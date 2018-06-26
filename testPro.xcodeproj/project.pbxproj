@@ -10,8 +10,8 @@
 		86F6FC1920E2292000BA0AD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6FC1820E2292000BA0AD1 /* AppDelegate.swift */; };
 		86F6FC1B20E2292000BA0AD1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6FC1A20E2292000BA0AD1 /* ViewController.swift */; };
 		86F6FC1E20E2292000BA0AD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86F6FC1C20E2292000BA0AD1 /* Main.storyboard */; };
-		86F6FC2020E2292000BA0AD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86F6FC1F20E2292000BA0AD1 /* Assets.xcassets */; };
 		86F6FC2320E2292000BA0AD1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86F6FC2120E2292000BA0AD1 /* LaunchScreen.storyboard */; };
+		86F6FC2B20E2344600BA0AD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86F6FC2A20E2344500BA0AD1 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,9 +19,9 @@
 		86F6FC1820E2292000BA0AD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86F6FC1A20E2292000BA0AD1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		86F6FC1D20E2292000BA0AD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		86F6FC1F20E2292000BA0AD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		86F6FC2220E2292000BA0AD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		86F6FC2420E2292000BA0AD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		86F6FC2A20E2344500BA0AD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +56,8 @@
 			children = (
 				86F6FC1820E2292000BA0AD1 /* AppDelegate.swift */,
 				86F6FC1A20E2292000BA0AD1 /* ViewController.swift */,
+				86F6FC2A20E2344500BA0AD1 /* Assets.xcassets */,
 				86F6FC1C20E2292000BA0AD1 /* Main.storyboard */,
-				86F6FC1F20E2292000BA0AD1 /* Assets.xcassets */,
 				86F6FC2120E2292000BA0AD1 /* LaunchScreen.storyboard */,
 				86F6FC2420E2292000BA0AD1 /* Info.plist */,
 			);
@@ -124,7 +124,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86F6FC2320E2292000BA0AD1 /* LaunchScreen.storyboard in Resources */,
-				86F6FC2020E2292000BA0AD1 /* Assets.xcassets in Resources */,
+				86F6FC2B20E2344600BA0AD1 /* Assets.xcassets in Resources */,
 				86F6FC1E20E2292000BA0AD1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,9 +274,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 49HJAMKD2L;
 				INFOPLIST_FILE = testPro/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = af.testPro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -289,9 +291,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 49HJAMKD2L;
 				INFOPLIST_FILE = testPro/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = af.testPro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
