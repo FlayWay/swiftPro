@@ -12,6 +12,12 @@
 		86F6FC1E20E2292000BA0AD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86F6FC1C20E2292000BA0AD1 /* Main.storyboard */; };
 		86F6FC2320E2292000BA0AD1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86F6FC2120E2292000BA0AD1 /* LaunchScreen.storyboard */; };
 		86F6FC2B20E2344600BA0AD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86F6FC2A20E2344500BA0AD1 /* Assets.xcassets */; };
+		86F6FC3720E23E6500BA0AD1 /* LJMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6FC3620E23E6500BA0AD1 /* LJMainViewController.swift */; };
+		86F6FC3920E23F7100BA0AD1 /* LJNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6FC3820E23F7100BA0AD1 /* LJNavigationController.swift */; };
+		86F6FC3B20E244F100BA0AD1 /* LJMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6FC3A20E244F100BA0AD1 /* LJMessageViewController.swift */; };
+		86F6FC3D20E2450200BA0AD1 /* LJProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6FC3C20E2450200BA0AD1 /* LJProfileViewController.swift */; };
+		86F6FC3F20E2451200BA0AD1 /* LJDiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6FC3E20E2451200BA0AD1 /* LJDiscoverViewController.swift */; };
+		86F6FC4120E2451F00BA0AD1 /* LJHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6FC4020E2451F00BA0AD1 /* LJHomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +28,12 @@
 		86F6FC2220E2292000BA0AD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		86F6FC2420E2292000BA0AD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86F6FC2A20E2344500BA0AD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		86F6FC3620E23E6500BA0AD1 /* LJMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJMainViewController.swift; sourceTree = "<group>"; };
+		86F6FC3820E23F7100BA0AD1 /* LJNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJNavigationController.swift; sourceTree = "<group>"; };
+		86F6FC3A20E244F100BA0AD1 /* LJMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJMessageViewController.swift; sourceTree = "<group>"; };
+		86F6FC3C20E2450200BA0AD1 /* LJProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJProfileViewController.swift; sourceTree = "<group>"; };
+		86F6FC3E20E2451200BA0AD1 /* LJDiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJDiscoverViewController.swift; sourceTree = "<group>"; };
+		86F6FC4020E2451F00BA0AD1 /* LJHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJHomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +66,7 @@
 		86F6FC1720E2292000BA0AD1 /* testPro */ = {
 			isa = PBXGroup;
 			children = (
+				86F6FC2C20E23C8E00BA0AD1 /* Classes */,
 				86F6FC1820E2292000BA0AD1 /* AppDelegate.swift */,
 				86F6FC1A20E2292000BA0AD1 /* ViewController.swift */,
 				86F6FC2A20E2344500BA0AD1 /* Assets.xcassets */,
@@ -62,6 +75,91 @@
 				86F6FC2420E2292000BA0AD1 /* Info.plist */,
 			);
 			path = testPro;
+			sourceTree = "<group>";
+		};
+		86F6FC2C20E23C8E00BA0AD1 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				86F6FC2D20E23C8E00BA0AD1 /* View(视图和控制器) */,
+				86F6FC3320E23C8E00BA0AD1 /* Tools */,
+				86F6FC3420E23C8E00BA0AD1 /* ViewModel(视图模型) */,
+				86F6FC3520E23C8E00BA0AD1 /* Model(模型) */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		86F6FC2D20E23C8E00BA0AD1 /* View(视图和控制器) */ = {
+			isa = PBXGroup;
+			children = (
+				86F6FC2E20E23C8E00BA0AD1 /* Home */,
+				86F6FC2F20E23C8E00BA0AD1 /* Discover */,
+				86F6FC3020E23C8E00BA0AD1 /* Message */,
+				86F6FC3120E23C8E00BA0AD1 /* Profile */,
+				86F6FC3220E23C8E00BA0AD1 /* Main */,
+			);
+			path = "View(视图和控制器)";
+			sourceTree = "<group>";
+		};
+		86F6FC2E20E23C8E00BA0AD1 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				86F6FC4020E2451F00BA0AD1 /* LJHomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		86F6FC2F20E23C8E00BA0AD1 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				86F6FC3E20E2451200BA0AD1 /* LJDiscoverViewController.swift */,
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		86F6FC3020E23C8E00BA0AD1 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				86F6FC3A20E244F100BA0AD1 /* LJMessageViewController.swift */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		86F6FC3120E23C8E00BA0AD1 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				86F6FC3C20E2450200BA0AD1 /* LJProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		86F6FC3220E23C8E00BA0AD1 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				86F6FC3620E23E6500BA0AD1 /* LJMainViewController.swift */,
+				86F6FC3820E23F7100BA0AD1 /* LJNavigationController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		86F6FC3320E23C8E00BA0AD1 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		86F6FC3420E23C8E00BA0AD1 /* ViewModel(视图模型) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "ViewModel(视图模型)";
+			sourceTree = "<group>";
+		};
+		86F6FC3520E23C8E00BA0AD1 /* Model(模型) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Model(模型)";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -90,6 +188,7 @@
 		86F6FC0D20E2292000BA0AD1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = LJ;
 				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = ljkj;
@@ -137,7 +236,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				86F6FC1B20E2292000BA0AD1 /* ViewController.swift in Sources */,
+				86F6FC3B20E244F100BA0AD1 /* LJMessageViewController.swift in Sources */,
+				86F6FC3D20E2450200BA0AD1 /* LJProfileViewController.swift in Sources */,
+				86F6FC4120E2451F00BA0AD1 /* LJHomeViewController.swift in Sources */,
+				86F6FC3F20E2451200BA0AD1 /* LJDiscoverViewController.swift in Sources */,
+				86F6FC3920E23F7100BA0AD1 /* LJNavigationController.swift in Sources */,
 				86F6FC1920E2292000BA0AD1 /* AppDelegate.swift in Sources */,
+				86F6FC3720E23E6500BA0AD1 /* LJMainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
