@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LJDiscoverViewController: UIViewController {
+class LJDiscoverViewController: LJBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

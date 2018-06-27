@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LJMessageViewController: UIViewController {
+class LJMessageViewController: LJBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

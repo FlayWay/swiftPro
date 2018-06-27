@@ -12,9 +12,18 @@ class LJBaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        view.backgroundColor = UIColor.cz_random()
         
+        setupUI()
     }
-
 }
+
+// MARK: -界面设置
+extension LJBaseViewController {
+    
+    private func setupUI(){
+        view.backgroundColor = UIColor.cz_random()
+    }
+    
+}
+
+

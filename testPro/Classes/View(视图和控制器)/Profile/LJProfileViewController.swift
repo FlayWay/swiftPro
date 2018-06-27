@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LJProfileViewController: UIViewController {
+class LJProfileViewController: LJBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
