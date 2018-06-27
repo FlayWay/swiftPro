@@ -30,6 +30,7 @@
 		86F6FC6720E3239800BA0AD1 /* NSAttributedString+CZAdditon.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F6FC5A20E3239800BA0AD1 /* NSAttributedString+CZAdditon.m */; };
 		86F6FC6820E3239800BA0AD1 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F6FC5B20E3239800BA0AD1 /* NSArray+Log.m */; };
 		86F6FC6A20E325D900BA0AD1 /* LJBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6FC6920E325D900BA0AD1 /* LJBaseViewController.swift */; };
+		86F6FC6D20E32D5400BA0AD1 /* Bundle+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6FC6C20E32D5400BA0AD1 /* Bundle+extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		86F6FC5B20E3239800BA0AD1 /* NSArray+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Log.m"; sourceTree = "<group>"; };
 		86F6FC5C20E3239800BA0AD1 /* NSString+CZPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CZPath.h"; sourceTree = "<group>"; };
 		86F6FC6920E325D900BA0AD1 /* LJBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJBaseViewController.swift; sourceTree = "<group>"; };
+		86F6FC6C20E32D5400BA0AD1 /* Bundle+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +185,7 @@
 		86F6FC3320E23C8E00BA0AD1 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				86F6FC6B20E32CB500BA0AD1 /* Extension */,
 				86F6FC4320E3239800BA0AD1 /* Additions */,
 			);
 			path = Tools;
@@ -232,6 +235,14 @@
 				86F6FC5C20E3239800BA0AD1 /* NSString+CZPath.h */,
 			);
 			path = Additions;
+			sourceTree = "<group>";
+		};
+		86F6FC6B20E32CB500BA0AD1 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				86F6FC6C20E32D5400BA0AD1 /* Bundle+extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,6 +328,7 @@
 				86F6FC3920E23F7100BA0AD1 /* LJNavigationController.swift in Sources */,
 				86F6FC6420E3239800BA0AD1 /* NSObject+CZRuntime.m in Sources */,
 				86F6FC6820E3239800BA0AD1 /* NSArray+Log.m in Sources */,
+				86F6FC6D20E32D5400BA0AD1 /* Bundle+extension.swift in Sources */,
 				86F6FC6520E3239800BA0AD1 /* UIViewController+CZAddition.m in Sources */,
 				86F6FC6320E3239800BA0AD1 /* UIButton+CZAddition.m in Sources */,
 				86F6FC6020E3239800BA0AD1 /* UILabel+CZAddition.m in Sources */,
