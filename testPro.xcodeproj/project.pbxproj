@@ -32,6 +32,7 @@
 		86F6FC6A20E325D900BA0AD1 /* LJBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6FC6920E325D900BA0AD1 /* LJBaseViewController.swift */; };
 		86F6FC6D20E32D5400BA0AD1 /* Bundle+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6FC6C20E32D5400BA0AD1 /* Bundle+extension.swift */; };
 		86F6FC6F20E3820F00BA0AD1 /* LJDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6FC6E20E3820F00BA0AD1 /* LJDemoViewController.swift */; };
+		86F6FC7120E39BC800BA0AD1 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6FC7020E39BC800BA0AD1 /* UIBarButtonItem+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		86F6FC6920E325D900BA0AD1 /* LJBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJBaseViewController.swift; sourceTree = "<group>"; };
 		86F6FC6C20E32D5400BA0AD1 /* Bundle+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+extension.swift"; sourceTree = "<group>"; };
 		86F6FC6E20E3820F00BA0AD1 /* LJDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJDemoViewController.swift; sourceTree = "<group>"; };
+		86F6FC7020E39BC800BA0AD1 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				86F6FC6C20E32D5400BA0AD1 /* Bundle+extension.swift */,
+				86F6FC7020E39BC800BA0AD1 /* UIBarButtonItem+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 				86F6FC3F20E2451200BA0AD1 /* LJDiscoverViewController.swift in Sources */,
 				86F6FC6F20E3820F00BA0AD1 /* LJDemoViewController.swift in Sources */,
 				86F6FC3920E23F7100BA0AD1 /* LJNavigationController.swift in Sources */,
+				86F6FC7120E39BC800BA0AD1 /* UIBarButtonItem+Extension.swift in Sources */,
 				86F6FC6420E3239800BA0AD1 /* NSObject+CZRuntime.m in Sources */,
 				86F6FC6820E3239800BA0AD1 /* NSArray+Log.m in Sources */,
 				86F6FC6D20E32D5400BA0AD1 /* Bundle+extension.swift in Sources */,

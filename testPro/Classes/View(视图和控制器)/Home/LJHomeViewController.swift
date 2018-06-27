@@ -30,7 +30,8 @@ class LJHomeViewController: LJBaseViewController {
 extension LJHomeViewController {
     // 重写父类方法
     private func setupUI() {
-    navigationItem.leftBarButtonItem = UIBarButtonItem(title: "好友", style: .plain, target: self, action: #selector(showFriends))
+    
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(showFriends))
     }
     
 }

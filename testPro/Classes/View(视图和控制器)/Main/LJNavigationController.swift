@@ -9,12 +9,15 @@
 import UIKit
 
 class LJNavigationController: UINavigationController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    
+    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         
-        
+        // 如果不是栈底控制器才需要隐藏，根控制器不需要隐藏
+        if childViewControllers.count>0 {
+           // 隐藏底部tabBar 
+            viewController.hidesBottomBarWhenPushed = true
+        }
+        super.pushViewController(viewController, animated: animated)
     }
 
 }
