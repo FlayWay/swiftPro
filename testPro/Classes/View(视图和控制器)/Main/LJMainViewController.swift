@@ -14,7 +14,13 @@ class LJMainViewController: UITabBarController {
         super.viewDidLoad()
         
         setupChildControllers()
+        setupcomposeBtn()
     }
+    
+    // MARK: - 私有控件
+    private lazy var composeBtn:UIButton = UIButton.cz_imageButton("tabbar_compose_icon_add", backgroundImageName:"tabbar_compose_button")
+    
+    
 }
 
 // extension 类似于 oc中的分类，在swift还可以用来切分代码块
@@ -29,6 +35,7 @@ extension LJMainViewController {
         let array = [
             ["clsName":"LJHomeViewController","title":"首页","imageName":"home"],
             ["clsName":"LJMessageViewController","title":"消息","imageName":"message_center"],
+            ["clsName":"UIViewController"],
             ["clsName":"LJDiscoverViewController","title":"发现","imageName":"discover"],
         ["clsName":"LJProfileViewController","title":"我","imageName":"profile"]
                      ]
@@ -63,6 +70,23 @@ extension LJMainViewController {
     vc.tabBarItem.setTitleTextAttributes([.font:UIFont.systemFont(ofSize: 14)], for: .normal)
     
         return nav
+    }
+    
+    // 设置撰写按钮
+    private  func setupcomposeBtn(){
+        
+        tabBar.addSubview(composeBtn)
+        
+        // 计算按钮的frame
+        guard let vcs = viewControllers else {
+            return
+        }
+        let count = CGFloat(vcs.count)
+        // 容错点
+        let w = tabBar.bounds.width/count - 1
+        composeBtn.frame = tabBar.bounds.insetBy(dx: 2*w, dy: 0)
+        print("按钮宽度\(composeBtn.bounds.width)")
+        
     }
     
 }
