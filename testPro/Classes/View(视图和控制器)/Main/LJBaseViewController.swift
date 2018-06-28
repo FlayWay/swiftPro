@@ -9,7 +9,6 @@
 import UIKit
 
 class LJBaseViewController: UIViewController {
-
     /// 自定义导航条
     lazy var navigationBar = LJNavigationBar(frame: CGRect(x: 0, y: 0, width: UIScreen.cz_screenWidth(), height: 64))
     /// 自定义导航条目
@@ -18,7 +17,6 @@ class LJBaseViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
     }
-    
     override var title: String?{
         didSet {
             navItem.title = title

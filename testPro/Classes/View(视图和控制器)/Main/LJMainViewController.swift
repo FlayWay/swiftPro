@@ -17,11 +17,22 @@ class LJMainViewController: UITabBarController {
         setupcomposeBtn()
     }
     
+    // 设置屏幕方向 当前的控制器和子控制器都会遵守这个方向
+    // 如果是视频 一般是通过modal 来展示的
+    /// portrait 竖屏 肖像
+    /// landscape 横屏 风景
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
+    
+    
     // MARK: -撰写按钮事件
    @objc private func composeStatus() {
         print("撰写事件")
+        let vc = UIViewController()
+        let nav = UINavigationController(rootViewController: vc)
+        present(nav, animated: true, completion: nil)
     }
-    
     
     // MARK: - 私有控件
     private lazy var composeBtn:UIButton = UIButton.cz_imageButton("tabbar_compose_icon_add", backgroundImageName:"tabbar_compose_button")
