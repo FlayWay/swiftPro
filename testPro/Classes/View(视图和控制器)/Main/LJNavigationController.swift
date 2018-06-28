@@ -12,7 +12,6 @@ class LJNavigationController: UINavigationController {
     
     
     override func viewDidLoad() {
-
         super.viewDidLoad()
         // 隐藏默认的导航条
         navigationBar.isHidden = true
@@ -25,7 +24,27 @@ class LJNavigationController: UINavigationController {
            // 隐藏底部tabBar 
             viewController.hidesBottomBarWhenPushed = true
         }
+        
+        // 判断控制器的类型
+        if let vc = viewController as? LJBaseViewController  {
+            
+            var title = "返回"
+            if childViewControllers.count == 1 {
+                // title显示首页的标题
+                title = childViewControllers.first?.title ?? "返回"
+            }
+            
+            // 取出自定义的navItem
+            vc.navItem.leftBarButtonItem = UIBarButtonItem(title: title, style: .plain, target: self, action: #selector(popToparent))
+        }
+        
         super.pushViewController(viewController, animated: animated)
+    }
+    
+    // POP 返回到上一个页面
+   @objc private func popToparent(){
+    
+        popViewController(animated: true)
     }
 
 }
