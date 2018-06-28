@@ -18,8 +18,6 @@ class LJHomeViewController: LJBaseViewController {
     
     @objc private func showFriends() {
         print("显示好友")
-        let vc = LJDemoViewController()
-        navigationController?.pushViewController(vc, animated: true)
     }
 
 }
