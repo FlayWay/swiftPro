@@ -18,9 +18,16 @@ extension UIBarButtonItem {
     ///   - fontSize: fontSize
     ///   - target: target
     ///   - action: action
-    convenience init(title:String,fontSize:CGFloat = 16,target:Any,action: Selector ) {
+    ///   - isBackButton: isBackButton
+    convenience init(title:String,fontSize:CGFloat = 16,target:Any,action: Selector,isBackButton:Bool = false) {
         let btn:UIButton = UIButton.cz_textButton(title, fontSize: fontSize, normalColor: UIColor.darkGray, highlightedColor: UIColor.orange)
         btn.addTarget(target, action: action, for: .touchUpInside)
+        if isBackButton == true {
+            let imageNor = "navigationbar_back_withtext"
+            btn.setImage(UIImage(named: imageNor), for: .normal)
+            btn.setImage(UIImage(named: imageNor+"_highlighted"), for:.highlighted)
+            btn.sizeToFit()
+        }
         self.init(customView: btn)
     }
 }

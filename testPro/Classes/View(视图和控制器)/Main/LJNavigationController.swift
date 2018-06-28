@@ -35,7 +35,7 @@ class LJNavigationController: UINavigationController {
             }
             
             // 取出自定义的navItem
-            vc.navItem.leftBarButtonItem = UIBarButtonItem(title: title, style: .plain, target: self, action: #selector(popToparent))
+            vc.navItem.leftBarButtonItem = UIBarButtonItem(title: title, target: self, action: #selector(popToparent), isBackButton: true)
         }
         
         super.pushViewController(viewController, animated: animated)
@@ -43,7 +43,6 @@ class LJNavigationController: UINavigationController {
     
     // POP 返回到上一个页面
    @objc private func popToparent(){
-    
         popViewController(animated: true)
     }
 
