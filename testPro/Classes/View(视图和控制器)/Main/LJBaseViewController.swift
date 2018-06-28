@@ -11,18 +11,15 @@ import UIKit
 class LJBaseViewController: UIViewController {
 
     /// 自定义导航条
-    lazy var navigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: UIScreen.cz_screenWidth(), height: 64))
+    lazy var navigationBar = LJNavigationBar(frame: CGRect(x: 0, y: 0, width: UIScreen.cz_screenWidth(), height: 64))
     /// 自定义导航条目
     lazy var navItem = UINavigationItem()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupUI()
-        navigationBar.isHidden = true
     }
     
-    override var title: String? {
-        
+    override var title: String?{
         didSet {
             navItem.title = title
         }
@@ -34,8 +31,13 @@ extension LJBaseViewController {
     
     private func setupUI(){
         view.backgroundColor = UIColor.cz_random()
+        
+        // 添加到航条
         view.addSubview(navigationBar)
+        // 将item设置给Bar
         navigationBar.items = [navItem]
+        // 设置navbar的渲染颜色
+        navigationBar.barTintColor = UIColor.cz_color(withHex: 0xF6F6F6)
     }
     
 }

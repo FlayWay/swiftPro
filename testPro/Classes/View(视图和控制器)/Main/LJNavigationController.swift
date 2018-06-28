@@ -10,6 +10,14 @@ import UIKit
 
 class LJNavigationController: UINavigationController {
     
+    
+    override func viewDidLoad() {
+
+        super.viewDidLoad()
+        // 隐藏默认的导航条
+        navigationBar.isHidden = true
+    }
+    
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         
         // 如果不是栈底控制器才需要隐藏，根控制器不需要隐藏

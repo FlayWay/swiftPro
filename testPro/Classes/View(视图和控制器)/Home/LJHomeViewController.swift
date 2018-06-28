@@ -19,7 +19,6 @@ class LJHomeViewController: LJBaseViewController {
     @objc private func showFriends() {
         
         print("显示好友")
-        
         let vc = LJDemoViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
@@ -28,10 +27,9 @@ class LJHomeViewController: LJBaseViewController {
 
 // MARK: -设置界面
 extension LJHomeViewController {
-    // 重写父类方法
     private func setupUI() {
     
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(showFriends))
+        navItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(showFriends))
     }
     
 }

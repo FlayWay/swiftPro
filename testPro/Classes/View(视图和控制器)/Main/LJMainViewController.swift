@@ -92,7 +92,6 @@ extension LJMainViewController {
         composeBtn.frame = tabBar.bounds.insetBy(dx: 2*w, dy: 0)
         print("按钮宽度\(composeBtn.bounds.width)")
         composeBtn.addTarget(self, action: #selector(composeStatus), for: .touchUpInside)
-
     }
     
 }

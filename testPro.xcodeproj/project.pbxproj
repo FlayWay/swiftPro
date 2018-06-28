@@ -33,6 +33,7 @@
 		86F6FC6D20E32D5400BA0AD1 /* Bundle+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6FC6C20E32D5400BA0AD1 /* Bundle+extension.swift */; };
 		86F6FC6F20E3820F00BA0AD1 /* LJDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6FC6E20E3820F00BA0AD1 /* LJDemoViewController.swift */; };
 		86F6FC7120E39BC800BA0AD1 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6FC7020E39BC800BA0AD1 /* UIBarButtonItem+Extension.swift */; };
+		86F6FC7320E48F2700BA0AD1 /* LJNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6FC7220E48F2700BA0AD1 /* LJNavigationBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		86F6FC6C20E32D5400BA0AD1 /* Bundle+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+extension.swift"; sourceTree = "<group>"; };
 		86F6FC6E20E3820F00BA0AD1 /* LJDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJDemoViewController.swift; sourceTree = "<group>"; };
 		86F6FC7020E39BC800BA0AD1 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
+		86F6FC7220E48F2700BA0AD1 /* LJNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJNavigationBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +185,7 @@
 				86F6FC3820E23F7100BA0AD1 /* LJNavigationController.swift */,
 				86F6FC6920E325D900BA0AD1 /* LJBaseViewController.swift */,
 				86F6FC6E20E3820F00BA0AD1 /* LJDemoViewController.swift */,
+				86F6FC7220E48F2700BA0AD1 /* LJNavigationBar.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				86F6FC6A20E325D900BA0AD1 /* LJBaseViewController.swift in Sources */,
 				86F6FC5E20E3239800BA0AD1 /* UIView+CZAddition.m in Sources */,
 				86F6FC6620E3239800BA0AD1 /* NSString+CZHash.m in Sources */,
+				86F6FC7320E48F2700BA0AD1 /* LJNavigationBar.swift in Sources */,
 				86F6FC6720E3239800BA0AD1 /* NSAttributedString+CZAdditon.m in Sources */,
 				86F6FC1920E2292000BA0AD1 /* AppDelegate.swift in Sources */,
 				86F6FC6220E3239800BA0AD1 /* NSString+CZPath.m in Sources */,

@@ -27,7 +27,7 @@ extension LJDemoViewController {
     
     private func setupUI(){
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "下一个", target: self, action: #selector(nextAction))
-        navigationItem.title = "第\(navigationController?.viewControllers.count ?? 0)个"
+        navItem.rightBarButtonItem = UIBarButtonItem(title: "下一个", target: self, action: #selector(nextAction))
+        navItem.title = "第\(navigationController?.viewControllers.count ?? 0)个"
     }
 }
