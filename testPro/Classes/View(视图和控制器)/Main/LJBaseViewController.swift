@@ -30,9 +30,9 @@ class LJBaseViewController: UIViewController {
         }
     }
     
-    
     /// 加载数据  - 具体的实现由子类负责
     func loadData()  {
+        
         
     }
 }
@@ -42,16 +42,26 @@ extension LJBaseViewController {
     
     private func setupUI(){
         view.backgroundColor = UIColor.cz_random()
+       
         setupNavgationBar()
         setupTableView()
+        
+        // 取消自动缩放
+        if #available(iOS 11.0, *) {
+            tableView?.contentInsetAdjustmentBehavior = .never
+        } else {
+            automaticallyAdjustsScrollViewInsets = false
+        };
     }
-    
-    
     /// 设置表格视图
     private func setupTableView(){
         
         tableView = UITableView(frame: view.bounds, style: .plain)
-        
+        // 设置内容缩进
+        tableView?.contentInset = UIEdgeInsets(top: navigationBar.bounds.height,
+                                               left: 0,
+                                               bottom: tabBarController?.tabBar.bounds.height ?? 49,
+                                               right: 0)
         // 设置数据源代理 -> 子类直接实现数据源方法
         tableView?.dataSource = self
         tableView?.delegate = self

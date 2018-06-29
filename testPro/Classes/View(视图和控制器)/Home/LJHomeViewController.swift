@@ -23,7 +23,7 @@ class LJHomeViewController: LJBaseViewController {
     // 加载数据
     override func loadData() {
 
-        for i in 0..<10 {
+        for i in 0..<20 {
             statusList.insert(i.description, at: 0)
         }
     }
