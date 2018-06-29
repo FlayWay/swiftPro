@@ -13,7 +13,8 @@ class LJBaseViewController: UIViewController {
     
     // 表格视图 如果用户没有登录 不需要创建
     var tableView:UITableView?
-    
+    /// 刷新控件
+    var refreshControl:UIRefreshControl?
     /// 自定义导航条
     lazy var navigationBar = LJNavigationBar(frame: CGRect(x: 0, y: 0, width: UIScreen.cz_screenWidth(), height: 64))
     /// 自定义导航条目
@@ -31,8 +32,7 @@ class LJBaseViewController: UIViewController {
     }
     
     /// 加载数据  - 具体的实现由子类负责
-    func loadData()  {
-        
+    @objc func loadData()  {
         
     }
 }
@@ -57,15 +57,24 @@ extension LJBaseViewController {
     private func setupTableView(){
         
         tableView = UITableView(frame: view.bounds, style: .plain)
+        // 设置数据源代理 -> 子类直接实现数据源方法
+        tableView?.dataSource = self
+        tableView?.delegate = self
+        view.insertSubview(tableView!, belowSubview:navigationBar)
         // 设置内容缩进
         tableView?.contentInset = UIEdgeInsets(top: navigationBar.bounds.height,
                                                left: 0,
                                                bottom: tabBarController?.tabBar.bounds.height ?? 49,
                                                right: 0)
-        // 设置数据源代理 -> 子类直接实现数据源方法
-        tableView?.dataSource = self
-        tableView?.delegate = self
-        view.insertSubview(tableView!, belowSubview:navigationBar)
+        // 设置刷新控件
+        // 实例化控件
+        refreshControl = UIRefreshControl()
+        // 添加到视图
+        tableView?.addSubview(refreshControl!)
+        // 添加监听方法
+        refreshControl?.addTarget(self, action: #selector(loadData), for: .valueChanged)
+        
+        
     }
     
     /// 设置导航条
