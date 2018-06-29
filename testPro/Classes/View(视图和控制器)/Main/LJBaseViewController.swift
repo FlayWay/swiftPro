@@ -20,14 +20,20 @@ class LJBaseViewController: UIViewController {
     lazy var navItem = UINavigationItem()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupUI()
+        loadData()
         
     }
     override var title: String?{
         didSet {
             navItem.title = title
         }
+    }
+    
+    
+    /// 加载数据  - 具体的实现由子类负责
+    func loadData()  {
+        
     }
 }
 

@@ -8,25 +8,61 @@
 
 import UIKit
 
+private let cellId = "cellId"
+
 class LJHomeViewController: LJBaseViewController {
 
+    // 微博数据
+    private lazy var statusList = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        
+
+    }
+
+    // 加载数据
+    override func loadData() {
+
+        for i in 0..<10 {
+            statusList.insert(i.description, at: 0)
+        }
     }
     
     @objc private func showFriends() {
         print("显示好友")
     }
+    
+    
 
+}
+// MARK: - 表格数据源方法,具体的数据源实现方法，不需要super
+extension LJHomeViewController{
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return statusList.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // 取cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
+        // 设置cell
+        cell.textLabel?.text = self.statusList[indexPath.row]
+        // 返回cell
+        return cell
+    }
+    
+    
 }
 
 // MARK: -设置界面
 extension LJHomeViewController {
     private func setupUI() {
     
+        // 设置导航栏按钮
         navItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(showFriends))
+        
+        // 注册原型 cell
+        tableView?.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
     }
     
 }
