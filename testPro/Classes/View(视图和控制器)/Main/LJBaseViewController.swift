@@ -85,7 +85,7 @@ extension LJBaseViewController {
     /// 设置访客视图
     private func setupVisitorView(){
         
-        let visitorView = UIView(frame: view.bounds)
+        let visitorView = LJVisitorView(frame: view.bounds)
         visitorView.backgroundColor = UIColor.cz_random()
         view.insertSubview(visitorView, belowSubview: navigationBar)
         
