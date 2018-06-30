@@ -86,7 +86,6 @@ extension LJBaseViewController {
     private func setupVisitorView(){
         
         let visitorView = LJVisitorView(frame: view.bounds)
-        visitorView.backgroundColor = UIColor.cz_random()
         view.insertSubview(visitorView, belowSubview: navigationBar)
         
     }
