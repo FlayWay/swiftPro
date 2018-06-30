@@ -15,6 +15,8 @@ class LJBaseViewController: UIViewController {
     var tableView:UITableView?
     /// 刷新控件
     var refreshControl:UIRefreshControl?
+    /// 上拉刷新标记
+    var isPullUp = false
     /// 自定义导航条
     lazy var navigationBar = LJNavigationBar(frame: CGRect(x: 0, y: 0, width: UIScreen.cz_screenWidth(), height: 64))
     /// 自定义导航条目
@@ -105,6 +107,28 @@ extension LJBaseViewController: UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return 0
+    }
+    
+    /// 在显示最后一行的时候，做上拉刷新
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        // 判断indexPath 是否是最后一行 indexPath section 最大 indexPath.row 最后一行
+        let row = indexPath.row
+        let section = tableView.numberOfSections - 1
+        
+        if row < 0 || section < 0 {
+            
+            return
+        }
+        
+        // 行数
+        let count = tableView.numberOfRows(inSection: section)
+        
+        if row == count && !isPullUp {
+            
+            print("上拉刷新")
+        }
+        
     }
 }
 
