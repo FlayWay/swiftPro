@@ -23,19 +23,19 @@ class LJNavigationController: UINavigationController {
         if childViewControllers.count>0 {
            // 隐藏底部tabBar 
             viewController.hidesBottomBarWhenPushed = true
-        }
-        
-        // 判断控制器的类型
-        if let vc = viewController as? LJBaseViewController  {
             
-            var title = "返回"
-            if childViewControllers.count == 1 {
-                // title显示首页的标题
-                title = childViewControllers.first?.title ?? "返回"
+            // 判断控制器的类型
+            if let vc = viewController as? LJBaseViewController  {
+                
+                var title = "返回"
+                if childViewControllers.count == 1 {
+                    // title显示首页的标题
+                    title = childViewControllers.first?.title ?? "返回"
+                }
+                
+                // 取出自定义的navItem
+                vc.navItem.leftBarButtonItem = UIBarButtonItem(title: title, target: self, action: #selector(popToparent), isBackButton: true)
             }
-            
-            // 取出自定义的navItem
-            vc.navItem.leftBarButtonItem = UIBarButtonItem(title: title, target: self, action: #selector(popToparent), isBackButton: true)
         }
         
         super.pushViewController(viewController, animated: animated)

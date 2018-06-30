@@ -34,8 +34,9 @@ class LJBaseViewController: UIViewController {
     }
     
     /// 加载数据  - 具体的实现由子类负责
-    @objc func loadData()  {
-        
+    @objc func loadData()  { 
+        // 如果子类不实现任务方法，默认关闭刷新
+        refreshControl?.endRefreshing()
     }
 }
 
