@@ -28,11 +28,17 @@ class LJHomeViewController: LJBaseViewController {
         // 模拟延时加载数据  - dispatch_after 5秒
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
             for i in 0..<20 {
+                if self.isPullUp {
+                    self.statusList.append("上拉\(i)")
+                } else {
                 self.statusList.insert(i.description, at: 0)
+                }
             }
             print("刷新表格")
             // 结束刷新控件
             self.refreshControl?.endRefreshing()
+            // 恢复上拉刷新标记
+            self.isPullUp = false
             // 刷新表格
             self.tableView?.reloadData()
         }

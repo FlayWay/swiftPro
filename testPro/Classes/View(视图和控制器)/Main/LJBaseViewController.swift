@@ -124,9 +124,12 @@ extension LJBaseViewController: UITableViewDataSource,UITableViewDelegate {
         // 行数
         let count = tableView.numberOfRows(inSection: section)
         
-        if row == count && !isPullUp {
+        if row == (count-1) && !isPullUp {
             
             print("上拉刷新")
+            isPullUp = true
+            // 开始刷新
+            loadData()
         }
         
     }
