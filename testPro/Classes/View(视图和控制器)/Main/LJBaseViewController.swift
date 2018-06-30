@@ -11,6 +11,8 @@ import UIKit
 /// 所有主控制器的基类控制器
 class LJBaseViewController: UIViewController {
     
+    /// 用户登录标记
+    var userLog = false
     // 表格视图 如果用户没有登录 不需要创建
     var tableView:UITableView?
     /// 刷新控件
@@ -34,7 +36,7 @@ class LJBaseViewController: UIViewController {
     }
     
     /// 加载数据  - 具体的实现由子类负责
-    @objc func loadData()  { 
+    @objc func loadData()  {
         // 如果子类不实现任务方法，默认关闭刷新
         refreshControl?.endRefreshing()
     }
@@ -44,10 +46,10 @@ class LJBaseViewController: UIViewController {
 extension LJBaseViewController {
     
     private func setupUI(){
-        view.backgroundColor = UIColor.cz_random()
-       
+        view.backgroundColor = UIColor.white
         setupNavgationBar()
-        setupTableView()
+        
+        userLog ? setupTableView() : setupVisitorView()
         
         // 取消自动缩放
         if #available(iOS 11.0, *) {
@@ -77,6 +79,15 @@ extension LJBaseViewController {
         // 添加监听方法
         refreshControl?.addTarget(self, action: #selector(loadData), for: .valueChanged)
         
+        
+    }
+    
+    /// 设置访客视图
+    private func setupVisitorView(){
+        
+        let visitorView = UIView(frame: view.bounds)
+        visitorView.backgroundColor = UIColor.cz_random()
+        view.insertSubview(visitorView, belowSubview: navigationBar)
         
     }
     
