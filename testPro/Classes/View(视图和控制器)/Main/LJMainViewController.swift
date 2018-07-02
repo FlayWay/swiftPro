@@ -50,18 +50,25 @@ extension LJMainViewController {
     /// 设置所有的自控制器
     // 在现在的很多应用程序中，界面的创建都依赖网络的 json
     private func setupChildControllers() {
-        let array:[[String:Any]] = [
-            ["clsName":"LJHomeViewController","title":"首页","imageName":"home","visitorInfo":["imageName":"","message":"关注一些人,回这里看看有什么变化"]],
-            ["clsName":"LJMessageViewController","title":"消息","imageName":"message_center","visitorInfo":["imageName":"visitordiscover_image_message","message":"登录后,别人评论你的微博,发给你的消息,都会在这里收到通知"]],
-            ["clsName":"UIViewController"],
-            ["clsName":"LJDiscoverViewController","title":"发现","imageName":"discover","visitorInfo":["imageName":"visitordiscover_image_message","message":"登录后,最新最热微博尽在掌握,不再会与实时潮流擦肩而过"]],
-        ["clsName":"LJProfileViewController","title":"我","imageName":"profile","visitorInfo":["imageName":"visitordiscover_image_profile","message":"登录后,你的微博、相册、个人资料会显示到这里,展示给别人"]]
-                     ]
+        
+        // 从bundle 加载配置的 json
+        guard let path = Bundle.main.path(forResource: "main.json", ofType: nil),
+              let data = NSData(contentsOfFile: path),
+        let array = try? JSONSerialization.jsonObject(with: data as Data, options: []) as! [[String:Any]]  else {
+            return
+        }
+//        let array:[[String:Any]] = [
+//            ["clsName":"LJHomeViewController","title":"首页","imageName":"home","visitorInfo":["imageName":"","message":"关注一些人,回这里看看有什么变化"]],
+//            ["clsName":"LJMessageViewController","title":"消息","imageName":"message_center","visitorInfo":["imageName":"visitordiscover_image_message","message":"登录后,别人评论你的微博,发给你的消息,都会在这里收到通知"]],
+//            ["clsName":"UIViewController"],
+//            ["clsName":"LJDiscoverViewController","title":"发现","imageName":"discover","visitorInfo":["imageName":"visitordiscover_image_message","message":"登录后,最新最热微博尽在掌握,不再会与实时潮流擦肩而过"]],
+//        ["clsName":"LJProfileViewController","title":"我","imageName":"profile","visitorInfo":["imageName":"visitordiscover_image_profile","message":"登录后,你的微博、相册、个人资料会显示到这里,展示给别人"]]
+//                     ]
         
         // json 写入到沙河  数组 -- > 序列化
 //        (array as NSArray).write(toFile: "/Users/ljkj/Desktop/demo.plist", atomically: true)
-        let data = try? JSONSerialization.data(withJSONObject: array, options: [.prettyPrinted])
-        (data! as NSData).write(toFile: "/Users/ljkj/Desktop/demo.json", atomically: true)
+//        let data = try? JSONSerialization.data(withJSONObject: array, options: [.prettyPrinted])
+//        (data! as NSData).write(toFile: "/Users/ljkj/Desktop/demo.json", atomically: true)
         
         var arrayM = [UIViewController]()
         for dict in array {
