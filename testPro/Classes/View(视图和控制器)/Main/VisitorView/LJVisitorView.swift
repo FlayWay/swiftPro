@@ -28,6 +28,8 @@ class LJVisitorView: UIView {
     private lazy var iconView:UIImageView  = UIImageView(image: UIImage(named: "visitordiscover_feed_image_smallicon"))
     /// 小房子
     private lazy var houseIconView:UIImageView = UIImageView(image: UIImage(named: "visitordiscover_feed_image_house"))
+    /// 遮罩图像
+    private lazy var markIconView:UIImageView = UIImageView(image: UIImage(named: "visitordiscover_feed_mask_smallicon"))
     /// 提示标签
     private lazy var tiplable:UILabel = UILabel.cz_label(withText: "关注一些人，回这里看看有什么惊喜关注一些人，回这里看看有什么惊喜", fontSize: 14, color: UIColor.darkGray)
     /// 注册按钮
@@ -57,6 +59,7 @@ extension LJVisitorView {
         // 添加控件
         addSubview(iconView)
         addSubview(houseIconView)
+        addSubview(markIconView)
         addSubview(tiplable)
         addSubview(registerButton)
         addSubview(loginButton)
@@ -97,6 +100,7 @@ extension LJVisitorView {
                                          attribute: .centerY,
                                          multiplier: 1.0,
                                          constant: -10))
+    
         // 提示标签
         addConstraint(NSLayoutConstraint(item: tiplable,
                                          attribute: .centerX,
@@ -164,5 +168,19 @@ extension LJVisitorView {
                                          attribute: .width,
                                          multiplier: 1.0,
                                          constant: 0))
+        // 遮罩图像 VFL
+        // views:定义 VFL 中的控件名称和实际名称的映射关系
+        let viewDic = ["markIconView": markIconView]
+        addConstraints(NSLayoutConstraint.constraints(
+            // 水平方向  H  距离左右边界  0
+            withVisualFormat: "H:|-0-[markIconView]-0-|",
+            options: [],
+            metrics: nil,
+            views: viewDic))
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: <#T##String#>,
+            options: <#T##NSLayoutFormatOptions#>,
+            metrics: <#T##[String : Any]?#>,
+            views: <#T##[String : Any]#>))
     }
 }
