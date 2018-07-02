@@ -170,7 +170,10 @@ extension LJVisitorView {
                                          constant: 0))
         // 遮罩图像 VFL
         // views:定义 VFL 中的控件名称和实际名称的映射关系
-        let viewDic = ["markIconView": markIconView]
+        // metrics: 定义 VFL 中 () 指定的常数映射关系
+        let viewDic = ["markIconView": markIconView,
+                       "registerButton":registerButton] as [String : Any]
+        let metrics = ["spacing":-35]
         addConstraints(NSLayoutConstraint.constraints(
             // 水平方向  H  距离左右边界  0
             withVisualFormat: "H:|-0-[markIconView]-0-|",
@@ -178,9 +181,11 @@ extension LJVisitorView {
             metrics: nil,
             views: viewDic))
         addConstraints(NSLayoutConstraint.constraints(
-            withVisualFormat: <#T##String#>,
-            options: <#T##NSLayoutFormatOptions#>,
-            metrics: <#T##[String : Any]?#>,
-            views: <#T##[String : Any]#>))
+            // markIconView 距离顶边为0 距离底边registerButton为0
+            // withVisualFormat: "V:|-0-[markIconView]-0-[registerButton]",
+            withVisualFormat: "V:|-0-[markIconView]-(spacing)-[registerButton]",
+            options: [],
+            metrics: metrics,
+            views: viewDic))
     }
 }
