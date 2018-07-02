@@ -10,6 +10,7 @@ import UIKit
 
 class LJMainViewController: UITabBarController {
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -53,7 +54,7 @@ extension LJMainViewController {
             ["clsName":"LJMessageViewController","title":"消息","imageName":"message_center"],
             ["clsName":"UIViewController"],
             ["clsName":"LJDiscoverViewController","title":"发现","imageName":"discover"],
-        ["clsName":"LJProfileViewController","title":"我","imageName":"profile"]
+            ["clsName":"LJProfileViewController","title":"我","imageName":"profile"]
                      ]
         var arrayM = [UIViewController]()
         for dict in array {

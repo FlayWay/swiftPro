@@ -12,6 +12,28 @@ import UIKit
 /// 访客视图
 class LJVisitorView: UIView {
 
+    /// 使用字典访问访客视图
+    /// - Parameter dict: [imageName / message ]
+    /// 提示: 如果是首页 imageName = ""
+    var visitorInfo:[String:String]? {
+        didSet{
+            // 1. 取出字典信息
+            guard let imageName = visitorInfo?["imageName"],
+                let message = visitorInfo?["message"]  else {
+    
+                    return
+            }
+            
+            //2. 设置消息
+            tiplable.text = message
+            //3. 设置图像
+            if imageName == "" {
+                return
+            }
+            iconView.image = UIImage(named: imageName)
+        }
+    }
+    // MARK: -构造函数
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -21,6 +43,7 @@ class LJVisitorView: UIView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     
     // MARK: - 私有控件
     /// 懒加载属性什么时候需要添加属性 只有调用 UIKit 控件的指定构造函数，其他都需要使用类型
@@ -54,7 +77,7 @@ class LJVisitorView: UIView {
 extension LJVisitorView {
     
     private func setupUI() {
-        backgroundColor = UIColor.white
+        backgroundColor = UIColor.cz_color(withHex: 0xEDEDED)
         
         // 添加控件
         addSubview(iconView)
@@ -145,7 +168,6 @@ extension LJVisitorView {
                                          attribute: .notAnAttribute,
                                          multiplier: 1.0,
                                          constant: 100))
-        
         // 登录按钮
         addConstraint(NSLayoutConstraint(item: loginButton,
                                          attribute: .right,
@@ -183,6 +205,7 @@ extension LJVisitorView {
         addConstraints(NSLayoutConstraint.constraints(
             // markIconView 距离顶边为0 距离底边registerButton为0
             // withVisualFormat: "V:|-0-[markIconView]-0-[registerButton]",
+            // withVisualFormat: "V:|-0-[markIconView]-(-35)-[registerButton]",
             withVisualFormat: "V:|-0-[markIconView]-(spacing)-[registerButton]",
             options: [],
             metrics: metrics,
