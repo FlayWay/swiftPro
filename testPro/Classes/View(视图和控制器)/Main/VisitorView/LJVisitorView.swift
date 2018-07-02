@@ -20,10 +20,8 @@ class LJVisitorView: UIView {
             // 1. 取出字典信息
             guard let imageName = visitorInfo?["imageName"],
                 let message = visitorInfo?["message"]  else {
-    
                     return
             }
-            
             //2. 设置消息
             tiplable.text = message
             //3. 设置图像
@@ -31,6 +29,9 @@ class LJVisitorView: UIView {
                 return
             }
             iconView.image = UIImage(named: imageName)
+            // 其他控制器  隐藏小房子 遮罩
+            houseIconView.isHidden = true
+            markIconView.isHidden = true
         }
     }
     // MARK: -构造函数
@@ -86,6 +87,8 @@ extension LJVisitorView {
         addSubview(tiplable)
         addSubview(registerButton)
         addSubview(loginButton)
+        
+        tiplable.textAlignment = .center
         
         // 代码布局 取消autoresizing
         for v in subviews {

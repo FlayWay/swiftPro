@@ -13,6 +13,8 @@ class LJBaseViewController: UIViewController {
     
     /// 用户登录标记
     var userLog = false
+    // 访客视图信息字典
+    var visitorInfoDiction:[String:String]?
     // 表格视图 如果用户没有登录 不需要创建
     var tableView:UITableView?
     /// 刷新控件
@@ -87,7 +89,7 @@ extension LJBaseViewController {
         
         let visitorView = LJVisitorView(frame: view.bounds)
         view.insertSubview(visitorView, belowSubview: navigationBar)
-        
+        visitorView.visitorInfo = visitorInfoDiction
     }
     
     /// 设置导航条

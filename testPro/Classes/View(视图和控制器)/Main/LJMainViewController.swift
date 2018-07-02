@@ -48,14 +48,19 @@ class LJMainViewController: UITabBarController {
 extension LJMainViewController {
     
     /// 设置所有的自控制器
+    // 在现在的很多应用程序中，界面的创建都依赖网络的 json
     private func setupChildControllers() {
-        let array = [
-            ["clsName":"LJHomeViewController","title":"首页","imageName":"home"],
-            ["clsName":"LJMessageViewController","title":"消息","imageName":"message_center"],
+        let array:[[String:Any]] = [
+            ["clsName":"LJHomeViewController","title":"首页","imageName":"home","visitorInfo":["imageName":"","message":"关注一些人,回这里看看有什么变化"]],
+            ["clsName":"LJMessageViewController","title":"消息","imageName":"message_center","visitorInfo":["imageName":"visitordiscover_image_message","message":"登录后,别人评论你的微博,发给你的消息,都会在这里收到通知"]],
             ["clsName":"UIViewController"],
-            ["clsName":"LJDiscoverViewController","title":"发现","imageName":"discover"],
-            ["clsName":"LJProfileViewController","title":"我","imageName":"profile"]
+            ["clsName":"LJDiscoverViewController","title":"发现","imageName":"discover","visitorInfo":["imageName":"visitordiscover_image_message","message":"登录后,最新最热微博尽在掌握,不再会与实时潮流擦肩而过"]],
+        ["clsName":"LJProfileViewController","title":"我","imageName":"profile","visitorInfo":["imageName":"visitordiscover_image_profile","message":"登录后,你的微博、相册、个人资料会显示到这里,展示给别人"]]
                      ]
+        
+        // json 写入到沙河
+        (array as NSArray).write(toFile: "/Users/ljkj/Desktop/demo.plist", atomically: true)
+        
         var arrayM = [UIViewController]()
         for dict in array {
             arrayM.append(controller(dict: dict))
@@ -66,19 +71,22 @@ extension LJMainViewController {
     ///
     /// - Parameter dict: 信息字典[clsName,title,imageName]
     /// - Returns: 子控制器
-    private func controller(dict:[String:String]) -> UIViewController {
+    private func controller(dict:[String:Any]) -> UIViewController {
         
         // 取得字典内容
-        guard let clsName = dict["clsName"],
-              let  title = dict["title"],
-              let imageName = dict["imageName"],
-              let cls = NSClassFromString(Bundle.main.namespace + "." + clsName) as? UIViewController.Type
+        guard let clsName = dict["clsName"] as? String,
+              let  title = dict["title"] as? String,
+              let imageName = dict["imageName"] as? String,
+              let cls = NSClassFromString(Bundle.main.namespace + "." + clsName) as? LJBaseViewController.Type,
+        let visitor = dict["visitorInfo"] as? [String:String]
         else {
             
             return UIViewController()
         }
         let vc = cls.init()
         vc.title = title
+        // 访客视图的字典
+        vc.visitorInfoDiction = visitor
         vc.tabBarItem.image = UIImage(named: "tabbar_" + imageName)?.withRenderingMode(.alwaysOriginal)
         vc.tabBarItem.selectedImage = UIImage(named: "tabbar_" + imageName + "_selected")?.withRenderingMode(.alwaysOriginal)
         let nav = LJNavigationController(rootViewController: vc)
