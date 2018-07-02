@@ -53,5 +53,21 @@ extension LJVisitorView {
     
     private func setupUI() {
         backgroundColor = UIColor.white
+        
+        // 添加控件
+        addSubview(iconView)
+        addSubview(houseIconView)
+        addSubview(tiplable)
+        addSubview(registerButton)
+        addSubview(loginButton)
+        
+        // 代码布局 取消autoresizing
+        for v in subviews {
+            v.translatesAutoresizingMaskIntoConstraints = false
+        }
+        // 自动布局
+        
+        
+        
     }
 }
