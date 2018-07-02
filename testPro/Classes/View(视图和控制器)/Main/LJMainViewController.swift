@@ -58,8 +58,10 @@ extension LJMainViewController {
         ["clsName":"LJProfileViewController","title":"我","imageName":"profile","visitorInfo":["imageName":"visitordiscover_image_profile","message":"登录后,你的微博、相册、个人资料会显示到这里,展示给别人"]]
                      ]
         
-        // json 写入到沙河
+        // json 写入到沙河  数组 -- > 序列化
 //        (array as NSArray).write(toFile: "/Users/ljkj/Desktop/demo.plist", atomically: true)
+        let data = try? JSONSerialization.data(withJSONObject: array, options: [.prettyPrinted])
+        (data! as NSData).write(toFile: "/Users/ljkj/Desktop/demo.json", atomically: true)
         
         var arrayM = [UIViewController]()
         for dict in array {
@@ -90,9 +92,9 @@ extension LJMainViewController {
         vc.tabBarItem.image = UIImage(named: "tabbar_" + imageName)?.withRenderingMode(.alwaysOriginal)
         vc.tabBarItem.selectedImage = UIImage(named: "tabbar_" + imageName + "_selected")?.withRenderingMode(.alwaysOriginal)
         let nav = LJNavigationController(rootViewController: vc)
-    vc.tabBarItem.setTitleTextAttributes([.foregroundColor:UIColor.orange], for: .highlighted)
+        vc.tabBarItem.setTitleTextAttributes([.foregroundColor:UIColor.orange], for: .highlighted)
         // 系统默认是12号字体 修改字体大小 设置为默认
-    vc.tabBarItem.setTitleTextAttributes([.font:UIFont.systemFont(ofSize: 14)], for: .normal)
+        vc.tabBarItem.setTitleTextAttributes([.font:UIFont.systemFont(ofSize: 14)], for: .normal)
     
         return nav
     }

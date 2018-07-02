@@ -21,7 +21,6 @@ class LJHomeViewController: LJBaseViewController {
     }
 
     // 加载数据
-    
     override func loadData() {
         
         print("加载数据")

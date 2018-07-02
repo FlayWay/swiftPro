@@ -34,6 +34,7 @@
 		86F6FC7120E39BC800BA0AD1 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6FC7020E39BC800BA0AD1 /* UIBarButtonItem+Extension.swift */; };
 		86F6FC7320E48F2700BA0AD1 /* LJNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6FC7220E48F2700BA0AD1 /* LJNavigationBar.swift */; };
 		86F6FC9B20E7710C00BA0AD1 /* LJVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6FC9A20E7710C00BA0AD1 /* LJVisitorView.swift */; };
+		86F6FC9D20EA1FE500BA0AD1 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = 86F6FC9C20EA1FE500BA0AD1 /* main.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		86F6FC7020E39BC800BA0AD1 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
 		86F6FC7220E48F2700BA0AD1 /* LJNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJNavigationBar.swift; sourceTree = "<group>"; };
 		86F6FC9A20E7710C00BA0AD1 /* LJVisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJVisitorView.swift; sourceTree = "<group>"; };
+		86F6FC9C20EA1FE500BA0AD1 /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 		86F6FC3220E23C8E00BA0AD1 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				86F6FC9C20EA1FE500BA0AD1 /* main.json */,
 				86F6FC9620E770CE00BA0AD1 /* VisitorView */,
 				86F6FC3620E23E6500BA0AD1 /* LJMainViewController.swift */,
 				86F6FC3820E23F7100BA0AD1 /* LJNavigationController.swift */,
@@ -324,6 +327,7 @@
 			files = (
 				86F6FC2320E2292000BA0AD1 /* LaunchScreen.storyboard in Resources */,
 				86F6FC2B20E2344600BA0AD1 /* Assets.xcassets in Resources */,
+				86F6FC9D20EA1FE500BA0AD1 /* main.json in Resources */,
 				86F6FC1E20E2292000BA0AD1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
