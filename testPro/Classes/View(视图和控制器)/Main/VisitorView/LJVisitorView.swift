@@ -26,6 +26,7 @@ class LJVisitorView: UIView {
             tiplable.text = message
             //3. 设置图像
             if imageName == "" {
+                startAnimation()
                 return
             }
             iconView.image = UIImage(named: imageName)
@@ -44,7 +45,18 @@ class LJVisitorView: UIView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+    // 旋转动画
+    private func startAnimation() {
+        let ani = CABasicAnimation(keyPath: "transform.rotation")
+        ani.toValue = 2 * Double.pi
+        ani.repeatCount = MAXFLOAT
+        ani.duration = 15
+        // 动画完成不删除，如果iconView被释放，动画一起销毁
+        ani.isRemovedOnCompletion = false
+        // 将图层添加到图层
+        iconView.layer.add(ani, forKey: nil)
+        
+    }
     
     // MARK: - 私有控件
     /// 懒加载属性什么时候需要添加属性 只有调用 UIKit 控件的指定构造函数，其他都需要使用类型

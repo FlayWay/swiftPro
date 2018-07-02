@@ -59,7 +59,7 @@ extension LJMainViewController {
                      ]
         
         // json 写入到沙河
-        (array as NSArray).write(toFile: "/Users/ljkj/Desktop/demo.plist", atomically: true)
+//        (array as NSArray).write(toFile: "/Users/ljkj/Desktop/demo.plist", atomically: true)
         
         var arrayM = [UIViewController]()
         for dict in array {
