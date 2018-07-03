@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = UIColor.white
         window?.rootViewController = LJMainViewController()
         window?.makeKeyAndVisible()
+        loadAppInfo()
         return true
     }
 
@@ -48,4 +49,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
+
+// MARK: - 从服务器加载应用程序
+extension AppDelegate {
+    
+    func loadAppInfo() {
+        
+        DispatchQueue.global().async {
+         
+            let url =  Bundle.main.url(forResource: "main.json",
+                                       withExtension: nil)
+            let data = NSData(contentsOf: url!)
+            // 写入沙河
+            let docDir = NSSearchPathForDirectoriesInDomains(.documentDirectory,
+                                                            .userDomainMask,
+                                                            true)[0]
+            let jsonPath = (docDir as NSString).appendingPathComponent("main.json")
+            data?.write(toFile: jsonPath, atomically: true)
+            print("应用程序加载完毕\(jsonPath)")
+        }
+    }
+}
+
 
