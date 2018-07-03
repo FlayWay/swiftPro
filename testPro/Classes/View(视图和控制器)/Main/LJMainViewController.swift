@@ -26,7 +26,6 @@ class LJMainViewController: UITabBarController {
         return .portrait
     }
     
-    
     // MARK: -撰写按钮事件
    @objc private func composeStatus() {
         print("撰写事件")
@@ -51,10 +50,20 @@ extension LJMainViewController {
     // 在现在的很多应用程序中，界面的创建都依赖网络的 json
     private func setupChildControllers() {
         
+        // 获取沙河路径
+        let docDir = NSSearchPathForDirectoriesInDomains(.documentDirectory,
+                                                         .userDomainMask,
+                                                         true)[0]
+        let jsonPath = (docDir as NSString).appendingPathComponent("main.json")
+        var data = NSData(contentsOfFile: jsonPath)
+        
+        if data == nil {
+            let path = Bundle.main.path(forResource: "main.json", ofType: nil)
+            data = NSData(contentsOfFile: path!)
+        }
+        
         // 从bundle 加载配置的 json
-        guard let path = Bundle.main.path(forResource: "main.json", ofType: nil),
-              let data = NSData(contentsOfFile: path),
-        let array = try? JSONSerialization.jsonObject(with: data as Data, options: []) as! [[String:Any]]  else {
+        guard  let array = try? JSONSerialization.jsonObject(with: data! as Data, options: []) as! [[String:Any]]  else {
             return
         }
 //        let array:[[String:Any]] = [

@@ -56,7 +56,7 @@ extension AppDelegate {
     func loadAppInfo() {
         
         DispatchQueue.global().async {
-         
+            
             let url =  Bundle.main.url(forResource: "main.json",
                                        withExtension: nil)
             let data = NSData(contentsOf: url!)
