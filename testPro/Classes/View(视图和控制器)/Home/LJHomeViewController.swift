@@ -16,11 +16,28 @@ class LJHomeViewController: LJBaseViewController {
     private lazy var statusList = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
+                
         
     }
 
     // 加载数据
     override func loadData() {
+        
+        // 用网络工具加载数据
+        let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
+        let params = ["access_token":"2.00hUXEeC31bUKE02e9483882bnmvXE"]
+//        LJNetworkManager.shared.get(urlString, parameters: params, progress: nil, success: { (_, json) in
+//
+//            print(json ?? "")
+//
+//        }) { (_, error) in
+//
+//            print("网络请求失败\(error)")
+//        }
+        LJNetworkManager.shared.request(URLString: urlString, parameters:params) { (json, isSuccess) in
+            
+            print("网络请求\(json,isSuccess)")
+        }
         
         print("加载数据\(LJNetworkManager.shared)")
         // 模拟延时加载数据  - dispatch_after 5秒
@@ -73,7 +90,6 @@ extension LJHomeViewController {
         super.setupTableView()
         // 设置导航栏按钮
         navItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(showFriends))
-        
         // 注册原型 cell
         tableView?.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
     }
