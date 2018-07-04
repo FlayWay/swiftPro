@@ -22,7 +22,7 @@ class LJHomeViewController: LJBaseViewController {
     // 加载数据
     override func loadData() {
         
-        print("加载数据")
+        print("加载数据\(LJNetworkManager.shared)")
         // 模拟延时加载数据  - dispatch_after 5秒
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
             for i in 0..<20 {

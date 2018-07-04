@@ -12,7 +12,7 @@ import UIKit
 class LJBaseViewController: UIViewController {
     
     /// 用户登录标记
-    var userLog = false
+    var userLog = true
     // 访客视图信息字典
     var visitorInfoDiction:[String:String]?
     // 表格视图 如果用户没有登录 不需要创建

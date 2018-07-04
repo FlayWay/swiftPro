@@ -35,6 +35,7 @@
 		86F6FC7320E48F2700BA0AD1 /* LJNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6FC7220E48F2700BA0AD1 /* LJNavigationBar.swift */; };
 		86F6FC9B20E7710C00BA0AD1 /* LJVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6FC9A20E7710C00BA0AD1 /* LJVisitorView.swift */; };
 		86F6FCA320EA25F000BA0AD1 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = 86F6FCA220EA25F000BA0AD1 /* main.json */; };
+		86F6FCAA20EC988900BA0AD1 /* LJNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6FCA920EC988900BA0AD1 /* LJNetworkManager.swift */; };
 		9FBE546B42CBBF3CFD5EFF45 /* Pods_testPro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B1D98216877E71E3926A472 /* Pods_testPro.framework */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +87,7 @@
 		86F6FC7220E48F2700BA0AD1 /* LJNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJNavigationBar.swift; sourceTree = "<group>"; };
 		86F6FC9A20E7710C00BA0AD1 /* LJVisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJVisitorView.swift; sourceTree = "<group>"; };
 		86F6FCA220EA25F000BA0AD1 /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
+		86F6FCA920EC988900BA0AD1 /* LJNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJNetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +213,7 @@
 		86F6FC3320E23C8E00BA0AD1 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				86F6FCA820EC7B3100BA0AD1 /* netwrok */,
 				86F6FC6B20E32CB500BA0AD1 /* Extension */,
 				86F6FC4320E3239800BA0AD1 /* Additions */,
 			);
@@ -278,6 +281,14 @@
 				86F6FC9A20E7710C00BA0AD1 /* LJVisitorView.swift */,
 			);
 			path = VisitorView;
+			sourceTree = "<group>";
+		};
+		86F6FCA820EC7B3100BA0AD1 /* netwrok */ = {
+			isa = PBXGroup;
+			children = (
+				86F6FCA920EC988900BA0AD1 /* LJNetworkManager.swift */,
+			);
+			path = netwrok;
 			sourceTree = "<group>";
 		};
 		A9D746983627CCB698E3A647 /* Pods */ = {
@@ -453,6 +464,7 @@
 				86F6FC6720E3239800BA0AD1 /* NSAttributedString+CZAdditon.m in Sources */,
 				86F6FC1920E2292000BA0AD1 /* AppDelegate.swift in Sources */,
 				86F6FC6220E3239800BA0AD1 /* NSString+CZPath.m in Sources */,
+				86F6FCAA20EC988900BA0AD1 /* LJNetworkManager.swift in Sources */,
 				86F6FC3720E23E6500BA0AD1 /* LJMainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
