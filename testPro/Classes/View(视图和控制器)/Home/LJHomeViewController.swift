@@ -16,8 +16,7 @@ class LJHomeViewController: LJBaseViewController {
     private lazy var statusList = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
-
+        
     }
 
     // 加载数据
@@ -46,9 +45,6 @@ class LJHomeViewController: LJBaseViewController {
     @objc private func showFriends() {
         print("显示好友")
     }
-    
-    
-
 }
 // MARK: - 表格数据源方法,具体的数据源实现方法，不需要super
 extension LJHomeViewController{
@@ -71,8 +67,10 @@ extension LJHomeViewController{
 
 // MARK: -设置界面
 extension LJHomeViewController {
-    private func setupUI() {
     
+    
+    override func setupTableView() {
+        super.setupTableView()
         // 设置导航栏按钮
         navItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(showFriends))
         

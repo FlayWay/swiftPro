@@ -60,8 +60,8 @@ extension LJBaseViewController {
             automaticallyAdjustsScrollViewInsets = false
         };
     }
-    /// 设置表格视图
-    private func setupTableView(){
+    /// 设置表格视图  登录之后执行
+     @objc  func setupTableView(){
         
         tableView = UITableView(frame: view.bounds, style: .plain)
         // 设置数据源代理 -> 子类直接实现数据源方法
@@ -80,8 +80,6 @@ extension LJBaseViewController {
         tableView?.addSubview(refreshControl!)
         // 添加监听方法
         refreshControl?.addTarget(self, action: #selector(loadData), for: .valueChanged)
-        
-        
     }
     
     /// 设置访客视图
@@ -90,6 +88,14 @@ extension LJBaseViewController {
         let visitorView = LJVisitorView(frame: view.bounds)
         view.insertSubview(visitorView, belowSubview: navigationBar)
         visitorView.visitorInfo = visitorInfoDiction
+        
+        // 添加访客视图按钮的事件方法  delegate是为了解耦
+        visitorView.registerButton.addTarget(self, action: #selector(register), for: .touchUpInside)
+        visitorView.loginButton.addTarget(self, action: #selector(login), for: .touchUpInside)
+        
+        // 设置导航条按钮
+        navItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: .plain, target: self, action: #selector(register))
+        navItem.rightBarButtonItem = UIBarButtonItem(title: "登录", style: .plain, target: self, action: #selector(login))
     }
     
     /// 设置导航条
@@ -103,6 +109,8 @@ extension LJBaseViewController {
         navigationBar.barTintColor = UIColor.cz_color(withHex: 0xF6F6F6)
         // 设置navBar的字体颜色
         navigationBar.titleTextAttributes = [.foregroundColor:UIColor.darkGray]
+        // 设置系统按钮的渲染颜色
+        navigationBar.tintColor = UIColor.orange
     }
     
 }
@@ -116,7 +124,7 @@ extension LJBaseViewController: UITableViewDataSource,UITableViewDelegate {
         // 只是保证没有语法错误
         return UITableViewCell()
     }
-    
+//    find . -name "*.swift" | xargs grep -l
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return 0
@@ -148,4 +156,18 @@ extension LJBaseViewController: UITableViewDataSource,UITableViewDelegate {
     }
 }
 
+// MARK: - 访客视图登录 注册按钮事件监听
+extension LJBaseViewController {
+    
+    @objc private func login() {
+     
+        print("用户登录")
+    }
+    
+    @objc private func register() {
+        
+        print("用户注册")
+    }
+    
+}
 

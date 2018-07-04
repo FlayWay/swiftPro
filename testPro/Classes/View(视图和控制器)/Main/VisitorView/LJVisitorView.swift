@@ -12,6 +12,21 @@ import UIKit
 /// 访客视图
 class LJVisitorView: UIView {
 
+    /// 注册按钮
+    lazy var registerButton: UIButton = UIButton.cz_textButton(
+        "注册",
+        fontSize: 16,
+        normalColor: UIColor.orange,
+        highlightedColor: UIColor.black,
+        backgroundImageName: "common_button_white_disable")
+    /// 登录按钮
+    lazy var loginButton: UIButton = UIButton.cz_textButton(
+        "登录",
+        fontSize: 16,
+        normalColor: UIColor.darkGray,
+        highlightedColor: UIColor.black,
+        backgroundImageName: "common_button_white_disable")
+    
     /// 使用字典访问访客视图
     /// - Parameter dict: [imageName / message ]
     /// 提示: 如果是首页 imageName = ""
@@ -68,22 +83,7 @@ class LJVisitorView: UIView {
     private lazy var markIconView:UIImageView = UIImageView(image: UIImage(named: "visitordiscover_feed_mask_smallicon"))
     /// 提示标签
     private lazy var tiplable:UILabel = UILabel.cz_label(withText: "关注一些人，回这里看看有什么惊喜关注一些人，回这里看看有什么惊喜", fontSize: 14, color: UIColor.darkGray)
-    /// 注册按钮
-    private lazy var registerButton: UIButton = UIButton.cz_textButton(
-        "注册",
-        fontSize: 16,
-        normalColor: UIColor.orange,
-        highlightedColor: UIColor.black,
-        backgroundImageName: "common_button_white_disable")
-    /// 登录按钮
-    private lazy var loginButton: UIButton = UIButton.cz_textButton(
-        "登录",
-        fontSize: 16,
-        normalColor: UIColor.darkGray,
-        highlightedColor: UIColor.black,
-        backgroundImageName: "common_button_white_disable")
-    
-    
+   
 }
 
 // MARK: -设置界面
@@ -227,3 +227,6 @@ extension LJVisitorView {
             views: viewDic))
     }
 }
+
+
+
