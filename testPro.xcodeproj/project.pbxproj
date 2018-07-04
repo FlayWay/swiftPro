@@ -36,6 +36,7 @@
 		86F6FC9B20E7710C00BA0AD1 /* LJVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6FC9A20E7710C00BA0AD1 /* LJVisitorView.swift */; };
 		86F6FCA320EA25F000BA0AD1 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = 86F6FCA220EA25F000BA0AD1 /* main.json */; };
 		86F6FCAA20EC988900BA0AD1 /* LJNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6FCA920EC988900BA0AD1 /* LJNetworkManager.swift */; };
+		86F6FCAC20ECC75A00BA0AD1 /* LJNetworkManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6FCAB20ECC75A00BA0AD1 /* LJNetworkManager+Extension.swift */; };
 		9FBE546B42CBBF3CFD5EFF45 /* Pods_testPro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B1D98216877E71E3926A472 /* Pods_testPro.framework */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +89,7 @@
 		86F6FC9A20E7710C00BA0AD1 /* LJVisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJVisitorView.swift; sourceTree = "<group>"; };
 		86F6FCA220EA25F000BA0AD1 /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
 		86F6FCA920EC988900BA0AD1 /* LJNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJNetworkManager.swift; sourceTree = "<group>"; };
+		86F6FCAB20ECC75A00BA0AD1 /* LJNetworkManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LJNetworkManager+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -287,6 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				86F6FCA920EC988900BA0AD1 /* LJNetworkManager.swift */,
+				86F6FCAB20ECC75A00BA0AD1 /* LJNetworkManager+Extension.swift */,
 			);
 			path = netwrok;
 			sourceTree = "<group>";
@@ -457,6 +460,7 @@
 				86F6FC6320E3239800BA0AD1 /* UIButton+CZAddition.m in Sources */,
 				86F6FC6020E3239800BA0AD1 /* UILabel+CZAddition.m in Sources */,
 				86F6FC9B20E7710C00BA0AD1 /* LJVisitorView.swift in Sources */,
+				86F6FCAC20ECC75A00BA0AD1 /* LJNetworkManager+Extension.swift in Sources */,
 				86F6FC6A20E325D900BA0AD1 /* LJBaseViewController.swift in Sources */,
 				86F6FC5E20E3239800BA0AD1 /* UIView+CZAddition.m in Sources */,
 				86F6FC6620E3239800BA0AD1 /* NSString+CZHash.m in Sources */,

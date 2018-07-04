@@ -24,19 +24,28 @@ class LJHomeViewController: LJBaseViewController {
     override func loadData() {
         
         // 用网络工具加载数据
-        let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
-        let params = ["access_token":"2.00hUXEeC31bUKE02e9483882bnmvXE"]
-//        LJNetworkManager.shared.get(urlString, parameters: params, progress: nil, success: { (_, json) in
+//        let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
+//        let params = ["access_token":"2.00hUXEeC31bUKE02e9483882bnmvXE"]
+////        LJNetworkManager.shared.get(urlString, parameters: params, progress: nil, success: { (_, json) in
+////
+////            print(json ?? "")
+////
+////        }) { (_, error) in
+////
+////            print("网络请求失败\(error)")
+////        }
+//        LJNetworkManager.shared.request(URLString: urlString, parameters:params) { (json, isSuccess) in
 //
-//            print(json ?? "")
-//
-//        }) { (_, error) in
-//
-//            print("网络请求失败\(error)")
+//            print("网络请求\(json,isSuccess)")
 //        }
-        LJNetworkManager.shared.request(URLString: urlString, parameters:params) { (json, isSuccess) in
-            
-            print("网络请求\(json,isSuccess)")
+        
+//        LJNetworkManager.shared.statusList { (json) in
+//
+//            print("加载完成\(String(describing: json))")
+//        }
+        
+        LJNetworkManager.shared.statusList { (list, isSuccess) in
+            print(list,isSuccess)
         }
         
         print("加载数据\(LJNetworkManager.shared)")
