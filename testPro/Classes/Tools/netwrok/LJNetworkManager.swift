@@ -25,6 +25,10 @@ class LJNetworkManager: AFHTTPSessionManager {
     // 在第一次访问的时候，执行闭包，并且将结果保存在 shared 常量中
     static let shared = LJNetworkManager()
     
+    // 访问令牌，所有访问都需要令牌
+    var accessToken:String? = "2.00hUXEeC31bUKE02e9483882bnmvXE"
+    
+    
     /// 使用一个函数 封装 AFN 的 get 和 post 方法
     ///
     /// - Parameters:
@@ -32,7 +36,7 @@ class LJNetworkManager: AFHTTPSessionManager {
     ///   - URLString:
     ///   - parameters: URLString 参数字典
     ///   - completion: 完成回调  字典、数组  是否成功
-    func request(method:LJHttpMethod = .GET,URLString:String,parameters:[String:Any],completion:@escaping (_ json:Any?,_ isSuccess:Bool)->()) {
+    func request(method:LJHttpMethod = .GET,URLString:String,parameters:[String:Any]?,completion:@escaping (_ json:Any?,_ isSuccess:Bool)->()) {
         let success = { (task:URLSessionDataTask,json:Any?)->() in
             
             completion(json,true)
@@ -47,6 +51,28 @@ class LJNetworkManager: AFHTTPSessionManager {
         }else {
             post(URLString, parameters: parameters, progress:nil, success: success, failure: failure)
         }
+    }
+    
+    
+    ///  专门负责获取token的网络请求方法
+    func tokenRequest(method:LJHttpMethod = .GET,urlString:String,parameters:[String:Any]?,completaion:@escaping (_ json:Any?,_ isSuccess:Bool)->()) {
+        
+        // 处理token字典
+        // 判断token是否为nil 为nil直接返回
+        guard let token = accessToken else {
+            
+            print("没有token，需要登录")
+            completaion(nil,false)
+            return
+        }
+        // 判断 参数字典是否存在 如果为nil 应该新建一个字典
+        var parameters = parameters
+        if parameters == nil {
+            parameters = [String:Any]()
+        }
+        // 设置参数
+        parameters!["access_token"] = token
+        request(URLString: urlString, parameters: parameters, completion: completaion)
     }
     
 }
