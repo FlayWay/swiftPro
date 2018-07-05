@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		864E64D020EDBC2600D5AB30 /* LJStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864E64CF20EDBC2600D5AB30 /* LJStatusModel.swift */; };
 		86F6FC1920E2292000BA0AD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6FC1820E2292000BA0AD1 /* AppDelegate.swift */; };
 		86F6FC1E20E2292000BA0AD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86F6FC1C20E2292000BA0AD1 /* Main.storyboard */; };
 		86F6FC2320E2292000BA0AD1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86F6FC2120E2292000BA0AD1 /* LaunchScreen.storyboard */; };
@@ -44,6 +45,7 @@
 		3FAA8828133FE0D8271E24A3 /* Pods-testPro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testPro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-testPro/Pods-testPro.debug.xcconfig"; sourceTree = "<group>"; };
 		40C3814E624AF317B3D482EF /* Pods-testPro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testPro.release.xcconfig"; path = "Pods/Target Support Files/Pods-testPro/Pods-testPro.release.xcconfig"; sourceTree = "<group>"; };
 		6B1D98216877E71E3926A472 /* Pods_testPro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_testPro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		864E64CF20EDBC2600D5AB30 /* LJStatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJStatusModel.swift; sourceTree = "<group>"; };
 		86F6FC1520E2292000BA0AD1 /* testPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86F6FC1820E2292000BA0AD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86F6FC1D20E2292000BA0AD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 		86F6FC3520E23C8E00BA0AD1 /* Model(模型) */ = {
 			isa = PBXGroup;
 			children = (
+				864E64CF20EDBC2600D5AB30 /* LJStatusModel.swift */,
 			);
 			path = "Model(模型)";
 			sourceTree = "<group>";
@@ -447,6 +450,7 @@
 				86F6FC5F20E3239800BA0AD1 /* UIScreen+CZAddition.m in Sources */,
 				86F6FC5D20E3239800BA0AD1 /* UIColor+CZAddition.m in Sources */,
 				86F6FC3B20E244F100BA0AD1 /* LJMessageViewController.swift in Sources */,
+				864E64D020EDBC2600D5AB30 /* LJStatusModel.swift in Sources */,
 				86F6FC6120E3239800BA0AD1 /* NSString+CZBase64.m in Sources */,
 				86F6FC3D20E2450200BA0AD1 /* LJProfileViewController.swift in Sources */,
 				86F6FC4120E2451F00BA0AD1 /* LJHomeViewController.swift in Sources */,
