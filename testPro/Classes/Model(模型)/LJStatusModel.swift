@@ -17,7 +17,6 @@ class LJStatusModel: NSObject {
     var id:Int64 = 0
     // 微博信息内容
     var text:String?
-    
     // 计算型属性
     override var description: String{
         
