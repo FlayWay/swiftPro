@@ -11,8 +11,7 @@ import Foundation
 // MARK: -封装wb的网络请求方法
 extension LJNetworkManager {
     
-    
-    @objc func statusList(completion:@escaping (_ list:[[String:Any]]?,_ isSuccess:Bool)->()) {
+    func statusList(completion:@escaping (_ list:[[String:Any]]?,_ isSuccess:Bool)->()) {
         
         let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
 //        let params = ["access_token":"2.00hUXEeC31bUKE02e9483882bnmvXE"]
