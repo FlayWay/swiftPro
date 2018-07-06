@@ -48,9 +48,9 @@ class LJHomeViewController: LJBaseViewController {
 //        LJNetworkManager.shared.statusList { (list, isSuccess) in
 //            print(list,isSuccess)
 //        }
-        listViewModel.loadData { (isSuccess) in
+        listViewModel.loadData(pullup:self.isPullUp) { (isSuccess) in
             
-            print("加载数据\(LJNetworkManager.shared)")
+            print("加载数据\(self.listViewModel.statusList.last?.text ?? "")")
             print("刷新表格")
             // 结束刷新控件
             self.refreshControl?.endRefreshing()

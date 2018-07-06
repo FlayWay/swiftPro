@@ -16,12 +16,18 @@ class LJStatusViewModel: NSObject {
 
     lazy var statusList = [LJStatusModel]()
     // 加载微博列表
-    // 
-    func loadData(completion:@escaping (_ isSuccess:Bool)->())  {
+    ///
+    /// - Parameters:
+    ///   - pullup: 上拉刷新标记
+    ///   - completion: 完成回调
+    func loadData(pullup:Bool,completion:@escaping (_ isSuccess:Bool)->())  {
         
         // since_id： 下拉刷新
-        let since_id = statusList.first?.id ?? 0
-        LJNetworkManager.shared.statusList(since_id: 0,max_id: 0) { (list, isSuccess) in
+        let since_id = pullup ? 0 : (statusList.first?.id ?? 0)
+        // max_id 上拉刷新
+        let max_id = !pullup ? 0 : (statusList.last?.id ?? 0)
+        
+        LJNetworkManager.shared.statusList(since_id: since_id,max_id: max_id) { (list, isSuccess) in
             // 1.字典转模型
             guard let array = NSArray.yy_modelArray(with: LJStatusModel.self, json:list!) as? [LJStatusModel] else{
                 completion(isSuccess)
@@ -29,9 +35,13 @@ class LJStatusViewModel: NSObject {
             }
             print("测试数据\(array.count)")
             // 拼接数据
-            // 下拉刷新应该将数组结果拼接到数组前面
-            self.statusList = array + self.statusList
-            
+            // 上拉刷新将结果拼接到数组后面
+            if pullup {
+                self.statusList += array
+            } else {
+                // 下拉刷新应该将数组结果拼接到数组前面
+                self.statusList = array + self.statusList
+            }
             // 完成加载
             completion(isSuccess)
         }

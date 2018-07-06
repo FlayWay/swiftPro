@@ -23,14 +23,14 @@ extension LJNetworkManager {
 //        let params = ["access_token":"2.00hUXEeC31bUKE02e9483882bnmvXE"]
         // swift 中int 可以转为any 但是 Int64不可以
         let params = ["since_id":"\(since_id)",
-                        "max_id":"\(max_id)"]
+            "max_id":"\(max_id > 0 ? max_id - 1 : 0)"]
         tokenRequest(urlString: urlString, parameters: params) { (json, isSuccess) in
             
             // 从json中取出 accessToken
             // 如果 as? 失败  restul为nil
+            // 服务器返回的数据，按照时间倒序排序的
             let result = (json as? NSDictionary)?["statuses"] as? [[String:Any]]
             completion(result,isSuccess)
-            
         }
     }
     

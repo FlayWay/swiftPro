@@ -26,7 +26,7 @@ class LJNetworkManager: AFHTTPSessionManager {
     static let shared = LJNetworkManager()
     
     // 访问令牌，所有访问都需要令牌
-    var accessToken:String? = "2.00hUXEeC31bUKE02e9483882bnmvXE"
+    var accessToken:String? = "2.00hUXEeCT1PvIBdbc39be83b01x9ye"
 
     /// 使用一个函数 封装 AFN 的 get 和 post 方法
     ///
@@ -47,6 +47,7 @@ class LJNetworkManager: AFHTTPSessionManager {
             // 针对403 处理用户过期 可选 不能参与计算 但是可以进行比较
             if (task?.response as? HTTPURLResponse)?.statusCode == 403 {
                 print("token过期了")
+                
             }
             completion(nil,false)
         }
