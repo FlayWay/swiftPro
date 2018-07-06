@@ -12,8 +12,9 @@ private let cellId = "cellId"
 
 class LJHomeViewController: LJBaseViewController {
 
-    // 微博数据
-    private lazy var statusList = [String]()
+    // 列表视图模型
+    private var listViewModel = LJStatusViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
                 
@@ -44,20 +45,12 @@ class LJHomeViewController: LJBaseViewController {
 //            print("加载完成\(String(describing: json))")
 //        }
         
-        LJNetworkManager.shared.statusList { (list, isSuccess) in
-            print(list,isSuccess)
-        }
-        
-        print("加载数据\(LJNetworkManager.shared)")
-        // 模拟延时加载数据  - dispatch_after 5秒
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
-            for i in 0..<20 {
-                if self.isPullUp {
-                    self.statusList.append("上拉\(i)")
-                } else {
-                self.statusList.insert(i.description, at: 0)
-                }
-            }
+//        LJNetworkManager.shared.statusList { (list, isSuccess) in
+//            print(list,isSuccess)
+//        }
+        listViewModel.loadData { (isSuccess) in
+            
+            print("加载数据\(LJNetworkManager.shared)")
             print("刷新表格")
             // 结束刷新控件
             self.refreshControl?.endRefreshing()
@@ -66,6 +59,18 @@ class LJHomeViewController: LJBaseViewController {
             // 刷新表格
             self.tableView?.reloadData()
         }
+        
+        // 模拟延时加载数据  - dispatch_after 5秒
+//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+//            for i in 0..<20 {
+//                if self.isPullUp {
+//                    self.statusList.append("上拉\(i)")
+//                } else {
+//                self.statusList.insert(i.description, at: 0)
+//                }
+//            }
+//
+//        }
     }
     
     @objc private func showFriends() {
@@ -76,18 +81,17 @@ class LJHomeViewController: LJBaseViewController {
 extension LJHomeViewController{
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return statusList.count
+        return listViewModel.statusList.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // 取cell
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
         // 设置cell
-        cell.textLabel?.text = self.statusList[indexPath.row]
+        cell.textLabel?.text = listViewModel.statusList[indexPath.row].text
         // 返回cell
         return cell
     }
-    
     
 }
 

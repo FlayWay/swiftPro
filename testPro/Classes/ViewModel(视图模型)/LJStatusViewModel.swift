@@ -20,13 +20,15 @@ class LJStatusViewModel: NSObject {
     func loadData(completion:@escaping (_ isSuccess:Bool)->())  {
         
         LJNetworkManager.shared.statusList { (list, isSuccess) in
-            
             // 1.字典转模型
-            guard let array = NSArray.yy_modelArray(with: LJStatusModel.self, json:list ?? []) as? [LJStatusModel] else{
+            guard let array = NSArray.yy_modelArray(with: LJStatusModel.self, json:list!) as? [LJStatusModel] else{
                 completion(isSuccess)
                 return
             }
+            print("测试数据\(array)")
+            // 拼接数据
             self.statusList += array
+            // 完成加载
             completion(isSuccess)
         }
         

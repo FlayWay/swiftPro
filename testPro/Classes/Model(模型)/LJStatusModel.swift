@@ -9,8 +9,8 @@
 import UIKit
 import YYModel
 
-class LJStatusModel: NSObject {
-
+@objcMembers class LJStatusModel: NSObject {
+    
     // 基本数据类型 赋0
     // int 类型 在64位机器中是64位 在32位中是32位
     // 如果不写Int64 在5c/4s/ipad2 上无法运行
