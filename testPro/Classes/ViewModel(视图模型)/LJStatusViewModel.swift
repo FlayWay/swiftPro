@@ -19,20 +19,23 @@ class LJStatusViewModel: NSObject {
     // 
     func loadData(completion:@escaping (_ isSuccess:Bool)->())  {
         
-        LJNetworkManager.shared.statusList { (list, isSuccess) in
+        // since_id： 下拉刷新
+        let since_id = statusList.first?.id ?? 0
+        LJNetworkManager.shared.statusList(since_id: 0,max_id: 0) { (list, isSuccess) in
             // 1.字典转模型
             guard let array = NSArray.yy_modelArray(with: LJStatusModel.self, json:list!) as? [LJStatusModel] else{
                 completion(isSuccess)
                 return
             }
-            print("测试数据\(array)")
+            print("测试数据\(array.count)")
             // 拼接数据
-            self.statusList += array
+            // 下拉刷新应该将数组结果拼接到数组前面
+            self.statusList = array + self.statusList
+            
             // 完成加载
             completion(isSuccess)
         }
         
     }
-    
     
 }

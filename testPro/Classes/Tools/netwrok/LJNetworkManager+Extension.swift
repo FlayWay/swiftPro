@@ -11,11 +11,20 @@ import Foundation
 // MARK: -封装wb的网络请求方法
 extension LJNetworkManager {
     
-    func statusList(completion:@escaping (_ list:[[String:Any]]?,_ isSuccess:Bool)->()) {
+    /// 加载微博数据字典数组
+    ///
+    /// - Parameters:
+    ///   - since_id: 返回比since_id大的微博，默认0
+    ///   - max_id: 返回比max_id小的微博 默认 0
+    ///   - completion: 完成回调 list
+    func statusList(since_id:Int64 = 0,max_id:Int64 = 0, completion:@escaping (_ list:[[String:Any]]?,_ isSuccess:Bool)->()) {
         
         let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
 //        let params = ["access_token":"2.00hUXEeC31bUKE02e9483882bnmvXE"]
-        tokenRequest(urlString: urlString, parameters: nil) { (json, isSuccess) in
+        // swift 中int 可以转为any 但是 Int64不可以
+        let params = ["since_id":"\(since_id)",
+                        "max_id":"\(max_id)"]
+        tokenRequest(urlString: urlString, parameters: params) { (json, isSuccess) in
             
             // 从json中取出 accessToken
             // 如果 as? 失败  restul为nil
