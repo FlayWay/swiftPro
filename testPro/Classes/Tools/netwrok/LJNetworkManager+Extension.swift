@@ -35,4 +35,26 @@ extension LJNetworkManager {
     }
     
     
+    /// 返回微博的未读数量
+    func unreadCount(completion:@escaping(_ count:Int) -> ()) {
+        
+        guard let uid = uid else {
+            return
+        }
+        let urlString = "https://rm.api.weibo.com/2/remind/unread_count.json";
+        let params = ["uid":uid]
+        tokenRequest(urlString: urlString, parameters: params) { (json, isSuccess) in
+            
+            print("取出数据信息\(json ?? "无数据")")
+            let dict = json as? [String:Any]
+            let count = dict?["status"] as? Int
+            completion(count ?? 0)
+
+        }
+        
+    }
+    
+    
+  
+    
 }

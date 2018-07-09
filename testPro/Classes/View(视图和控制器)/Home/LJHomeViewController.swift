@@ -24,22 +24,22 @@ class LJHomeViewController: LJBaseViewController {
     // 加载数据
     override func loadData() {
         
-        // 用网络工具加载数据
+//        // 用网络工具加载数据
 //        let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
-//        let params = ["access_token":"2.00hUXEeC31bUKE02e9483882bnmvXE"]
-////        LJNetworkManager.shared.get(urlString, parameters: params, progress: nil, success: { (_, json) in
-////
-////            print(json ?? "")
-////
-////        }) { (_, error) in
-////
-////            print("网络请求失败\(error)")
-////        }
+//        let params = ["access_token":"2.00hUXEeCBYYq7D0251603489wetAeC"]
+//        LJNetworkManager.shared.get(urlString, parameters: params, progress: nil, success: { (_, json) in
+//
+//            print(json ?? "")
+//
+//        }) { (_, error) in
+//
+//            print("网络请求失败\(error)")
+//        }
 //        LJNetworkManager.shared.request(URLString: urlString, parameters:params) { (json, isSuccess) in
 //
 //            print("网络请求\(json,isSuccess)")
 //        }
-        
+//
 //        LJNetworkManager.shared.statusList { (json) in
 //
 //            print("加载完成\(String(describing: json))")
@@ -48,18 +48,20 @@ class LJHomeViewController: LJBaseViewController {
 //        LJNetworkManager.shared.statusList { (list, isSuccess) in
 //            print(list,isSuccess)
 //        }
-        listViewModel.loadData(pullup:self.isPullUp) { (isSuccess) in
-            
+        listViewModel.loadData(pullup:self.isPullUp) { (isSuccess,shouldRefresh) in
+
             print("加载数据\(self.listViewModel.statusList.last?.text ?? "")")
-            print("刷新表格")
+            print("\(isSuccess,shouldRefresh)")
             // 结束刷新控件
             self.refreshControl?.endRefreshing()
             // 恢复上拉刷新标记
             self.isPullUp = false
-            // 刷新表格
-            self.tableView?.reloadData()
+            if shouldRefresh {
+                // 刷新表格
+                self.tableView?.reloadData()
+            }
         }
-        
+
         // 模拟延时加载数据  - dispatch_after 5秒
 //        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
 //            for i in 0..<20 {

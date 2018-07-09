@@ -16,6 +16,13 @@ class LJMainViewController: UITabBarController {
         
         setupChildControllers()
         setupcomposeBtn()
+        
+        // 测试未读数据
+        LJNetworkManager.shared.unreadCount { (count) in
+            
+            print("有\(count)条新微博")
+            
+        }
     }
     
     // 设置屏幕方向 当前的控制器和子控制器都会遵守这个方向
