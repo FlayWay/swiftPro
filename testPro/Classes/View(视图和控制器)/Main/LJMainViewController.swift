@@ -19,9 +19,12 @@ class LJMainViewController: UITabBarController {
         setupChildControllers()
         setupcomposeBtn()
         setupTimer()
-        
         // 设置代理
         delegate = self
+        
+        // 注册通知
+        NotificationCenter.default.addObserver(self, selector: #selector(userLogIn), name: NSNotification.Name(rawValue: LJUserShouldloginNotification), object: nil)
+        
         
     }
     
@@ -29,6 +32,18 @@ class LJMainViewController: UITabBarController {
         
         // 销毁时钟
         timer?.invalidate()
+        // 注销通知
+        NotificationCenter.default.removeObserver(self)
+        
+    }
+    
+    // 用户登录
+   @objc private func userLogIn(n:Notification){
+        print(n)
+        // 展现登录控制器，通常会和 UINavigationController连用
+        let vc = LJOAuthViewController()
+        let nav = UINavigationController(rootViewController: vc)
+        present(nav, animated: true, completion: nil)
     }
     
     // 设置屏幕方向 当前的控制器和子控制器都会遵守这个方向

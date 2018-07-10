@@ -12,7 +12,7 @@ import UIKit
 class LJBaseViewController: UIViewController {
     
     /// 用户登录标记
-    var userLog = true
+    var userLog = false
     // 访客视图信息字典
     var visitorInfoDiction:[String:String]?
     // 表格视图 如果用户没有登录 不需要创建
@@ -28,9 +28,9 @@ class LJBaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        loadData()
+        LJNetworkManager.shared.userLogin ? loadData() : ()
         
-    }
+    } 
     override var title: String?{
         didSet {
             navItem.title = title
@@ -51,7 +51,7 @@ extension LJBaseViewController {
         view.backgroundColor = UIColor.white
         setupNavgationBar()
         
-        userLog ? setupTableView() : setupVisitorView()
+        LJNetworkManager.shared.userLogin ? setupTableView() : setupVisitorView()
         
         // 取消自动缩放
         if #available(iOS 11.0, *) {
@@ -160,11 +160,13 @@ extension LJBaseViewController: UITableViewDataSource,UITableViewDelegate {
 extension LJBaseViewController {
     
     @objc private func login() {
-     
+    NotificationCenter.default.post(name:NSNotification.Name(LJUserShouldloginNotification), object: nil)
         print("用户登录")
+        
     }
     
     @objc private func register() {
+        
         
         print("用户注册")
     }

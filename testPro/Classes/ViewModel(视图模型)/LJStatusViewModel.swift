@@ -40,6 +40,10 @@ class LJStatusViewModel: NSObject {
         
         LJNetworkManager.shared.statusList(since_id: since_id,max_id: max_id) { (list, isSuccess) in
             
+            if !isSuccess{
+                completion(false,false)
+                return
+            }
             // 1.字典转模型
             guard let array = NSArray.yy_modelArray(with: LJStatusModel.self, json:list!) as? [LJStatusModel] else{
                 completion(isSuccess,false)

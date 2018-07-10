@@ -26,9 +26,14 @@ class LJNetworkManager: AFHTTPSessionManager {
     static let shared = LJNetworkManager()
     
     // 访问令牌，所有访问都需要令牌
-    var accessToken:String? = "2.00hUXEeCBYYq7D0251603489wetAeC"
+//    var accessToken:String? = "2.00hUXEeCBYYq7D0251603489wetAeC"
+    var accessToken:String?
     // 微博id
     var uid:String? = "2424401171"
+    var userLogin:Bool {
+        return accessToken != nil
+    }
+    
     
     /// 使用一个函数 封装 AFN 的 get 和 post 方法
     ///
