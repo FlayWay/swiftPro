@@ -20,12 +20,9 @@ class LJMainViewController: UITabBarController {
         setupcomposeBtn()
         setupTimer()
         
-        // 测试未读数据
-        LJNetworkManager.shared.unreadCount { (count) in
-            
-            print("有\(count)条新微博")
-            
-        }
+        // 设置代理
+        delegate = self
+        
     }
     
     deinit {
@@ -142,7 +139,7 @@ extension LJMainViewController {
         }
         let count = CGFloat(vcs.count)
         // 容错点
-        let w = tabBar.bounds.width/count - 1
+        let w = tabBar.bounds.width/count
         composeBtn.frame = tabBar.bounds.insetBy(dx: 2*w, dy: 0)
         print("按钮宽度\(composeBtn.bounds.width)")
         composeBtn.addTarget(self, action: #selector(composeStatus), for: .touchUpInside)
@@ -171,4 +168,25 @@ extension LJMainViewController {
             UIApplication.shared.applicationIconBadgeNumber = count
         }
     }
+}
+
+
+// MARK: - UITabBarControllerDelegate
+extension LJMainViewController:UITabBarControllerDelegate {
+    
+    
+    /// 将要选择tabBaritem
+    ///
+    /// - Parameters:
+    ///   - tabBarController: tabBarController
+    ///   - viewController: 目标控制器
+    /// - Returns: 是否切换到目标控制器
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        // 就不需要容错点了
+        print("将要切换到\(viewController)")
+        let isMess = viewController.isMember(of: UIViewController.self)
+        print("控制器\(isMess)")
+        return !viewController.isMember(of: UIViewController.self)
+    }
+    
 }
