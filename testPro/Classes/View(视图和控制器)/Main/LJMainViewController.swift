@@ -154,7 +154,7 @@ extension LJMainViewController {
     // 时钟初始化
     private func setupTimer(){
         
-        timer = Timer.scheduledTimer(timeInterval: 10.0, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 600.0, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
     }
     
     //
@@ -186,6 +186,24 @@ extension LJMainViewController:UITabBarControllerDelegate {
         print("将要切换到\(viewController)")
         let isMess = viewController.isMember(of: UIViewController.self)
         print("控制器\(isMess)")
+        
+        // 获取控制器在controllers中索引
+        let idx = (childViewControllers as NSArray).index(of: viewController)
+        // 判断当前索引是首页，同时idx 也是首页，重复点击首页的按钮
+        
+        if selectedIndex == 0 && idx == selectedIndex  {
+            print("点击首页")
+            // 让表格滚动到顶部
+            // 获取到控制器
+            let nav = childViewControllers[0] as! UINavigationController
+            let vc = nav.childViewControllers[0] as! LJHomeViewController
+            // 滚动到顶部
+            vc.tableView?.setContentOffset(CGPoint(x: 0, y: -64), animated: true)
+            // 刷新表格
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+3, execute: {
+                vc.loadData()
+            })
+        }
         return !viewController.isMember(of: UIViewController.self)
     }
     
