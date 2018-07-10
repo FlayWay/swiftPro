@@ -10,12 +10,15 @@ import UIKit
 
 class LJMainViewController: UITabBarController {
 
+    // 定时器
+    private var timer:Timer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupChildControllers()
         setupcomposeBtn()
+        setupTimer()
         
         // 测试未读数据
         LJNetworkManager.shared.unreadCount { (count) in
@@ -23,6 +26,12 @@ class LJMainViewController: UITabBarController {
             print("有\(count)条新微博")
             
         }
+    }
+    
+    deinit {
+        
+        // 销毁时钟
+        timer?.invalidate()
     }
     
     // 设置屏幕方向 当前的控制器和子控制器都会遵守这个方向
@@ -141,3 +150,25 @@ extension LJMainViewController {
     
 }
 
+
+// MARK: - 定义时钟相关
+extension LJMainViewController {
+    
+    // 时钟初始化
+    private func setupTimer(){
+        
+        timer = Timer.scheduledTimer(timeInterval: 10.0, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+    }
+    
+    //
+   @objc private func updateTimer() {
+    
+        print(#function)
+        LJNetworkManager.shared.unreadCount { (count) in
+            // 设置 首页  tabbarItem的badgeNumber
+            self.tabBar.items?[0].badgeValue = count > 0 ? "\(count)" : nil
+            // 设置APP的badgeNumber  从ios8之后，需要用户授权才能显示
+            UIApplication.shared.applicationIconBadgeNumber = count
+        }
+    }
+}
