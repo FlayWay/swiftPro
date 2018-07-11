@@ -62,17 +62,6 @@ class LJHomeViewController: LJBaseViewController {
             }
         }
 
-        // 模拟延时加载数据  - dispatch_after 5秒
-//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
-//            for i in 0..<20 {
-//                if self.isPullUp {
-//                    self.statusList.append("上拉\(i)")
-//                } else {
-//                self.statusList.insert(i.description, at: 0)
-//                }
-//            }
-//
-//        }
     }
     
     @objc private func showFriends() {
@@ -107,6 +96,23 @@ extension LJHomeViewController {
         navItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(showFriends))
         // 注册原型 cell
         tableView?.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+        setupNavTitle()
+    }
+    
+    /// 添加昵称标题
+    private func setupNavTitle() {
+        let title = LJNetworkManager.shared.userAccount.screen_name
+        let button = LJTitleButton(title: title ?? "")
+        button.addTarget(self, action: #selector(clickTitleButton), for: .touchUpInside)
+        navItem.titleView = button
+    }
+    
+   /// 昵称标题按钮点击事件  系统按钮 有图片先显示图片 在显示文字
+    @objc private func clickTitleButton(button:UIButton) {
+        
+        // 设置选中状态
+        button.isSelected = !button.isSelected
+        
     }
     
 }

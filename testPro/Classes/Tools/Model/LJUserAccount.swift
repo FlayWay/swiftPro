@@ -24,6 +24,10 @@ private let accountFile:NSString = "userAccount.json"
     var uid:String?
     /// 过期时间
     var expiresDate: Date?
+    /// 用户昵称
+    var screen_name:String?
+    /// 用户头像 大图
+    var avatar_large:String?
     
     override var description: String {
         
@@ -40,10 +44,10 @@ private let accountFile:NSString = "userAccount.json"
             
                 return
         }
-        // 使用字典设置属性
+        // 使用字典设置属性 用户是否登录的关键
         yy_modelSet(with: dict ?? [:])
         // 账户过期日期
-//        expiresDate = Date(timeIntervalSinceNow: -3600 * 24)
+        expiresDate = Date(timeIntervalSinceNow: -3600 * 24)
         if expiresDate?.compare(Date()) != .orderedDescending {
 
             print("账户过期")

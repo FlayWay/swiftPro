@@ -1,4 +1,4 @@
-//
+ //
 //  LJNetworkManager+Extension.swift
 //  testPro
 //
@@ -75,12 +75,43 @@ extension LJNetworkManager {
         
         // 发起网络请求
         request(method: .POST, URLString: url, parameters: params) { (json, isSuccess) in
-            
+        
             self.userAccount.yy_modelSet(with: json as? [String:Any] ?? [:])
-            print(self.userAccount)
-            self.userAccount.saveAccount()
-            completion(isSuccess)
+            self.loadUserInfo(completion: { (dict) in
+                
+                self.userAccount.yy_modelSet(with: dict)
+                self.userAccount.saveAccount()
+                print(self.userAccount)
+                completion(isSuccess)
+
+            })
             
+        }
+        
+    }
+    
+}
+
+
+// MARK: - 用户信息
+extension LJNetworkManager {
+    
+    
+    /// 加载用户信息 用户登录后立即执行
+    func loadUserInfo(completion:@escaping(_ dict:[String:Any])->()) {
+        
+        let urlString = "https://api.weibo.com/2/users/show.json"
+        
+        guard let uid = userAccount.uid else {
+            return
+        }
+        let params = ["uid":uid]
+        // 发起请求
+        tokenRequest(urlString: urlString, parameters: params) { (json, isSuccess) in
+            
+            print(json)
+            // 完成回调
+            completion(json as? [String:Any] ?? [:])
         }
         
     }
