@@ -62,7 +62,7 @@ extension LJNetworkManager {
     
     
     /// 加载accessToken
-    func loadAccessToken(code:String,completion:@escaping(_ json:[String:Any],_ isSuccess:Bool)->()) {
+    func loadAccessToken(code:String,completion:@escaping(_ isSuccess:Bool)->()) {
         
         let url = "https://api.weibo.com/oauth2/access_token"
         let params = [
@@ -76,9 +76,10 @@ extension LJNetworkManager {
         // 发起网络请求
         request(method: .POST, URLString: url, parameters: params) { (json, isSuccess) in
             
-//            completion()
             self.userAccount.yy_modelSet(with: json as? [String:Any] ?? [:])
             print(self.userAccount)
+            self.userAccount.saveAccount()
+            completion(isSuccess)
             
         }
         

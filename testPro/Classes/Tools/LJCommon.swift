@@ -19,3 +19,6 @@ let ljAppDirectUrl = "http://www.baidu.com"
 /// 用户登录需要通知
 let LJUserShouldloginNotification = "LJUserShouldloginNotification"
 
+/// 用户登录成功通知
+let LJUserloginSuccessNotification = "LJUserloginSuccessNotification"
+

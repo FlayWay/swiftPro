@@ -85,11 +85,16 @@ extension LJOAuthViewController:UIWebViewDelegate {
 //        }
         // 回调地址的 "查询字符串"中查找code query 就是 ？后面的值
         let code = request.url?.query?.substring(from: "code=".endIndex) ?? ""
-        LJNetworkManager.shared.loadAccessToken(code: code) { (json, isSuccess) in
-            print("")
+        LJNetworkManager.shared.loadAccessToken(code: code) { (isSuccess) in
+            
+            if !isSuccess {
+                SVProgressHUD.show(withStatus: "网络请求失败")
+            }else {
+//                SVProgressHUD.show(withStatus: "登录成功")
+              NotificationCenter.default.post(name: NSNotification.Name(LJUserloginSuccessNotification), object: self, userInfo: nil)
+                self.close()
+            }
         }
-//        LJNetworkManager.shared.loadAccessToken(code: code)
-        
         return false
     }
     

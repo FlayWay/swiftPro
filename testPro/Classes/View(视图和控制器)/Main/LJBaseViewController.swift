@@ -30,7 +30,15 @@ class LJBaseViewController: UIViewController {
         setupUI()
         LJNetworkManager.shared.userLogin ? loadData() : ()
         
-    } 
+        // 注册通知
+        NotificationCenter.default.addObserver(self, selector: #selector(loginSuccess), name: Notification.Name(LJUserloginSuccessNotification), object: nil)
+        
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     override var title: String?{
         didSet {
             navItem.title = title
@@ -73,6 +81,8 @@ extension LJBaseViewController {
                                                left: 0,
                                                bottom: tabBarController?.tabBar.bounds.height ?? 49,
                                                right: 0)
+        // 设置指示器的缩进
+        tableView?.scrollIndicatorInsets = tableView!.contentInset
         // 设置刷新控件
         // 实例化控件
         refreshControl = UIRefreshControl()
@@ -167,9 +177,23 @@ extension LJBaseViewController {
     
     @objc private func register() {
         
-        
         print("用户注册")
     }
     
+    
+   /// 登录成功
+   @objc private func loginSuccess() {
+    
+    // 登录前左边是 注册 右边是 登录
+    navItem.leftBarButtonItem = nil
+    navItem.rightBarButtonItem = nil
+    
+        // 将访客视图替换成表格视图
+        // 需要重新设置view
+        //在访问view的getter方法时 如果view等于nil，会调用loadView方法 -> viewDidLoad
+     view = nil
+     // 避免通知被重复注册
+     NotificationCenter.default.removeObserver(self)
+    }
 }
 
