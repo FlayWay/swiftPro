@@ -62,6 +62,7 @@ class LJNetworkManager: AFHTTPSessionManager {
             // 针对403 处理用户过期 可选 不能参与计算 但是可以进行比较
             if (task?.response as? HTTPURLResponse)?.statusCode == 403 {
                 print("token过期了")
+                NotificationCenter.default.post(name: Notification.Name(LJUserShouldloginNotification), object: self, userInfo: nil)
             }
             completion(nil,false)
         }
@@ -76,10 +77,11 @@ class LJNetworkManager: AFHTTPSessionManager {
     func tokenRequest(method:LJHttpMethod = .GET,urlString:String,parameters:[String:Any]?,completaion:@escaping (_ json:Any?,_ isSuccess:Bool)->()) {
         
         // 处理token字典
-        // 判断token是否为nil 为nil直接返回
+        // 判断token是否为nil 为nil直接返回 一般情况下程序执行过程中token不为nil
         guard let token = userAccount.access_token else {
             
             print("没有token，需要登录")
+            NotificationCenter.default.post(name: Notification.Name(LJUserShouldloginNotification), object: self, userInfo: nil)
             completaion(nil,false)
             return
         }

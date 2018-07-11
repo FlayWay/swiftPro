@@ -188,9 +188,9 @@ extension LJBaseViewController {
     navItem.leftBarButtonItem = nil
     navItem.rightBarButtonItem = nil
     
-        // 将访客视图替换成表格视图
-        // 需要重新设置view
-        //在访问view的getter方法时 如果view等于nil，会调用loadView方法 -> viewDidLoad
+    // 将访客视图替换成表格视图
+    // 需要重新设置view
+    //在访问view的getter方法时 如果view等于nil，会调用loadView方法 -> viewDidLoad
      view = nil
      // 避免通知被重复注册
      NotificationCenter.default.removeObserver(self)

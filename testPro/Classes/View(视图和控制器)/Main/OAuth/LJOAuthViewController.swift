@@ -111,7 +111,6 @@ extension LJOAuthViewController:UIWebViewDelegate {
     func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
         
         SVProgressHUD.dismiss()
-        
     }
     
 }

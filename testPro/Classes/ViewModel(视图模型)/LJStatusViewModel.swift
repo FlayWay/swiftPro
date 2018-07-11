@@ -68,9 +68,6 @@ class LJStatusViewModel: NSObject {
                 completion(isSuccess,true)
             }
             
-            
-            // 完成加载
-//            completion(isSuccess)
         }
     }
 }
