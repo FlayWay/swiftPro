@@ -23,15 +23,23 @@ class LJNetworkManager: AFHTTPSessionManager {
 
     // 静态区、常量、闭包
     // 在第一次访问的时候，执行闭包，并且将结果保存在 shared 常量中
-    static let shared = LJNetworkManager()
+    static let shared:LJNetworkManager = {
+       
+        let instance = LJNetworkManager()
+        instance.responseSerializer.acceptableContentTypes?.insert("text/plain")
+        return instance
+    }()
+    
+    // 用户账户
+    lazy var userAccount = LJUserAccount()
     
     // 访问令牌，所有访问都需要令牌
 //    var accessToken:String? = "2.00hUXEeCBYYq7D0251603489wetAeC"
-    var accessToken:String?
-    // 微博id
-    var uid:String? = "2424401171"
+//    var accessToken:String?
+//    // 微博id
+//    var uid:String? = "2424401171"
     var userLogin:Bool {
-        return accessToken != nil
+        return  userAccount.access_token != nil
     }
     
     
@@ -69,7 +77,7 @@ class LJNetworkManager: AFHTTPSessionManager {
         
         // 处理token字典
         // 判断token是否为nil 为nil直接返回
-        guard let token = accessToken else {
+        guard let token = userAccount.access_token else {
             
             print("没有token，需要登录")
             completaion(nil,false)

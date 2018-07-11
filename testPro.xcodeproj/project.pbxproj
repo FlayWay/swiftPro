@@ -11,6 +11,7 @@
 		864E650120EDF5A600D5AB30 /* LJStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864E650020EDF5A600D5AB30 /* LJStatusViewModel.swift */; };
 		864E653A20F4A15800D5AB30 /* LJCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864E653920F4A15700D5AB30 /* LJCommon.swift */; };
 		864E653D20F4A44000D5AB30 /* LJOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864E653C20F4A44000D5AB30 /* LJOAuthViewController.swift */; };
+		864E654020F59DE800D5AB30 /* LJUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864E653F20F59DE800D5AB30 /* LJUserAccount.swift */; };
 		86F6FC1920E2292000BA0AD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6FC1820E2292000BA0AD1 /* AppDelegate.swift */; };
 		86F6FC1E20E2292000BA0AD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86F6FC1C20E2292000BA0AD1 /* Main.storyboard */; };
 		86F6FC2320E2292000BA0AD1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86F6FC2120E2292000BA0AD1 /* LaunchScreen.storyboard */; };
@@ -52,6 +53,7 @@
 		864E650020EDF5A600D5AB30 /* LJStatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJStatusViewModel.swift; sourceTree = "<group>"; };
 		864E653920F4A15700D5AB30 /* LJCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJCommon.swift; sourceTree = "<group>"; };
 		864E653C20F4A44000D5AB30 /* LJOAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJOAuthViewController.swift; sourceTree = "<group>"; };
+		864E653F20F59DE800D5AB30 /* LJUserAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJUserAccount.swift; sourceTree = "<group>"; };
 		86F6FC1520E2292000BA0AD1 /* testPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86F6FC1820E2292000BA0AD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86F6FC1D20E2292000BA0AD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -126,6 +128,14 @@
 				864E653C20F4A44000D5AB30 /* LJOAuthViewController.swift */,
 			);
 			path = OAuth;
+			sourceTree = "<group>";
+		};
+		864E653E20F59DCE00D5AB30 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				864E653F20F59DE800D5AB30 /* LJUserAccount.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		86F6FC0C20E2292000BA0AD1 = {
@@ -232,6 +242,7 @@
 		86F6FC3320E23C8E00BA0AD1 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				864E653E20F59DCE00D5AB30 /* Model */,
 				86F6FCA820EC7B3100BA0AD1 /* netwrok */,
 				86F6FC6B20E32CB500BA0AD1 /* Extension */,
 				86F6FC4320E3239800BA0AD1 /* Additions */,
@@ -479,6 +490,7 @@
 				864E653A20F4A15800D5AB30 /* LJCommon.swift in Sources */,
 				86F6FC6420E3239800BA0AD1 /* NSObject+CZRuntime.m in Sources */,
 				86F6FC6820E3239800BA0AD1 /* NSArray+Log.m in Sources */,
+				864E654020F59DE800D5AB30 /* LJUserAccount.swift in Sources */,
 				86F6FC6D20E32D5400BA0AD1 /* Bundle+extension.swift in Sources */,
 				86F6FC6520E3239800BA0AD1 /* UIViewController+CZAddition.m in Sources */,
 				86F6FC6320E3239800BA0AD1 /* UIButton+CZAddition.m in Sources */,

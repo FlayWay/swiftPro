@@ -38,7 +38,7 @@ extension LJNetworkManager {
     /// 返回微博的未读数量
     func unreadCount(completion:@escaping(_ count:Int) -> ()) {
         
-        guard let uid = uid else {
+        guard let uid = userAccount.uid else {
             return
         }
         let urlString = "https://rm.api.weibo.com/2/remind/unread_count.json";
@@ -54,9 +54,37 @@ extension LJNetworkManager {
         
     }
     
-    // 获取授权码
+}
+
+
+// MARK: - Oauth相关方法
+extension LJNetworkManager {
     
     
-  
+    /// 加载accessToken
+    func loadAccessToken(code:String,completion:@escaping(_ json:[String:Any],_ isSuccess:Bool)->()) {
+        
+        let url = "https://api.weibo.com/oauth2/access_token"
+        let params = [
+            "client_id":LJAppKey,
+            "client_secret":LJAppSecret,
+            "grant_type":"authorization_code",
+            "code":code,
+            "redirect_uri":ljAppDirectUrl
+                    ]
+        
+        // 发起网络请求
+        request(method: .POST, URLString: url, parameters: params) { (json, isSuccess) in
+            
+//            completion()
+            self.userAccount.yy_modelSet(with: json as? [String:Any] ?? [:])
+            print(self.userAccount)
+            
+        }
+        
+    }
     
 }
+
+
+
