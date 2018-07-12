@@ -254,7 +254,7 @@ extension LJMainViewController {
         // 1、检查版本更新
        
         // 2、如果更新，显示新特性
-        let v = isNewVersion ? LJNewFeatureView() : LJWelcomeView.welcomeView()
+        let v = isNewVersion ? LJNewFeatureView.newFeatureView() : LJWelcomeView.welcomeView()
         // 3、添加视图
         v.frame = view.bounds
         view.addSubview(v)
@@ -278,6 +278,7 @@ extension LJMainViewController {
         // 将当前版本号保存沙河
        try? currentVersion.write(toFile: path, atomically: true, encoding: .utf8)
         
+        return true
         // 两个版本号是否一致
         return currentVersion != sandboxVersion
     }

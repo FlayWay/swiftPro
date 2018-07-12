@@ -22,7 +22,7 @@ class LJWelcomeView: UIView {
         
         let v = nib.instantiate(withOwner: nil, options: nil)[0] as! LJWelcomeView
         // 从xib加载的视图 默认是600 * 600
-//        v.frame = UIScreen.main.bounds
+        v.frame = UIScreen.main.bounds
         return v
     }
     
@@ -76,6 +76,10 @@ class LJWelcomeView: UIView {
          
             UIView.animate(withDuration: 1.0, animations: {
                 self.tipLable.alpha = 1
+
+            }, completion: { (_) in
+                
+                self.removeFromSuperview()
             })
         }
     }
