@@ -20,6 +20,9 @@ class LJMainViewController: UITabBarController {
         setupChildControllers()
         setupcomposeBtn()
         setupTimer()
+        
+        setupNewFeature()
+        
         // 设置代理
         delegate = self
         
@@ -230,6 +233,40 @@ extension LJMainViewController:UITabBarControllerDelegate {
             })
         }
         return !viewController.isMember(of: UIViewController.self)
+    }
+    
+}
+
+
+// MARK: - 新特性视图
+extension LJMainViewController {
+    
+    
+    /// 新特性视图
+    private func setupNewFeature() {
+       
+        // 判断是否登录
+        if !LJNetworkManager.shared.userLogin {
+            
+            return
+        }
+        
+        // 1、检查版本更新
+       
+        // 2、如果更新，显示新特性
+        let v = isNewVersion ? LJNewFeatureView() : LJWelcomeView()
+        // 3、添加视图
+        v.frame = view.bounds
+        view.addSubview(v)
+        
+    }
+    
+    
+    /// extension 可以有计算型属性，不占用存储空间
+    /// 构造函数：给属性分配空间
+    private var isNewVersion:Bool {
+        
+        return true
     }
     
 }

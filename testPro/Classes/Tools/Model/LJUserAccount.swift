@@ -56,7 +56,6 @@ private let accountFile:NSString = "userAccount.json"
             try?FileManager.default.removeItem(atPath: path)
         }
         print("正常")
-        
     }
     
     /// 存储用户account
@@ -70,11 +69,8 @@ private let accountFile:NSString = "userAccount.json"
               let filePath = accountFile.cz_appendDocumentDir() else {
             return
         }
-        
         (data as NSData).write(toFile: filePath, atomically: true)
         print("用户token地址\(filePath)")
-        
-        
     }
 
 }

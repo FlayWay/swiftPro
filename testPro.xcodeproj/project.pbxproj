@@ -13,6 +13,8 @@
 		864E653D20F4A44000D5AB30 /* LJOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864E653C20F4A44000D5AB30 /* LJOAuthViewController.swift */; };
 		864E654020F59DE800D5AB30 /* LJUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864E653F20F59DE800D5AB30 /* LJUserAccount.swift */; };
 		864E654320F5F98C00D5AB30 /* LJTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864E654220F5F98C00D5AB30 /* LJTitleButton.swift */; };
+		864E654620F6EE3300D5AB30 /* LJWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864E654520F6EE3300D5AB30 /* LJWelcomeView.swift */; };
+		864E654820F6EED400D5AB30 /* LJNewFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864E654720F6EED400D5AB30 /* LJNewFeatureView.swift */; };
 		86F6FC1920E2292000BA0AD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6FC1820E2292000BA0AD1 /* AppDelegate.swift */; };
 		86F6FC1E20E2292000BA0AD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86F6FC1C20E2292000BA0AD1 /* Main.storyboard */; };
 		86F6FC2320E2292000BA0AD1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86F6FC2120E2292000BA0AD1 /* LaunchScreen.storyboard */; };
@@ -56,6 +58,8 @@
 		864E653C20F4A44000D5AB30 /* LJOAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJOAuthViewController.swift; sourceTree = "<group>"; };
 		864E653F20F59DE800D5AB30 /* LJUserAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJUserAccount.swift; sourceTree = "<group>"; };
 		864E654220F5F98C00D5AB30 /* LJTitleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJTitleButton.swift; sourceTree = "<group>"; };
+		864E654520F6EE3300D5AB30 /* LJWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJWelcomeView.swift; sourceTree = "<group>"; };
+		864E654720F6EED400D5AB30 /* LJNewFeatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJNewFeatureView.swift; sourceTree = "<group>"; };
 		86F6FC1520E2292000BA0AD1 /* testPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86F6FC1820E2292000BA0AD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86F6FC1D20E2292000BA0AD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -146,6 +150,15 @@
 				864E654220F5F98C00D5AB30 /* LJTitleButton.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		864E654420F6EE1600D5AB30 /* NewFeature */ = {
+			isa = PBXGroup;
+			children = (
+				864E654520F6EE3300D5AB30 /* LJWelcomeView.swift */,
+				864E654720F6EED400D5AB30 /* LJNewFeatureView.swift */,
+			);
+			path = NewFeature;
 			sourceTree = "<group>";
 		};
 		86F6FC0C20E2292000BA0AD1 = {
@@ -239,6 +252,7 @@
 		86F6FC3220E23C8E00BA0AD1 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				864E654420F6EE1600D5AB30 /* NewFeature */,
 				864E653B20F4A41A00D5AB30 /* OAuth */,
 				86F6FCA220EA25F000BA0AD1 /* main.json */,
 				86F6FC9620E770CE00BA0AD1 /* VisitorView */,
@@ -492,7 +506,9 @@
 				86F6FC3B20E244F100BA0AD1 /* LJMessageViewController.swift in Sources */,
 				864E64D020EDBC2600D5AB30 /* LJStatusModel.swift in Sources */,
 				86F6FC6120E3239800BA0AD1 /* NSString+CZBase64.m in Sources */,
+				864E654620F6EE3300D5AB30 /* LJWelcomeView.swift in Sources */,
 				86F6FC3D20E2450200BA0AD1 /* LJProfileViewController.swift in Sources */,
+				864E654820F6EED400D5AB30 /* LJNewFeatureView.swift in Sources */,
 				86F6FC4120E2451F00BA0AD1 /* LJHomeViewController.swift in Sources */,
 				86F6FC3F20E2451200BA0AD1 /* LJDiscoverViewController.swift in Sources */,
 				864E650120EDF5A600D5AB30 /* LJStatusViewModel.swift in Sources */,
