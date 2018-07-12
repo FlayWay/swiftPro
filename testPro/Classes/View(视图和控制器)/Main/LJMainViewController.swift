@@ -254,7 +254,7 @@ extension LJMainViewController {
         // 1、检查版本更新
        
         // 2、如果更新，显示新特性
-        let v = isNewVersion ? LJNewFeatureView() : LJWelcomeView()
+        let v = isNewVersion ? LJNewFeatureView() : LJWelcomeView.welcomeView()
         // 3、添加视图
         v.frame = view.bounds
         view.addSubview(v)
@@ -266,7 +266,20 @@ extension LJMainViewController {
     /// 构造函数：给属性分配空间
     private var isNewVersion:Bool {
         
-        return true
+        // 取当前的版本号
+//        print(Bundle.main.infoDictionary)
+        let currentVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
+        print(currentVersion)
+        // 取itunes中版本号
+        let path:String = (currentVersion as NSString).cz_appendDocumentDir()
+        let sandboxVersion = (try? String(contentsOfFile: path)) ?? ""
+        print(sandboxVersion)
+        
+        // 将当前版本号保存沙河
+       try? currentVersion.write(toFile: path, atomically: true, encoding: .utf8)
+        
+        // 两个版本号是否一致
+        return currentVersion != sandboxVersion
     }
     
 }

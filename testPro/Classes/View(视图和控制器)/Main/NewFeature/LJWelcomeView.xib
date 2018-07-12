@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="LJWelcomeView" customModule="testPro" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ad_background" translatesAutoresizingMaskIntoConstraints="NO" id="79I-vi-4fX">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_default" translatesAutoresizingMaskIntoConstraints="NO" id="7Hi-q3-bYu">
+                    <rect key="frame" x="145" y="382" width="85" height="85"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="85" id="GDg-6y-LSK"/>
+                        <constraint firstAttribute="width" constant="85" id="hdR-s9-Ymt"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="欢迎归来" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="df7-Ap-i3V">
+                    <rect key="frame" x="152" y="484" width="70" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="df7-Ap-i3V" firstAttribute="centerX" secondItem="7Hi-q3-bYu" secondAttribute="centerX" id="0P3-EJ-eGu"/>
+                <constraint firstItem="79I-vi-4fX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="13w-qc-0rr"/>
+                <constraint firstAttribute="bottom" secondItem="7Hi-q3-bYu" secondAttribute="bottom" constant="200" id="7vp-Bx-Arm"/>
+                <constraint firstItem="df7-Ap-i3V" firstAttribute="top" secondItem="7Hi-q3-bYu" secondAttribute="bottom" constant="17" id="Nu5-my-sS7"/>
+                <constraint firstAttribute="trailing" secondItem="79I-vi-4fX" secondAttribute="trailing" id="RRR-Z3-DGa"/>
+                <constraint firstAttribute="bottom" secondItem="79I-vi-4fX" secondAttribute="bottom" id="VJg-aT-1NB"/>
+                <constraint firstItem="79I-vi-4fX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="i5I-Eg-Cgh"/>
+                <constraint firstItem="7Hi-q3-bYu" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="xjV-2g-pHj"/>
+            </constraints>
+            <connections>
+                <outlet property="bottomCons" destination="7vp-Bx-Arm" id="KBA-ku-6Ix"/>
+                <outlet property="iconView" destination="7Hi-q3-bYu" id="Q8p-26-QK1"/>
+                <outlet property="tipLable" destination="df7-Ap-i3V" id="x9o-oR-F5l"/>
+            </connections>
+            <point key="canvasLocation" x="-70" y="81"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ad_background" width="320" height="480"/>
+        <image name="avatar_default" width="50" height="50"/>
+    </resources>
+</document>
