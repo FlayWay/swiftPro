@@ -14,7 +14,6 @@ extension Bundle {
     ////        return Bundle.main.infoDictionary?["CFBundleName"] as? String ?? ""
     //        return infoDictionary?["CFBundleName"] as? String ?? ""
     //    }
-    
     // 计算属性
     var namespace:String {
         return infoDictionary?["CFBundleName"] as? String ?? ""

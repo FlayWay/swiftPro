@@ -46,6 +46,12 @@ class LJNewFeatureView: UIView {
         enterButton.isHidden = true
         pageControl.numberOfPages = count
         
+        enterButton.addTarget(self, action: #selector(btnClick), for: .touchUpInside)
+    }
+    
+    @objc private func btnClick() {
+        
+        removeFromSuperview()
     }
     
 }

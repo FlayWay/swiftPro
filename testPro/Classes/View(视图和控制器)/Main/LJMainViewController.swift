@@ -231,6 +231,9 @@ extension LJMainViewController:UITabBarControllerDelegate {
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+3, execute: {
                 vc.loadData()
             })
+            // 清除value
+            vc.tabBarItem.badgeValue = nil
+            UIApplication.shared.applicationIconBadgeNumber = 0
         }
         return !viewController.isMember(of: UIViewController.self)
     }
@@ -278,7 +281,6 @@ extension LJMainViewController {
         // 将当前版本号保存沙河
        try? currentVersion.write(toFile: path, atomically: true, encoding: .utf8)
         
-        return true
         // 两个版本号是否一致
         return currentVersion != sandboxVersion
     }

@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setupAddition()
         
         window = UIWindow()
+        window?.frame = UIScreen.main.bounds
         window?.backgroundColor = UIColor.white
         window?.rootViewController = LJMainViewController()
         window?.makeKeyAndVisible()
