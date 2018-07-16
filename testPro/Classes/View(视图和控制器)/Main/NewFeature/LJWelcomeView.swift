@@ -49,49 +49,17 @@ class LJWelcomeView: UIView {
             return
         }
         
-        // 设置头像 PNG 支持透明/ JPG 不支持透明
+        // 设置头像 PNG 支持透明/ JPG 不透明
         let image = UIImage(named: "avatar_default")
-        iconView.image = avatarImage(image: image!, size: image!.size, black: self.backgroundColor)
+        iconView.image = image?.avatarImage(size: image?.size, black: self.backgroundColor!)
+        
 //        iconView.sd_setImage(with: url, placeholderImage: image)
 //        iconView.layer.cornerRadius = iconView.bounds.width * 0.5
 //        iconView.layer.masksToBounds = true
         
     }
     
-    func avatarImage(image:UIImage,size:CGSize,black:UIColor?) -> UIImage? {
-        
-        let rect = CGRect(origin: CGPoint(), size: size)
-        
-        /**
-            图像的上下文 - 内存中开辟一块空间，跟屏幕无关
-         参数
-            size: 绘图的尺寸
-            opaque: 透明度 false 透明 /true 不透明
-            scale: 缩放比例  一般默认0
-        */
-        UIGraphicsBeginImageContextWithOptions(rect.size, false, 0)
-        // 背景颜色填充
-        black?.setFill()
-        UIRectFill(rect)
-        // 实例化圆形路径
-        let path = UIBezierPath(ovalIn: rect)
-        // 对圆形剪切
-        path.addClip()
-        // 绘制边线
-        UIColor.darkGray.setStroke()
-        path.stroke()
-        path.lineWidth = 2
-        // 绘制图像
-        image.draw(in: rect)
-        
-        // 获取图像
-        let result = UIGraphicsGetImageFromCurrentImageContext()
-        
-        // 关闭上下文
-        UIGraphicsEndImageContext()
-        
-        return result
-    }
+
     
     
     

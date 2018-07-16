@@ -244,7 +244,6 @@ extension LJMainViewController:UITabBarControllerDelegate {
 // MARK: - 新特性视图
 extension LJMainViewController {
     
-    
     /// 新特性视图
     private func setupNewFeature() {
        

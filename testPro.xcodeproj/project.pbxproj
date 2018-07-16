@@ -16,6 +16,7 @@
 		864E654620F6EE3300D5AB30 /* LJWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864E654520F6EE3300D5AB30 /* LJWelcomeView.swift */; };
 		864E654820F6EED400D5AB30 /* LJNewFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864E654720F6EED400D5AB30 /* LJNewFeatureView.swift */; };
 		864E654A20F6F79000D5AB30 /* LJWelcomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 864E654920F6F79000D5AB30 /* LJWelcomeView.xib */; };
+		869A439720FC6CA1008980F9 /* LJImage+Extentsion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869A439620FC6CA1008980F9 /* LJImage+Extentsion.swift */; };
 		86F6FC1920E2292000BA0AD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6FC1820E2292000BA0AD1 /* AppDelegate.swift */; };
 		86F6FC1E20E2292000BA0AD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86F6FC1C20E2292000BA0AD1 /* Main.storyboard */; };
 		86F6FC2320E2292000BA0AD1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86F6FC2120E2292000BA0AD1 /* LaunchScreen.storyboard */; };
@@ -63,6 +64,7 @@
 		864E654520F6EE3300D5AB30 /* LJWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJWelcomeView.swift; sourceTree = "<group>"; };
 		864E654720F6EED400D5AB30 /* LJNewFeatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJNewFeatureView.swift; sourceTree = "<group>"; };
 		864E654920F6F79000D5AB30 /* LJWelcomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LJWelcomeView.xib; sourceTree = "<group>"; };
+		869A439620FC6CA1008980F9 /* LJImage+Extentsion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LJImage+Extentsion.swift"; sourceTree = "<group>"; };
 		86F6FC1520E2292000BA0AD1 /* testPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86F6FC1820E2292000BA0AD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86F6FC1D20E2292000BA0AD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -335,6 +337,7 @@
 			children = (
 				86F6FC6C20E32D5400BA0AD1 /* Bundle+extension.swift */,
 				86F6FC7020E39BC800BA0AD1 /* UIBarButtonItem+Extension.swift */,
+				869A439620FC6CA1008980F9 /* LJImage+Extentsion.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -532,6 +535,7 @@
 				86F6FC6320E3239800BA0AD1 /* UIButton+CZAddition.m in Sources */,
 				86F6FC6020E3239800BA0AD1 /* UILabel+CZAddition.m in Sources */,
 				86F6FC9B20E7710C00BA0AD1 /* LJVisitorView.swift in Sources */,
+				869A439720FC6CA1008980F9 /* LJImage+Extentsion.swift in Sources */,
 				86F6FCAC20ECC75A00BA0AD1 /* LJNetworkManager+Extension.swift in Sources */,
 				86F6FC6A20E325D900BA0AD1 /* LJBaseViewController.swift in Sources */,
 				86F6FC5E20E3239800BA0AD1 /* UIView+CZAddition.m in Sources */,
