@@ -50,7 +50,8 @@ class LJHomeViewController: LJBaseViewController {
 //        }
         listViewModel.loadData(pullup:self.isPullUp) { (isSuccess,shouldRefresh) in
 
-            print("加载数据\(self.listViewModel.statusList.last?.text ?? "")")
+            
+            print("加载数据\(self.listViewModel.statusList.last?.status.text ?? "")")
             print("\(isSuccess,shouldRefresh)")
             // 结束刷新控件
             self.refreshControl?.endRefreshing()
@@ -79,7 +80,7 @@ extension LJHomeViewController{
         // 取cell
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! LJStatusCell
         // 设置cell
-        cell.statusLabel?.text = listViewModel.statusList[indexPath.row].text
+        cell.viewModel = listViewModel.statusList[indexPath.row]
         // 返回cell
         return cell
     }
@@ -97,6 +98,7 @@ extension LJHomeViewController {
         // 注册原型 cell
         tableView?.register(UINib(nibName: "LJStatusNormalCell", bundle: nil), forCellReuseIdentifier: cellId)
         // 自动布局高度
+        tableView?.separatorStyle = .none
         tableView?.rowHeight = UITableViewAutomaticDimension
         tableView?.estimatedRowHeight = 300
         setupNavTitle()

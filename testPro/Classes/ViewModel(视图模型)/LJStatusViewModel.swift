@@ -17,7 +17,7 @@ private var maxPullUpTimes = 3
 
 class LJStatusViewModel: NSObject {
 
-    lazy var statusList = [LJStatusModel]()
+    lazy var statusList = [LJStatusSingleViewModel]()
     /// 上拉刷新错误次数
     private var pullUpErrorTimes = 0
     // 加载微博列表
@@ -34,9 +34,9 @@ class LJStatusViewModel: NSObject {
         }
         
         // since_id： 下拉刷新
-        let since_id = pullup ? 0 : (statusList.first?.id ?? 0)
+        let since_id = pullup ? 0 : (statusList.first? .status.id ?? 0)
         // max_id 上拉刷新
-        let max_id = !pullup ? 0 : (statusList.last?.id ?? 0)
+        let max_id = !pullup ? 0 : (statusList.last? .status.id ?? 0)
         
         LJNetworkManager.shared.statusList(since_id: since_id,max_id: max_id) { (list, isSuccess) in
             
@@ -44,11 +44,24 @@ class LJStatusViewModel: NSObject {
                 completion(false,false)
                 return
             }
-            // 1.字典转模型
-            guard let array = NSArray.yy_modelArray(with: LJStatusModel.self, json:list!) as? [LJStatusModel] else{
-                completion(isSuccess,false)
-                return
+            
+            
+            // 定义结果可变数组
+            var array = [LJStatusSingleViewModel]()
+            for dic in list ?? [] {
+                
+                let stauts = LJStatusModel()
+                stauts.yy_modelSet(with: dic)
+                let viewModel = LJStatusSingleViewModel(model: stauts)
+                array.append(viewModel)
             }
+            
+            print("属性====\(array)")
+            // 1.字典转模型
+//            guard let array =  NSArray.yy_modelArray(with: LJStatusModel.self, json:list!) as? [LJStatusModel] else{
+//                completion(isSuccess,false)
+//                return
+//            }
             
             print("测试数据\(array.count)")
             // 拼接数据
@@ -67,7 +80,6 @@ class LJStatusViewModel: NSObject {
             }else {
                 completion(isSuccess,true)
             }
-            
         }
     }
 }

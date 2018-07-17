@@ -16,6 +16,8 @@
 		864E654620F6EE3300D5AB30 /* LJWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864E654520F6EE3300D5AB30 /* LJWelcomeView.swift */; };
 		864E654820F6EED400D5AB30 /* LJNewFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864E654720F6EED400D5AB30 /* LJNewFeatureView.swift */; };
 		864E654A20F6F79000D5AB30 /* LJWelcomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 864E654920F6F79000D5AB30 /* LJWelcomeView.xib */; };
+		8667757F20FD8B2500CD7D03 /* LJUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8667757E20FD8B2500CD7D03 /* LJUser.swift */; };
+		8667758120FD8EC500CD7D03 /* LJStatusSingleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8667758020FD8EC500CD7D03 /* LJStatusSingleViewModel.swift */; };
 		869A439720FC6CA1008980F9 /* LJImage+Extentsion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869A439620FC6CA1008980F9 /* LJImage+Extentsion.swift */; };
 		869A439A20FC736A008980F9 /* LJStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869A439920FC736A008980F9 /* LJStatusCell.swift */; };
 		869A439C20FC739D008980F9 /* LJStatusNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 869A439B20FC739D008980F9 /* LJStatusNormalCell.xib */; };
@@ -66,6 +68,8 @@
 		864E654520F6EE3300D5AB30 /* LJWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJWelcomeView.swift; sourceTree = "<group>"; };
 		864E654720F6EED400D5AB30 /* LJNewFeatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJNewFeatureView.swift; sourceTree = "<group>"; };
 		864E654920F6F79000D5AB30 /* LJWelcomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LJWelcomeView.xib; sourceTree = "<group>"; };
+		8667757E20FD8B2500CD7D03 /* LJUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJUser.swift; sourceTree = "<group>"; };
+		8667758020FD8EC500CD7D03 /* LJStatusSingleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJStatusSingleViewModel.swift; sourceTree = "<group>"; };
 		869A439620FC6CA1008980F9 /* LJImage+Extentsion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LJImage+Extentsion.swift"; sourceTree = "<group>"; };
 		869A439920FC736A008980F9 /* LJStatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJStatusCell.swift; sourceTree = "<group>"; };
 		869A439B20FC739D008980F9 /* LJStatusNormalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LJStatusNormalCell.xib; sourceTree = "<group>"; };
@@ -302,6 +306,7 @@
 			isa = PBXGroup;
 			children = (
 				864E650020EDF5A600D5AB30 /* LJStatusViewModel.swift */,
+				8667758020FD8EC500CD7D03 /* LJStatusSingleViewModel.swift */,
 			);
 			path = "ViewModel(视图模型)";
 			sourceTree = "<group>";
@@ -310,6 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				864E64CF20EDBC2600D5AB30 /* LJStatusModel.swift */,
+				8667757E20FD8B2500CD7D03 /* LJUser.swift */,
 			);
 			path = "Model(模型)";
 			sourceTree = "<group>";
@@ -546,6 +552,7 @@
 				86F6FC6820E3239800BA0AD1 /* NSArray+Log.m in Sources */,
 				864E654020F59DE800D5AB30 /* LJUserAccount.swift in Sources */,
 				86F6FC6D20E32D5400BA0AD1 /* Bundle+extension.swift in Sources */,
+				8667758120FD8EC500CD7D03 /* LJStatusSingleViewModel.swift in Sources */,
 				86F6FC6520E3239800BA0AD1 /* UIViewController+CZAddition.m in Sources */,
 				86F6FC6320E3239800BA0AD1 /* UIButton+CZAddition.m in Sources */,
 				86F6FC6020E3239800BA0AD1 /* UILabel+CZAddition.m in Sources */,
@@ -561,6 +568,7 @@
 				86F6FC1920E2292000BA0AD1 /* AppDelegate.swift in Sources */,
 				86F6FC6220E3239800BA0AD1 /* NSString+CZPath.m in Sources */,
 				86F6FCAA20EC988900BA0AD1 /* LJNetworkManager.swift in Sources */,
+				8667757F20FD8B2500CD7D03 /* LJUser.swift in Sources */,
 				86F6FC3720E23E6500BA0AD1 /* LJMainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
