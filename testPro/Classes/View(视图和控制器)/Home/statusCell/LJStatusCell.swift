@@ -25,6 +25,8 @@ class LJStatusCell: UITableViewCell {
             vipIconView.image = viewModel?.vipIcon
             // 用户头像
             iconView.lj_setImage(urlString: viewModel?.status.user?.profile_image_url, placeholderImage: UIImage(named: "avatar_default"), isAvatar: true)
+            
+            
         }
     }
     
@@ -40,7 +42,7 @@ class LJStatusCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
+        self.selectionStyle = .none
         
     }
     

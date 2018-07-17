@@ -28,6 +28,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = LJMainViewController()
         window?.makeKeyAndVisible()
         loadAppInfo()
+        
+        // 添加fps
+        let FPSLab = LJLable(frame: CGRect())
+        UIApplication.shared.keyWindow?.addSubview(FPSLab)
+        
         return true
     }
 

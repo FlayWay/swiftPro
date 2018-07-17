@@ -19,6 +19,7 @@
 		8667757F20FD8B2500CD7D03 /* LJUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8667757E20FD8B2500CD7D03 /* LJUser.swift */; };
 		8667758120FD8EC500CD7D03 /* LJStatusSingleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8667758020FD8EC500CD7D03 /* LJStatusSingleViewModel.swift */; };
 		8667758320FDCCC000CD7D03 /* UIimageView+WebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8667758220FDCCC000CD7D03 /* UIimageView+WebImage.swift */; };
+		8667758520FDDCD600CD7D03 /* LJLable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8667758420FDDCD600CD7D03 /* LJLable.swift */; };
 		869A439720FC6CA1008980F9 /* LJImage+Extentsion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869A439620FC6CA1008980F9 /* LJImage+Extentsion.swift */; };
 		869A439A20FC736A008980F9 /* LJStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869A439920FC736A008980F9 /* LJStatusCell.swift */; };
 		869A439C20FC739D008980F9 /* LJStatusNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 869A439B20FC739D008980F9 /* LJStatusNormalCell.xib */; };
@@ -72,6 +73,7 @@
 		8667757E20FD8B2500CD7D03 /* LJUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJUser.swift; sourceTree = "<group>"; };
 		8667758020FD8EC500CD7D03 /* LJStatusSingleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJStatusSingleViewModel.swift; sourceTree = "<group>"; };
 		8667758220FDCCC000CD7D03 /* UIimageView+WebImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIimageView+WebImage.swift"; sourceTree = "<group>"; };
+		8667758420FDDCD600CD7D03 /* LJLable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJLable.swift; sourceTree = "<group>"; };
 		869A439620FC6CA1008980F9 /* LJImage+Extentsion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LJImage+Extentsion.swift"; sourceTree = "<group>"; };
 		869A439920FC736A008980F9 /* LJStatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJStatusCell.swift; sourceTree = "<group>"; };
 		869A439B20FC739D008980F9 /* LJStatusNormalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LJStatusNormalCell.xib; sourceTree = "<group>"; };
@@ -300,6 +302,7 @@
 				86F6FC6B20E32CB500BA0AD1 /* Extension */,
 				86F6FC4320E3239800BA0AD1 /* Additions */,
 				864E653920F4A15700D5AB30 /* LJCommon.swift */,
+				8667758420FDDCD600CD7D03 /* LJLable.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -549,6 +552,7 @@
 				864E650120EDF5A600D5AB30 /* LJStatusViewModel.swift in Sources */,
 				86F6FC3920E23F7100BA0AD1 /* LJNavigationController.swift in Sources */,
 				864E653D20F4A44000D5AB30 /* LJOAuthViewController.swift in Sources */,
+				8667758520FDDCD600CD7D03 /* LJLable.swift in Sources */,
 				86F6FC7120E39BC800BA0AD1 /* UIBarButtonItem+Extension.swift in Sources */,
 				864E653A20F4A15800D5AB30 /* LJCommon.swift in Sources */,
 				86F6FC6420E3239800BA0AD1 /* NSObject+CZRuntime.m in Sources */,
