@@ -21,6 +21,10 @@ class LJStatusCell: UITableViewCell {
             nameLab.text = viewModel?.status.user?.screen_name
             // 设置会员等级
             memberIconView.image = viewModel?.memberIcon
+            // 认证图标
+            vipIconView.image = viewModel?.vipIcon
+            // 用户头像
+            iconView.lj_setImage(urlString: viewModel?.status.user?.profile_image_url, placeholderImage: UIImage(named: "avatar_default"), isAvatar: true)
         }
     }
     
@@ -32,11 +36,10 @@ class LJStatusCell: UITableViewCell {
     @IBOutlet weak var sourceLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
     
-    
+     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
         
         
     }

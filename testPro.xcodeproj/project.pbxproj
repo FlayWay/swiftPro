@@ -18,6 +18,7 @@
 		864E654A20F6F79000D5AB30 /* LJWelcomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 864E654920F6F79000D5AB30 /* LJWelcomeView.xib */; };
 		8667757F20FD8B2500CD7D03 /* LJUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8667757E20FD8B2500CD7D03 /* LJUser.swift */; };
 		8667758120FD8EC500CD7D03 /* LJStatusSingleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8667758020FD8EC500CD7D03 /* LJStatusSingleViewModel.swift */; };
+		8667758320FDCCC000CD7D03 /* UIimageView+WebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8667758220FDCCC000CD7D03 /* UIimageView+WebImage.swift */; };
 		869A439720FC6CA1008980F9 /* LJImage+Extentsion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869A439620FC6CA1008980F9 /* LJImage+Extentsion.swift */; };
 		869A439A20FC736A008980F9 /* LJStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869A439920FC736A008980F9 /* LJStatusCell.swift */; };
 		869A439C20FC739D008980F9 /* LJStatusNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 869A439B20FC739D008980F9 /* LJStatusNormalCell.xib */; };
@@ -70,6 +71,7 @@
 		864E654920F6F79000D5AB30 /* LJWelcomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LJWelcomeView.xib; sourceTree = "<group>"; };
 		8667757E20FD8B2500CD7D03 /* LJUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJUser.swift; sourceTree = "<group>"; };
 		8667758020FD8EC500CD7D03 /* LJStatusSingleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJStatusSingleViewModel.swift; sourceTree = "<group>"; };
+		8667758220FDCCC000CD7D03 /* UIimageView+WebImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIimageView+WebImage.swift"; sourceTree = "<group>"; };
 		869A439620FC6CA1008980F9 /* LJImage+Extentsion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LJImage+Extentsion.swift"; sourceTree = "<group>"; };
 		869A439920FC736A008980F9 /* LJStatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJStatusCell.swift; sourceTree = "<group>"; };
 		869A439B20FC739D008980F9 /* LJStatusNormalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LJStatusNormalCell.xib; sourceTree = "<group>"; };
@@ -358,6 +360,7 @@
 				86F6FC6C20E32D5400BA0AD1 /* Bundle+extension.swift */,
 				86F6FC7020E39BC800BA0AD1 /* UIBarButtonItem+Extension.swift */,
 				869A439620FC6CA1008980F9 /* LJImage+Extentsion.swift */,
+				8667758220FDCCC000CD7D03 /* UIimageView+WebImage.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -550,6 +553,7 @@
 				864E653A20F4A15800D5AB30 /* LJCommon.swift in Sources */,
 				86F6FC6420E3239800BA0AD1 /* NSObject+CZRuntime.m in Sources */,
 				86F6FC6820E3239800BA0AD1 /* NSArray+Log.m in Sources */,
+				8667758320FDCCC000CD7D03 /* UIimageView+WebImage.swift in Sources */,
 				864E654020F59DE800D5AB30 /* LJUserAccount.swift in Sources */,
 				86F6FC6D20E32D5400BA0AD1 /* Bundle+extension.swift in Sources */,
 				8667758120FD8EC500CD7D03 /* LJStatusSingleViewModel.swift in Sources */,

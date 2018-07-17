@@ -21,7 +21,7 @@ import UIKit
     控件上不要设置圆角半径,所有图片渲染的属性都要考虑
     所有cell上的控件都要提前创建好，在显示的时候根据数据显示、隐藏
     cell中控件的层次越少越好，数量越少越好
-    要测量，不要猜测 屏幕刷新60帧 
+    要测量，不要猜测 屏幕刷新60帧
 */
 
 class LJStatusSingleViewModel: CustomStringConvertible {
@@ -31,6 +31,8 @@ class LJStatusSingleViewModel: CustomStringConvertible {
     var status:LJStatusModel
     /// 会员图标  -- 存储型属性 用内存换取cpu
     var memberIcon:UIImage?
+    /// 认证图标
+    var vipIcon:UIImage?
     /// 构造函数
     ///
     /// - Parameter model: 返回视图模型
@@ -43,6 +45,17 @@ class LJStatusSingleViewModel: CustomStringConvertible {
             
             let imageName = "common_icon_membership_level\(model.user?.mbrank ?? 1)"
             memberIcon = UIImage(named: imageName)
+        }
+        // 认证图标
+        switch model.user?.verified_type {
+        case 0:
+            vipIcon = UIImage(named: "avatar_vip_golden")
+        case 2,3,5:
+            vipIcon = UIImage(named: "avatar_enterprise_vip")
+        case 220:
+            vipIcon = UIImage(named: "avatar_grassroot")
+        default:
+            break
         }
         
     }

@@ -11,7 +11,7 @@ import UIKit
 
 extension UIImage {
     
-    func avatarImage(size:CGSize?,black:UIColor,lineColor:UIColor = UIColor.lightGray) -> UIImage? {
+    func avatarImage(size:CGSize?,black:UIColor = UIColor.white,lineColor:UIColor = UIColor.lightGray) -> UIImage? {
         
         var size = size
         if size == nil {
