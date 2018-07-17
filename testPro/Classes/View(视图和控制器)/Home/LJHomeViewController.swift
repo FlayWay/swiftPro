@@ -77,9 +77,9 @@ extension LJHomeViewController{
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // 取cell
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! LJStatusCell
         // 设置cell
-        cell.textLabel?.text = listViewModel.statusList[indexPath.row].text
+        cell.statusLabel?.text = listViewModel.statusList[indexPath.row].text
         // 返回cell
         return cell
     }
@@ -95,7 +95,10 @@ extension LJHomeViewController {
         // 设置导航栏按钮
         navItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(showFriends))
         // 注册原型 cell
-        tableView?.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+        tableView?.register(UINib(nibName: "LJStatusNormalCell", bundle: nil), forCellReuseIdentifier: cellId)
+        // 自动布局高度
+        tableView?.rowHeight = UITableViewAutomaticDimension
+        tableView?.estimatedRowHeight = 300
         setupNavTitle()
     }
     

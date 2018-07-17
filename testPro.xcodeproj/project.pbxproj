@@ -17,6 +17,8 @@
 		864E654820F6EED400D5AB30 /* LJNewFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864E654720F6EED400D5AB30 /* LJNewFeatureView.swift */; };
 		864E654A20F6F79000D5AB30 /* LJWelcomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 864E654920F6F79000D5AB30 /* LJWelcomeView.xib */; };
 		869A439720FC6CA1008980F9 /* LJImage+Extentsion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869A439620FC6CA1008980F9 /* LJImage+Extentsion.swift */; };
+		869A439A20FC736A008980F9 /* LJStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869A439920FC736A008980F9 /* LJStatusCell.swift */; };
+		869A439C20FC739D008980F9 /* LJStatusNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 869A439B20FC739D008980F9 /* LJStatusNormalCell.xib */; };
 		86F6FC1920E2292000BA0AD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6FC1820E2292000BA0AD1 /* AppDelegate.swift */; };
 		86F6FC1E20E2292000BA0AD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86F6FC1C20E2292000BA0AD1 /* Main.storyboard */; };
 		86F6FC2320E2292000BA0AD1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86F6FC2120E2292000BA0AD1 /* LaunchScreen.storyboard */; };
@@ -65,6 +67,8 @@
 		864E654720F6EED400D5AB30 /* LJNewFeatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJNewFeatureView.swift; sourceTree = "<group>"; };
 		864E654920F6F79000D5AB30 /* LJWelcomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LJWelcomeView.xib; sourceTree = "<group>"; };
 		869A439620FC6CA1008980F9 /* LJImage+Extentsion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LJImage+Extentsion.swift"; sourceTree = "<group>"; };
+		869A439920FC736A008980F9 /* LJStatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJStatusCell.swift; sourceTree = "<group>"; };
+		869A439B20FC739D008980F9 /* LJStatusNormalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LJStatusNormalCell.xib; sourceTree = "<group>"; };
 		86F6FC1520E2292000BA0AD1 /* testPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86F6FC1820E2292000BA0AD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86F6FC1D20E2292000BA0AD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -169,6 +173,15 @@
 			path = NewFeature;
 			sourceTree = "<group>";
 		};
+		869A439820FC7337008980F9 /* statusCell */ = {
+			isa = PBXGroup;
+			children = (
+				869A439920FC736A008980F9 /* LJStatusCell.swift */,
+				869A439B20FC739D008980F9 /* LJStatusNormalCell.xib */,
+			);
+			path = statusCell;
+			sourceTree = "<group>";
+		};
 		86F6FC0C20E2292000BA0AD1 = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +240,7 @@
 		86F6FC2E20E23C8E00BA0AD1 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				869A439820FC7337008980F9 /* statusCell */,
 				86F6FC4020E2451F00BA0AD1 /* LJHomeViewController.swift */,
 				864E654120F5F94400D5AB30 /* Views */,
 			);
@@ -436,6 +450,7 @@
 				86F6FC2B20E2344600BA0AD1 /* Assets.xcassets in Resources */,
 				86F6FCA320EA25F000BA0AD1 /* main.json in Resources */,
 				86FFE0D320F72B460026AB61 /* LJNewFeatureView.xib in Resources */,
+				869A439C20FC739D008980F9 /* LJStatusNormalCell.xib in Resources */,
 				86F6FC1E20E2292000BA0AD1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -542,6 +557,7 @@
 				86F6FC6620E3239800BA0AD1 /* NSString+CZHash.m in Sources */,
 				86F6FC7320E48F2700BA0AD1 /* LJNavigationBar.swift in Sources */,
 				86F6FC6720E3239800BA0AD1 /* NSAttributedString+CZAdditon.m in Sources */,
+				869A439A20FC736A008980F9 /* LJStatusCell.swift in Sources */,
 				86F6FC1920E2292000BA0AD1 /* AppDelegate.swift in Sources */,
 				86F6FC6220E3239800BA0AD1 /* NSString+CZPath.m in Sources */,
 				86F6FCAA20EC988900BA0AD1 /* LJNetworkManager.swift in Sources */,
@@ -688,7 +704,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 49HJAMKD2L;
 				INFOPLIST_FILE = testPro/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = af.testPro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -709,7 +725,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 49HJAMKD2L;
 				INFOPLIST_FILE = testPro/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = af.testPro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
