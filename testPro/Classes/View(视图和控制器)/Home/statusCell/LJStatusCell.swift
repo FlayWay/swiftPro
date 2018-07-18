@@ -25,7 +25,12 @@ class LJStatusCell: UITableViewCell {
             vipIconView.image = viewModel?.vipIcon
             // 用户头像
             iconView.lj_setImage(urlString: viewModel?.status.user?.profile_image_url, placeholderImage: UIImage(named: "avatar_default"), isAvatar: true)
+            // 底部工具栏
+            toolBar.viewModel = viewModel
+            // 测试修改配置视图高度
+            picktrueView.heigthCons.constant = viewModel?.picktureViewSize.height ?? 0
             
+//            pictureTopsCon.constant = 0
             
         }
     }
@@ -37,16 +42,20 @@ class LJStatusCell: UITableViewCell {
     @IBOutlet weak var vipIconView: UIImageView!
     @IBOutlet weak var sourceLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
+    /// 底部工具栏
+    @IBOutlet weak var toolBar: LJStatusToolBar!
+    /// 配图视图
+    @IBOutlet weak var picktrueView: LJStatusPicView!
     
      
+    @IBOutlet weak var pictureTopsCon: NSLayoutConstraint!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         self.selectionStyle = .none
         
     }
-    
-    
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

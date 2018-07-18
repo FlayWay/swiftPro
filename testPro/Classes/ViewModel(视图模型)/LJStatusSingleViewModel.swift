@@ -33,6 +33,14 @@ class LJStatusSingleViewModel: CustomStringConvertible {
     var memberIcon:UIImage?
     /// 认证图标
     var vipIcon:UIImage?
+    /// 转发
+    var reweetStr: String?
+    /// 评论
+    var commentStr: String?
+    /// 点赞
+    var likeStr: String?
+    /// 配图视图大小
+    var picktureViewSize = CGSize()
     /// 构造函数
     ///
     /// - Parameter model: 返回视图模型
@@ -57,6 +65,13 @@ class LJStatusSingleViewModel: CustomStringConvertible {
         default:
             break
         }
+        // 设置底部字符串
+        reweetStr = countString(count: model.reposts_count, defaultStr: "转发")
+        commentStr = countString(count: model.comments_count, defaultStr: "评论")
+        likeStr = countString(count: model.attitudes_count, defaultStr: "赞")
+        // 计算配图视图大小
+        picktureViewSize = calPictureViewSize(count: model.pic_urls?.count)
+        
         
     }
     
@@ -65,5 +80,48 @@ class LJStatusSingleViewModel: CustomStringConvertible {
         return status.description
     }
     
+    /// 计算指定图片的配图视图大小
+    ///
+    /// - Parameter count: 图片数量
+    /// - Returns: 视图大小
+    func calPictureViewSize(count:Int?) -> CGSize  {
+        
+        // 计算配图视图宽度
+        // 常数设置
+        let LJStatusPictureOutterMargin = CGFloat(12)
+        // 内部图像间距
+        let LJStatusPictureInnerMargin = CGFloat(3)
+        // 宽度
+        let LJStatusPictureWidth = UIScreen.cz_screenWidth() - 2*LJStatusPictureOutterMargin
+        // 高度
+        // 每个默认item宽度
+        let LJStatusPictureItemWidth = (LJStatusPictureWidth - 2*LJStatusPictureInnerMargin) / 3
+        
+        if count == 0 || count == nil {
+            
+            return CGSize()
+        }
+        
+        // 根据count 知道行数
+        let row = (count! - 1)/3 + 1
+        
+        let height = LJStatusPictureOutterMargin +  CGFloat(row) * LJStatusPictureItemWidth + CGFloat(row-1) * LJStatusPictureInnerMargin
+        
+        return CGSize(width:LJStatusPictureWidth , height: height)
+    }
+    
+    
+   private func countString(count:Int,defaultStr:String) -> String {
+        
+        if count == 0 {
+            
+            return defaultStr
+        }
+        if count < 10000 {
+            return count.description
+        }
+        return String(format: "%.02f万", Double(count) / 10000)
+        
+    }
     
 }

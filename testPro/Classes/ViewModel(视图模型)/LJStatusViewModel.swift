@@ -45,7 +45,6 @@ class LJStatusViewModel: NSObject {
                 return
             }
             
-            
             // 定义结果可变数组
             var array = [LJStatusSingleViewModel]()
             for dic in list ?? [] {
@@ -57,13 +56,13 @@ class LJStatusViewModel: NSObject {
             }
             
             print("属性====\(array)")
+
             // 1.字典转模型
 //            guard let array =  NSArray.yy_modelArray(with: LJStatusModel.self, json:list!) as? [LJStatusModel] else{
 //                completion(isSuccess,false)
 //                return
 //            }
-            
-            print("测试数据\(array.count)")
+            print("测试数据\(array)")
             // 拼接数据
             // 上拉刷新将结果拼接到数组后面
             if pullup {

@@ -20,6 +20,9 @@
 		8667758120FD8EC500CD7D03 /* LJStatusSingleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8667758020FD8EC500CD7D03 /* LJStatusSingleViewModel.swift */; };
 		8667758320FDCCC000CD7D03 /* UIimageView+WebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8667758220FDCCC000CD7D03 /* UIimageView+WebImage.swift */; };
 		8667758520FDDCD600CD7D03 /* LJLable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8667758420FDDCD600CD7D03 /* LJLable.swift */; };
+		866775A520FE023700CD7D03 /* LJStatusToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866775A420FE023700CD7D03 /* LJStatusToolBar.swift */; };
+		866775A720FEE34E00CD7D03 /* LJStatusPicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866775A620FEE34E00CD7D03 /* LJStatusPicView.swift */; };
+		866775A920FF14C500CD7D03 /* LJStatausPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866775A820FF14C500CD7D03 /* LJStatausPicture.swift */; };
 		869A439720FC6CA1008980F9 /* LJImage+Extentsion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869A439620FC6CA1008980F9 /* LJImage+Extentsion.swift */; };
 		869A439A20FC736A008980F9 /* LJStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869A439920FC736A008980F9 /* LJStatusCell.swift */; };
 		869A439C20FC739D008980F9 /* LJStatusNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 869A439B20FC739D008980F9 /* LJStatusNormalCell.xib */; };
@@ -74,6 +77,9 @@
 		8667758020FD8EC500CD7D03 /* LJStatusSingleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJStatusSingleViewModel.swift; sourceTree = "<group>"; };
 		8667758220FDCCC000CD7D03 /* UIimageView+WebImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIimageView+WebImage.swift"; sourceTree = "<group>"; };
 		8667758420FDDCD600CD7D03 /* LJLable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJLable.swift; sourceTree = "<group>"; };
+		866775A420FE023700CD7D03 /* LJStatusToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJStatusToolBar.swift; sourceTree = "<group>"; };
+		866775A620FEE34E00CD7D03 /* LJStatusPicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJStatusPicView.swift; sourceTree = "<group>"; };
+		866775A820FF14C500CD7D03 /* LJStatausPicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJStatausPicture.swift; sourceTree = "<group>"; };
 		869A439620FC6CA1008980F9 /* LJImage+Extentsion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LJImage+Extentsion.swift"; sourceTree = "<group>"; };
 		869A439920FC736A008980F9 /* LJStatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJStatusCell.swift; sourceTree = "<group>"; };
 		869A439B20FC739D008980F9 /* LJStatusNormalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LJStatusNormalCell.xib; sourceTree = "<group>"; };
@@ -186,6 +192,8 @@
 			children = (
 				869A439920FC736A008980F9 /* LJStatusCell.swift */,
 				869A439B20FC739D008980F9 /* LJStatusNormalCell.xib */,
+				866775A420FE023700CD7D03 /* LJStatusToolBar.swift */,
+				866775A620FEE34E00CD7D03 /* LJStatusPicView.swift */,
 			);
 			path = statusCell;
 			sourceTree = "<group>";
@@ -312,6 +320,7 @@
 			children = (
 				864E650020EDF5A600D5AB30 /* LJStatusViewModel.swift */,
 				8667758020FD8EC500CD7D03 /* LJStatusSingleViewModel.swift */,
+				866775A820FF14C500CD7D03 /* LJStatausPicture.swift */,
 			);
 			path = "ViewModel(视图模型)";
 			sourceTree = "<group>";
@@ -563,9 +572,11 @@
 				8667758120FD8EC500CD7D03 /* LJStatusSingleViewModel.swift in Sources */,
 				86F6FC6520E3239800BA0AD1 /* UIViewController+CZAddition.m in Sources */,
 				86F6FC6320E3239800BA0AD1 /* UIButton+CZAddition.m in Sources */,
+				866775A720FEE34E00CD7D03 /* LJStatusPicView.swift in Sources */,
 				86F6FC6020E3239800BA0AD1 /* UILabel+CZAddition.m in Sources */,
 				86F6FC9B20E7710C00BA0AD1 /* LJVisitorView.swift in Sources */,
 				869A439720FC6CA1008980F9 /* LJImage+Extentsion.swift in Sources */,
+				866775A920FF14C500CD7D03 /* LJStatausPicture.swift in Sources */,
 				86F6FCAC20ECC75A00BA0AD1 /* LJNetworkManager+Extension.swift in Sources */,
 				86F6FC6A20E325D900BA0AD1 /* LJBaseViewController.swift in Sources */,
 				86F6FC5E20E3239800BA0AD1 /* UIView+CZAddition.m in Sources */,
@@ -574,6 +585,7 @@
 				86F6FC6720E3239800BA0AD1 /* NSAttributedString+CZAdditon.m in Sources */,
 				869A439A20FC736A008980F9 /* LJStatusCell.swift in Sources */,
 				86F6FC1920E2292000BA0AD1 /* AppDelegate.swift in Sources */,
+				866775A520FE023700CD7D03 /* LJStatusToolBar.swift in Sources */,
 				86F6FC6220E3239800BA0AD1 /* NSString+CZPath.m in Sources */,
 				86F6FCAA20EC988900BA0AD1 /* LJNetworkManager.swift in Sources */,
 				8667757F20FD8B2500CD7D03 /* LJUser.swift in Sources */,
