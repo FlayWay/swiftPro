@@ -71,8 +71,6 @@ class LJStatusSingleViewModel: CustomStringConvertible {
         likeStr = countString(count: model.attitudes_count, defaultStr: "赞")
         // 计算配图视图大小
         picktureViewSize = calPictureViewSize(count: model.pic_urls?.count)
-        
-        
     }
     
     var description: String {
@@ -87,16 +85,8 @@ class LJStatusSingleViewModel: CustomStringConvertible {
     func calPictureViewSize(count:Int?) -> CGSize  {
         
         // 计算配图视图宽度
-        // 常数设置
-        let LJStatusPictureOutterMargin = CGFloat(12)
-        // 内部图像间距
-        let LJStatusPictureInnerMargin = CGFloat(3)
-        // 宽度
-        let LJStatusPictureWidth = UIScreen.cz_screenWidth() - 2*LJStatusPictureOutterMargin
+
         // 高度
-        // 每个默认item宽度
-        let LJStatusPictureItemWidth = (LJStatusPictureWidth - 2*LJStatusPictureInnerMargin) / 3
-        
         if count == 0 || count == nil {
             
             return CGSize()
@@ -104,7 +94,6 @@ class LJStatusSingleViewModel: CustomStringConvertible {
         
         // 根据count 知道行数
         let row = (count! - 1)/3 + 1
-        
         let height = LJStatusPictureOutterMargin +  CGFloat(row) * LJStatusPictureItemWidth + CGFloat(row-1) * LJStatusPictureInnerMargin
         
         return CGSize(width:LJStatusPictureWidth , height: height)
@@ -114,7 +103,6 @@ class LJStatusSingleViewModel: CustomStringConvertible {
    private func countString(count:Int,defaultStr:String) -> String {
         
         if count == 0 {
-            
             return defaultStr
         }
         if count < 10000 {

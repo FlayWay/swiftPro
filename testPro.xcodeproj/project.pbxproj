@@ -23,6 +23,7 @@
 		866775A520FE023700CD7D03 /* LJStatusToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866775A420FE023700CD7D03 /* LJStatusToolBar.swift */; };
 		866775A720FEE34E00CD7D03 /* LJStatusPicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866775A620FEE34E00CD7D03 /* LJStatusPicView.swift */; };
 		866775A920FF14C500CD7D03 /* LJStatausPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866775A820FF14C500CD7D03 /* LJStatausPicture.swift */; };
+		866775AB21002E6D00CD7D03 /* LJStatusRetweetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 866775AA21002E6D00CD7D03 /* LJStatusRetweetCell.xib */; };
 		869A439720FC6CA1008980F9 /* LJImage+Extentsion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869A439620FC6CA1008980F9 /* LJImage+Extentsion.swift */; };
 		869A439A20FC736A008980F9 /* LJStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869A439920FC736A008980F9 /* LJStatusCell.swift */; };
 		869A439C20FC739D008980F9 /* LJStatusNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 869A439B20FC739D008980F9 /* LJStatusNormalCell.xib */; };
@@ -80,6 +81,7 @@
 		866775A420FE023700CD7D03 /* LJStatusToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJStatusToolBar.swift; sourceTree = "<group>"; };
 		866775A620FEE34E00CD7D03 /* LJStatusPicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJStatusPicView.swift; sourceTree = "<group>"; };
 		866775A820FF14C500CD7D03 /* LJStatausPicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJStatausPicture.swift; sourceTree = "<group>"; };
+		866775AA21002E6D00CD7D03 /* LJStatusRetweetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LJStatusRetweetCell.xib; sourceTree = "<group>"; };
 		869A439620FC6CA1008980F9 /* LJImage+Extentsion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LJImage+Extentsion.swift"; sourceTree = "<group>"; };
 		869A439920FC736A008980F9 /* LJStatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJStatusCell.swift; sourceTree = "<group>"; };
 		869A439B20FC739D008980F9 /* LJStatusNormalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LJStatusNormalCell.xib; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 			children = (
 				869A439920FC736A008980F9 /* LJStatusCell.swift */,
 				869A439B20FC739D008980F9 /* LJStatusNormalCell.xib */,
+				866775AA21002E6D00CD7D03 /* LJStatusRetweetCell.xib */,
 				866775A420FE023700CD7D03 /* LJStatusToolBar.swift */,
 				866775A620FEE34E00CD7D03 /* LJStatusPicView.swift */,
 			);
@@ -468,6 +471,7 @@
 			files = (
 				864E654A20F6F79000D5AB30 /* LJWelcomeView.xib in Resources */,
 				86F6FC2320E2292000BA0AD1 /* LaunchScreen.storyboard in Resources */,
+				866775AB21002E6D00CD7D03 /* LJStatusRetweetCell.xib in Resources */,
 				86F6FC2B20E2344600BA0AD1 /* Assets.xcassets in Resources */,
 				86F6FCA320EA25F000BA0AD1 /* main.json in Resources */,
 				86FFE0D320F72B460026AB61 /* LJNewFeatureView.xib in Resources */,

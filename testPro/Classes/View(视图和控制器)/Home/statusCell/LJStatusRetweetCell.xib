@@ -12,11 +12,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="514" id="cop-m3-HPW" customClass="LJStatusCell" customModule="testPro" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="513" height="514"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="523" id="cop-m3-HPW" customClass="LJStatusCell" customModule="testPro" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="513" height="523"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cop-m3-HPW" id="bYd-P2-6Rq">
-                <rect key="frame" x="0.0" y="0.0" width="513" height="513.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="513" height="522.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XYF-Cs-XFw" userLabel="顶部分割视图">
@@ -64,10 +64,10 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qWo-pK-nem" userLabel="底部工具栏" customClass="LJStatusToolBar" customModule="testPro" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="478.5" width="513" height="35"/>
+                        <rect key="frame" x="0.0" y="487.5" width="513" height="35"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4lW-bT-cDg">
-                                <rect key="frame" x="0.0" y="0.0" width="170.5" height="35"/>
+                                <rect key="frame" x="0.0" y="0.0" width="171" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="转发" image="timeline_topic_icon_retweet" backgroundImage="timeline_card_bottom_background">
@@ -75,7 +75,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v6K-Se-gPX">
-                                <rect key="frame" x="342" y="0.0" width="171" height="35"/>
+                                <rect key="frame" x="342.5" y="0.0" width="170.5" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="赞" image="timeline_topic_icon_like" backgroundImage="timeline_card_bottom_background">
@@ -84,7 +84,7 @@
                                 <state key="selected" image="timeline_icon_like" backgroundImage="timeline_card_bottom_background"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sgM-Te-ukT">
-                                <rect key="frame" x="170.5" y="0.0" width="171.5" height="35"/>
+                                <rect key="frame" x="171" y="0.0" width="171.5" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="评论" image="timeline_topic_icon_comment" backgroundImage="timeline_card_bottom_background">
@@ -92,7 +92,7 @@
                                 </state>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timeline_card_bottom_line" translatesAutoresizingMaskIntoConstraints="NO" id="pWY-uT-aTd">
-                                <rect key="frame" x="342" y="17" width="1" height="1"/>
+                                <rect key="frame" x="342.5" y="17" width="1" height="1"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -120,7 +120,7 @@
                         </connections>
                     </view>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timeline_card_bottom_line" translatesAutoresizingMaskIntoConstraints="NO" id="ztw-nv-iNF">
-                        <rect key="frame" x="170.5" y="496" width="1" height="1"/>
+                        <rect key="frame" x="171" y="505" width="1" height="1"/>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KUl-Wy-SDH" userLabel="配图视图" customClass="LJStatusPicView" customModule="testPro" customModuleProvider="target">
                         <rect key="frame" x="11" y="99" width="490" height="267.5"/>
@@ -175,7 +175,7 @@
                 <outlet property="toolBar" destination="qWo-pK-nem" id="JDb-iG-nd8"/>
                 <outlet property="vipIconView" destination="R1Z-bD-S7K" id="c8y-mI-Bwb"/>
             </connections>
-            <point key="canvasLocation" x="-1627.5" y="-609"/>
+            <point key="canvasLocation" x="-1741.5" y="-603.5"/>
         </tableViewCell>
     </objects>
     <resources>

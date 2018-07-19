@@ -22,3 +22,11 @@ let LJUserShouldloginNotification = "LJUserShouldloginNotification"
 /// 用户登录成功通知
 let LJUserloginSuccessNotification = "LJUserloginSuccessNotification"
 
+/// 常数设置
+let LJStatusPictureOutterMargin = CGFloat(12)
+/// 内部图像间距
+let LJStatusPictureInnerMargin = CGFloat(3)
+/// 视图宽度
+let LJStatusPictureWidth = UIScreen.cz_screenWidth() - 2*LJStatusPictureOutterMargin
+/// 图片Item默认宽度
+let LJStatusPictureItemWidth = (LJStatusPictureWidth - 2 * LJStatusPictureInnerMargin)/3

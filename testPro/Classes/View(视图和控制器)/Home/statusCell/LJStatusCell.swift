@@ -29,7 +29,18 @@ class LJStatusCell: UITableViewCell {
             toolBar.viewModel = viewModel
             // 测试修改配置视图高度
             picktrueView.heigthCons.constant = viewModel?.picktureViewSize.height ?? 0
+            // 图片数组
             
+//            if (viewModel?.status.pic_urls?.count)! > 4 {
+//
+//                var picUlrs = viewModel!.status.pic_urls!
+//                picUlrs.removeSubrange((picUlrs.startIndex+4)..<picUlrs.endIndex)
+//
+//                picktrueView.urls = picUlrs
+//
+//            }else {
+            picktrueView.urls = viewModel?.status.pic_urls
+//            }
 //            pictureTopsCon.constant = 0
             
         }
