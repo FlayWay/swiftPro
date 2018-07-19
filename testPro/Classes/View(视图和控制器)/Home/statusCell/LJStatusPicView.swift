@@ -22,6 +22,28 @@ class LJStatusPicView: UIView {
    /// 根据视图模型的配图视图大小，调整显示内容
    private func calcViewSize() {
     
+        // 处理单图 修改单图大小
+    if viewModel?.picUrls?.count == 1 {
+        
+        let viewSize = viewModel?.picktureViewSize ?? CGSize()
+        // 获取第0个视图
+        let v = subviews[0]
+        v.frame = CGRect(x: 0,
+                         y: LJStatusPictureOutterMargin,
+                         width: viewSize.width,
+                         height: viewSize.height - LJStatusPictureOutterMargin)
+    }else { // 多图  无图 恢复单图大小  保证九宫格完整
+        
+        // 之前单个图片高度增加过 需要减去增加的
+        let v = subviews[0]
+        v.frame = CGRect(x: 0,
+                         y: LJStatusPictureOutterMargin,
+                         width: LJStatusPictureItemWidth,
+                         height: LJStatusPictureItemWidth)
+
+    }
+    
+
         heigthCons.constant = viewModel?.picktureViewSize.height ?? 0
     }
     

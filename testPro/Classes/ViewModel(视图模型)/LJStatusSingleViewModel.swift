@@ -99,6 +99,7 @@ class LJStatusSingleViewModel: CustomStringConvertible {
     func updateSingleImageSize(image:UIImage) {
         
         var size = image.size
+        // 尺寸需要增加顶部的12个点
         size.height += LJStatusPictureOutterMargin
         picktureViewSize = size
         
