@@ -11,6 +11,20 @@ import UIKit
 
 class LJStatusPicView: UIView {
 
+    var viewModel:LJStatusSingleViewModel? {
+        
+        didSet {
+            
+            calcViewSize()
+        }
+    }
+    
+   /// 根据视图模型的配图视图大小，调整显示内容
+   private func calcViewSize() {
+    
+        heigthCons.constant = viewModel?.picktureViewSize.height ?? 0
+    }
+    
     
     /// 图片urls数组
     var urls:[LJStatausPicture]? {

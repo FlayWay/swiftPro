@@ -41,6 +41,16 @@ class LJStatusSingleViewModel: CustomStringConvertible {
     var likeStr: String?
     /// 配图视图大小
     var picktureViewSize = CGSize()
+    
+    /// 被转发正文
+    var reweetText: String?
+    
+    /// 如果是被转发微博，原创微博一定没有图
+    var picUrls:[LJStatausPicture]? {
+        // 如果转发微博有配图，返回转发微博配图， 没有返回原创微博配图 都没有返回nil
+        return status.retweeted_status?.pic_urls ?? status.pic_urls
+    }
+    
     /// 构造函数
     ///
     /// - Parameter model: 返回视图模型
@@ -70,12 +80,28 @@ class LJStatusSingleViewModel: CustomStringConvertible {
         commentStr = countString(count: model.comments_count, defaultStr: "评论")
         likeStr = countString(count: model.attitudes_count, defaultStr: "赞")
         // 计算配图视图大小
-        picktureViewSize = calPictureViewSize(count: model.pic_urls?.count)
+        picktureViewSize = calPictureViewSize(count: picUrls?.count)
+        // 设置被转发文字
+        let reweetTextStr = "@" + (status.retweeted_status?.user?.screen_name ?? "")
+        reweetText = reweetTextStr + ":" + (status.retweeted_status?.text ?? "")
+        
     }
     
     var description: String {
 
         return status.description
+    }
+    
+    
+    /// 使用单个图像，更新视图大小
+    ///
+    /// - Parameter image: 网络缓存的单个大小
+    func updateSingleImageSize(image:UIImage) {
+        
+        var size = image.size
+        size.height += LJStatusPictureOutterMargin
+        picktureViewSize = size
+        
     }
     
     /// 计算指定图片的配图视图大小

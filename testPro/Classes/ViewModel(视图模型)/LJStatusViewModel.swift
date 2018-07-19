@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 // 如果类需要使用 kvc 或者 字典转模型框架设置对象值，类就需要继承 NSObject
 // 如果类只是包装一些逻辑代码，可以不需要父类，好处：更加轻量级
@@ -77,8 +78,70 @@ class LJStatusViewModel: NSObject {
                 completion(isSuccess,false)
                 print("错误次数\(self.pullUpErrorTimes)")
             }else {
-                completion(isSuccess,true)
+                self.cacheSingleImage(list: array,completion: completion)
+//                completion(isSuccess,true)
             }
         }
     }
+    
+    /// 缓存本次数据中的单张数组
+    ///   应该是缓存完单张图片，并且修改配图大小之后，再回调，才能等比例显示单张图片
+    /// - Parameter list: 本次下载的视图数组模型
+    private func cacheSingleImage(list:[LJStatusSingleViewModel],completion:@escaping (_ isSuccess:Bool,_ shouldRefresh:Bool)->()) {
+        
+        // 调度组
+        let group = DispatchGroup()
+        
+        // 记录数据长度
+        var length = 0
+        
+        // 遍历数组，查找数据中有单张图片的，进行缓存
+        for vm in list {
+            
+            // 判断图像数量
+            if vm.picUrls?.count != 1 {
+                continue
+            }
+            
+            guard let picStr = vm.picUrls![0].thumbnail_pic,
+                let url = URL(string: picStr) else {
+                    continue
+            }
+            
+            print("要缓存的url\(url)")
+            
+            // 入组
+            group.enter()
+            /// 图像下载完成之后，自动保存到沙盒中，文件路径是url的md5
+            SDWebImageManager.shared().imageDownloader?.downloadImage(with: url, options: [], progress: nil, completed: { (image, _, _, _) in
+            
+                if let image = image,
+                    let data = UIImagePNGRepresentation(image){
+                    // NSdata 是 length属性
+                    length += data.count
+                    
+                    vm.updateSingleImageSize(image: image)
+                }
+                print("缓存的图像\(image) \(length)")
+
+                // 出组
+                group.leave()
+            })
+            
+            // 监听调度组情况
+            group.notify(queue: DispatchQueue.main) {
+                
+                // 完成图片缓存
+                print("缓存的图像\(length / 1024)")
+                
+                completion(true,true)
+            }
+        }
+        
+    }
+    
 }
+
+
+
+

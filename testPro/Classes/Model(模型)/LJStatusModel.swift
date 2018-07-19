@@ -27,6 +27,9 @@ import YYModel
     var attitudes_count:Int = 0
     /// 配图视图模型
     var pic_urls:[LJStatausPicture]?
+    /// 转发微博
+    var retweeted_status:LJStatusModel?
+    
     /// 计算型属性
     override var description: String{
         

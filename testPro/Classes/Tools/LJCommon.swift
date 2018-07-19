@@ -10,9 +10,9 @@ import Foundation
 
 
 /// 应用程序ID
-let LJAppKey = "3145109093"
+let LJAppKey = "4249493541"
 /// 应用程序加密信息
-let LJAppSecret = "8192dc0a63798f3e8a969f5302b5ee49"
+let LJAppSecret = "4fec9ca120266637d83458559e7f615e"
 /// 应用程序回调地址
 let ljAppDirectUrl = "http://www.baidu.com"
 

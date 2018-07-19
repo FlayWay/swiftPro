@@ -8,7 +8,11 @@
 
 import UIKit
 
-private let cellId = "cellId"
+
+/// 原创
+private let originalCellId = "originalCellId"
+/// 转发
+private let reweetedCellId = "reweetedcellId"
 
 class LJHomeViewController: LJBaseViewController {
 
@@ -78,13 +82,15 @@ extension LJHomeViewController{
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // 取cell
+        
+        let vm = listViewModel.statusList[indexPath.row]
+        let cellId = (vm.status.retweeted_status != nil) ? reweetedCellId : originalCellId
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! LJStatusCell
         // 设置cell
-        cell.viewModel = listViewModel.statusList[indexPath.row]
+        cell.viewModel = vm
         // 返回cell
         return cell
     }
-    
 }
 
 // MARK: -设置界面
@@ -96,7 +102,8 @@ extension LJHomeViewController {
         // 设置导航栏按钮
         navItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(showFriends))
         // 注册原型 cell
-        tableView?.register(UINib(nibName: "LJStatusNormalCell", bundle: nil), forCellReuseIdentifier: cellId)
+        tableView?.register(UINib(nibName: "LJStatusNormalCell", bundle: nil), forCellReuseIdentifier: originalCellId)
+        tableView?.register(UINib(nibName: "LJStatusRetweetCell", bundle: nil), forCellReuseIdentifier: reweetedCellId)
         // 自动布局高度
         tableView?.separatorStyle = .none
         tableView?.rowHeight = UITableViewAutomaticDimension

@@ -27,10 +27,13 @@ class LJStatusCell: UITableViewCell {
             iconView.lj_setImage(urlString: viewModel?.status.user?.profile_image_url, placeholderImage: UIImage(named: "avatar_default"), isAvatar: true)
             // 底部工具栏
             toolBar.viewModel = viewModel
-            // 测试修改配置视图高度
-            picktrueView.heigthCons.constant = viewModel?.picktureViewSize.height ?? 0
-            // 图片数组
             
+            // 配图视图模型
+            picktrueView.viewModel = viewModel
+            
+            // 测试修改配置视图高度
+//            picktrueView.heigthCons.constant = viewModel?.picktureViewSize.height ?? 0
+            // 图片数组
 //            if (viewModel?.status.pic_urls?.count)! > 4 {
 //
 //                var picUlrs = viewModel!.status.pic_urls!
@@ -39,10 +42,12 @@ class LJStatusCell: UITableViewCell {
 //                picktrueView.urls = picUlrs
 //
 //            }else {
-            picktrueView.urls = viewModel?.status.pic_urls
+            // 设置配图(包含原创和被转发)
+            picktrueView.urls = viewModel?.picUrls
 //            }
 //            pictureTopsCon.constant = 0
             
+            reweetLable?.text = viewModel?.reweetText
         }
     }
     
@@ -57,8 +62,10 @@ class LJStatusCell: UITableViewCell {
     @IBOutlet weak var toolBar: LJStatusToolBar!
     /// 配图视图
     @IBOutlet weak var picktrueView: LJStatusPicView!
+
+    /// 被转发正文 原创微博中没有此控件， 用 ？
+    @IBOutlet weak var reweetLable: UILabel?
     
-     
     @IBOutlet weak var pictureTopsCon: NSLayoutConstraint!
     
     override func awakeFromNib() {
