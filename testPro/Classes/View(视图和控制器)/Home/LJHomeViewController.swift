@@ -52,19 +52,27 @@ class LJHomeViewController: LJBaseViewController {
 //        LJNetworkManager.shared.statusList { (list, isSuccess) in
 //            print(list,isSuccess)
 //        }
-        listViewModel.loadData(pullup:self.isPullUp) { (isSuccess,shouldRefresh) in
-
-            
-            print("加载数据\(self.listViewModel.statusList.last?.status.text ?? "")")
-            print("\(isSuccess,shouldRefresh)")
-            // 结束刷新控件
-            self.refreshControl?.endRefreshing()
-            // 恢复上拉刷新标记
-            self.isPullUp = false
-            if shouldRefresh {
-                // 刷新表格
-                self.tableView?.reloadData()
+        
+        // beginRefreshing方法 什么都不显示
+        refreshControl?.beginRefreshing()
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+10) {
+         
+            self.listViewModel.loadData(pullup:self.isPullUp) { (isSuccess,shouldRefresh) in
+                
+                
+                print("加载数据\(self.listViewModel.statusList.last?.status.text ?? "")")
+                print("\(isSuccess,shouldRefresh)")
+                // 结束刷新控件
+                self.refreshControl?.endRefreshing()
+                // 恢复上拉刷新标记
+                self.isPullUp = false
+                if shouldRefresh {
+                    // 刷新表格
+                    self.tableView?.reloadData()
+                }
             }
+            
         }
 
     }
@@ -91,6 +99,15 @@ extension LJHomeViewController{
         // 返回cell
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        // 计算行高
+        let vm = listViewModel.statusList[indexPath.row]
+        // 返回计算的行高
+        return vm.rowHeight
+    }
+    
 }
 
 // MARK: -设置界面
@@ -106,8 +123,8 @@ extension LJHomeViewController {
         tableView?.register(UINib(nibName: "LJStatusRetweetCell", bundle: nil), forCellReuseIdentifier: reweetedCellId)
         // 自动布局高度
         tableView?.separatorStyle = .none
-        tableView?.rowHeight = UITableViewAutomaticDimension
-        tableView?.estimatedRowHeight = 300
+//        tableView?.rowHeight = UITableViewAutomaticDimension
+//        tableView?.estimatedRowHeight = 300
         setupNavTitle()
     }
     

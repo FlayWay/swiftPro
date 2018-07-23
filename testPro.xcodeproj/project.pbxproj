@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		861D513F2104D77C00700E97 /* LJRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861D513E2104D77C00700E97 /* LJRefreshControl.swift */; };
+		861D51492105B87300700E97 /* LJRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861D51472105B87300700E97 /* LJRefreshView.swift */; };
+		861D514A2105B87300700E97 /* LJRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 861D51482105B87300700E97 /* LJRefreshView.xib */; };
 		864E64D020EDBC2600D5AB30 /* LJStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864E64CF20EDBC2600D5AB30 /* LJStatusModel.swift */; };
 		864E650120EDF5A600D5AB30 /* LJStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864E650020EDF5A600D5AB30 /* LJStatusViewModel.swift */; };
 		864E653A20F4A15800D5AB30 /* LJCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864E653920F4A15700D5AB30 /* LJCommon.swift */; };
@@ -65,6 +68,9 @@
 		3FAA8828133FE0D8271E24A3 /* Pods-testPro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testPro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-testPro/Pods-testPro.debug.xcconfig"; sourceTree = "<group>"; };
 		40C3814E624AF317B3D482EF /* Pods-testPro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testPro.release.xcconfig"; path = "Pods/Target Support Files/Pods-testPro/Pods-testPro.release.xcconfig"; sourceTree = "<group>"; };
 		6B1D98216877E71E3926A472 /* Pods_testPro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_testPro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		861D513E2104D77C00700E97 /* LJRefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJRefreshControl.swift; sourceTree = "<group>"; };
+		861D51472105B87300700E97 /* LJRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LJRefreshView.swift; sourceTree = "<group>"; };
+		861D51482105B87300700E97 /* LJRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LJRefreshView.xib; sourceTree = "<group>"; };
 		864E64CF20EDBC2600D5AB30 /* LJStatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJStatusModel.swift; sourceTree = "<group>"; };
 		864E650020EDF5A600D5AB30 /* LJStatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJStatusViewModel.swift; sourceTree = "<group>"; };
 		864E653920F4A15700D5AB30 /* LJCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJCommon.swift; sourceTree = "<group>"; };
@@ -152,6 +158,16 @@
 				6B1D98216877E71E3926A472 /* Pods_testPro.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		861D513D2104D75900700E97 /* LJRefreshControl */ = {
+			isa = PBXGroup;
+			children = (
+				861D51472105B87300700E97 /* LJRefreshView.swift */,
+				861D51482105B87300700E97 /* LJRefreshView.xib */,
+				861D513E2104D77C00700E97 /* LJRefreshControl.swift */,
+			);
+			path = LJRefreshControl;
 			sourceTree = "<group>";
 		};
 		864E653B20F4A41A00D5AB30 /* OAuth */ = {
@@ -308,6 +324,7 @@
 		86F6FC3320E23C8E00BA0AD1 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				861D513D2104D75900700E97 /* LJRefreshControl */,
 				864E653E20F59DCE00D5AB30 /* Model */,
 				86F6FCA820EC7B3100BA0AD1 /* netwrok */,
 				86F6FC6B20E32CB500BA0AD1 /* Extension */,
@@ -475,6 +492,7 @@
 				86F6FC2B20E2344600BA0AD1 /* Assets.xcassets in Resources */,
 				86F6FCA320EA25F000BA0AD1 /* main.json in Resources */,
 				86FFE0D320F72B460026AB61 /* LJNewFeatureView.xib in Resources */,
+				861D514A2105B87300700E97 /* LJRefreshView.xib in Resources */,
 				869A439C20FC739D008980F9 /* LJStatusNormalCell.xib in Resources */,
 				86F6FC1E20E2292000BA0AD1 /* Main.storyboard in Resources */,
 			);
@@ -500,7 +518,7 @@
 		};
 		C5FD8AB045BF3D4B847B8585 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -560,6 +578,7 @@
 				864E654620F6EE3300D5AB30 /* LJWelcomeView.swift in Sources */,
 				86F6FC3D20E2450200BA0AD1 /* LJProfileViewController.swift in Sources */,
 				864E654820F6EED400D5AB30 /* LJNewFeatureView.swift in Sources */,
+				861D51492105B87300700E97 /* LJRefreshView.swift in Sources */,
 				86F6FC4120E2451F00BA0AD1 /* LJHomeViewController.swift in Sources */,
 				86F6FC3F20E2451200BA0AD1 /* LJDiscoverViewController.swift in Sources */,
 				864E650120EDF5A600D5AB30 /* LJStatusViewModel.swift in Sources */,
@@ -586,6 +605,7 @@
 				86F6FC5E20E3239800BA0AD1 /* UIView+CZAddition.m in Sources */,
 				86F6FC6620E3239800BA0AD1 /* NSString+CZHash.m in Sources */,
 				86F6FC7320E48F2700BA0AD1 /* LJNavigationBar.swift in Sources */,
+				861D513F2104D77C00700E97 /* LJRefreshControl.swift in Sources */,
 				86F6FC6720E3239800BA0AD1 /* NSAttributedString+CZAdditon.m in Sources */,
 				869A439A20FC736A008980F9 /* LJStatusCell.swift in Sources */,
 				86F6FC1920E2292000BA0AD1 /* AppDelegate.swift in Sources */,
@@ -738,12 +758,13 @@
 				INFOPLIST_FILE = testPro/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MACH_O_TYPE = mh_execute;
 				PRODUCT_BUNDLE_IDENTIFIER = af.testPro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "testPro/testPro-Bridge.h";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -759,12 +780,13 @@
 				INFOPLIST_FILE = testPro/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MACH_O_TYPE = mh_execute;
 				PRODUCT_BUNDLE_IDENTIFIER = af.testPro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "testPro/testPro-Bridge.h";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

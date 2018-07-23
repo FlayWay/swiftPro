@@ -18,7 +18,7 @@ class LJBaseViewController: UIViewController {
     // 表格视图 如果用户没有登录 不需要创建
     var tableView:UITableView?
     /// 刷新控件
-    var refreshControl:UIRefreshControl?
+    var refreshControl:LJRefreshControl?
     /// 上拉刷新标记
     var isPullUp = false
     /// 自定义导航条
@@ -85,7 +85,7 @@ extension LJBaseViewController {
         tableView?.scrollIndicatorInsets = tableView!.contentInset
         // 设置刷新控件
         // 实例化控件
-        refreshControl = UIRefreshControl()
+        refreshControl = LJRefreshControl()
         // 添加到视图
         tableView?.addSubview(refreshControl!)
         // 添加监听方法
