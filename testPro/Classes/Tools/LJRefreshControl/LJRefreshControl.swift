@@ -149,7 +149,6 @@ class LJRefreshControl: UIControl {
         guard let sv = scrollView else {
             return
         }
-        
         // 判断是否正在刷新 如果正在刷新 返回
         if refreshView.refreshState != .willRefresh {
             
