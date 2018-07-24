@@ -16,12 +16,15 @@ import UIKit
  */
 class LJRefreshView: UIView {
     
+    
+    /// 父视图高度
+    var parentViewHeight:CGFloat = 0
     /// 提示图标
-    @IBOutlet weak var tipIcon: UIImageView!
+    @IBOutlet weak var tipIcon: UIImageView?
     /// 提示标签
-    @IBOutlet weak var tipLabel: UILabel!
+    @IBOutlet weak var tipLabel: UILabel?
     /// 指示器
-    @IBOutlet weak var indicator: UIActivityIndicatorView!
+    @IBOutlet weak var indicator: UIActivityIndicatorView?
     /// 刷新状态
     var refreshState:LJRefreshState = LJRefreshState.normal {
         
@@ -30,23 +33,23 @@ class LJRefreshView: UIView {
             switch refreshState {
             case .normal:
                 // 恢复状态
-                tipIcon.isHidden = false
-                indicator.stopAnimating()
-                tipLabel.text = "继续使劲拉"
+                tipIcon?.isHidden = false
+                indicator?.stopAnimating()
+                tipLabel?.text = "继续使劲拉"
                 UIView.animate(withDuration: 0.25) {
-                   self.tipIcon.transform =  CGAffineTransform.identity
+                    self.tipIcon?.transform =  CGAffineTransform.identity
                 }
             case .pulling:
-                tipLabel.text = "放手就刷新"
+                tipLabel?.text = "放手就刷新"
                 UIView.animate(withDuration: 0.25) {
-                    self.tipIcon.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI - 0.01))
+                    self.tipIcon?.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI - 0.01))
                 }
             case .willRefresh:
-                tipLabel.text = "正在刷新中"
+                tipLabel?.text = "正在刷新中"
                 
-                tipIcon.isHidden = true
+                tipIcon?.isHidden = true
                 // 显示菊花
-                indicator.startAnimating()
+                indicator?.startAnimating()
             }
         }
     }
@@ -54,7 +57,7 @@ class LJRefreshView: UIView {
     class func refreshView() -> LJRefreshView {
 //        LJHumanRefreshView
 //        LJRefreshView
-        let nib = UINib(nibName: "LJHumanRefreshView", bundle: nil)
+        let nib = UINib(nibName: "LJMeiRefreshView", bundle: nil)
         return nib.instantiate(withOwner: nil, options: nil)[0] as! LJRefreshView
     }
 

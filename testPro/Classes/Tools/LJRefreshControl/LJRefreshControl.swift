@@ -9,7 +9,10 @@
 import UIKit
 
 // 刷新状态的临界点
-private let LJRefreshOffset:CGFloat = 60
+// 普通
+//private let LJRefreshOffset:CGFloat = 60
+// 美团
+private let LJRefreshOffset:CGFloat = 126
 
 
 /// 刷新状态
@@ -32,6 +35,7 @@ class LJRefreshControl: UIControl {
     
     // 刷新视图
     private lazy var refreshView: LJRefreshView = LJRefreshView.refreshView()
+    
     init() {
         
         super.init(frame: CGRect())
@@ -91,6 +95,13 @@ class LJRefreshControl: UIControl {
             
             return
         }
+        
+        // 传递父视图高度
+        if refreshView.refreshState != .willRefresh {
+
+            refreshView.parentViewHeight = height
+        }
+
         // 判断临界点 - 只需要判断一次
         if sv.isDragging {
             
@@ -115,6 +126,7 @@ class LJRefreshControl: UIControl {
         }
         
         self.frame = CGRect(x: 0, y: -height, width: sv.bounds.width, height: height)
+        
         
     }
     
