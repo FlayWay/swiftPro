@@ -164,8 +164,8 @@
 			isa = PBXGroup;
 			children = (
 				861D51472105B87300700E97 /* LJRefreshView.swift */,
-				861D51482105B87300700E97 /* LJRefreshView.xib */,
 				861D513E2104D77C00700E97 /* LJRefreshControl.swift */,
+				861D51482105B87300700E97 /* LJRefreshView.xib */,
 			);
 			path = LJRefreshControl;
 			sourceTree = "<group>";

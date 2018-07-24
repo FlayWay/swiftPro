@@ -52,8 +52,9 @@ class LJRefreshView: UIView {
     }
     
     class func refreshView() -> LJRefreshView {
-        
-        let nib = UINib(nibName: "LJRefreshView", bundle: nil)
+//        LJHumanRefreshView
+//        LJRefreshView
+        let nib = UINib(nibName: "LJHumanRefreshView", bundle: nil)
         return nib.instantiate(withOwner: nil, options: nil)[0] as! LJRefreshView
     }
 
