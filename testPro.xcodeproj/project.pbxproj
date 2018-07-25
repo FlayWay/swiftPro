@@ -33,6 +33,8 @@
 		869A439720FC6CA1008980F9 /* LJImage+Extentsion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869A439620FC6CA1008980F9 /* LJImage+Extentsion.swift */; };
 		869A439A20FC736A008980F9 /* LJStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869A439920FC736A008980F9 /* LJStatusCell.swift */; };
 		869A439C20FC739D008980F9 /* LJStatusNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 869A439B20FC739D008980F9 /* LJStatusNormalCell.xib */; };
+		86ACA8CB21080D00003D3008 /* LJComposeTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86ACA8CA21080D00003D3008 /* LJComposeTypeView.swift */; };
+		86ACA8CD21080D09003D3008 /* LJComposeTypeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86ACA8CC21080D09003D3008 /* LJComposeTypeView.xib */; };
 		86F6FC1920E2292000BA0AD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6FC1820E2292000BA0AD1 /* AppDelegate.swift */; };
 		86F6FC1E20E2292000BA0AD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86F6FC1C20E2292000BA0AD1 /* Main.storyboard */; };
 		86F6FC2320E2292000BA0AD1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86F6FC2120E2292000BA0AD1 /* LaunchScreen.storyboard */; };
@@ -97,6 +99,8 @@
 		869A439620FC6CA1008980F9 /* LJImage+Extentsion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LJImage+Extentsion.swift"; sourceTree = "<group>"; };
 		869A439920FC736A008980F9 /* LJStatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJStatusCell.swift; sourceTree = "<group>"; };
 		869A439B20FC739D008980F9 /* LJStatusNormalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LJStatusNormalCell.xib; sourceTree = "<group>"; };
+		86ACA8CA21080D00003D3008 /* LJComposeTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJComposeTypeView.swift; sourceTree = "<group>"; };
+		86ACA8CC21080D09003D3008 /* LJComposeTypeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LJComposeTypeView.xib; sourceTree = "<group>"; };
 		86F6FC1520E2292000BA0AD1 /* testPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86F6FC1820E2292000BA0AD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86F6FC1D20E2292000BA0AD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -226,6 +230,23 @@
 			path = statusCell;
 			sourceTree = "<group>";
 		};
+		86ACA8C421080C14003D3008 /* Compose */ = {
+			isa = PBXGroup;
+			children = (
+				86ACA8C521080C7B003D3008 /* ComposeType */,
+			);
+			path = Compose;
+			sourceTree = "<group>";
+		};
+		86ACA8C521080C7B003D3008 /* ComposeType */ = {
+			isa = PBXGroup;
+			children = (
+				86ACA8CA21080D00003D3008 /* LJComposeTypeView.swift */,
+				86ACA8CC21080D09003D3008 /* LJComposeTypeView.xib */,
+			);
+			path = ComposeType;
+			sourceTree = "<group>";
+		};
 		86F6FC0C20E2292000BA0AD1 = {
 			isa = PBXGroup;
 			children = (
@@ -272,6 +293,7 @@
 		86F6FC2D20E23C8E00BA0AD1 /* View(视图和控制器) */ = {
 			isa = PBXGroup;
 			children = (
+				86ACA8C421080C14003D3008 /* Compose */,
 				86F6FC2E20E23C8E00BA0AD1 /* Home */,
 				86F6FC2F20E23C8E00BA0AD1 /* Discover */,
 				86F6FC3020E23C8E00BA0AD1 /* Message */,
@@ -498,6 +520,7 @@
 				864E654A20F6F79000D5AB30 /* LJWelcomeView.xib in Resources */,
 				86F6FC2320E2292000BA0AD1 /* LaunchScreen.storyboard in Resources */,
 				866775AB21002E6D00CD7D03 /* LJStatusRetweetCell.xib in Resources */,
+				86ACA8CD21080D09003D3008 /* LJComposeTypeView.xib in Resources */,
 				86F6FC2B20E2344600BA0AD1 /* Assets.xcassets in Resources */,
 				868E77F821071D6E00957E20 /* LJHumanRefreshView.xib in Resources */,
 				86F6FCA320EA25F000BA0AD1 /* main.json in Resources */,
@@ -593,6 +616,7 @@
 				86F6FC4120E2451F00BA0AD1 /* LJHomeViewController.swift in Sources */,
 				86F6FC3F20E2451200BA0AD1 /* LJDiscoverViewController.swift in Sources */,
 				864E650120EDF5A600D5AB30 /* LJStatusViewModel.swift in Sources */,
+				86ACA8CB21080D00003D3008 /* LJComposeTypeView.swift in Sources */,
 				86F6FC3920E23F7100BA0AD1 /* LJNavigationController.swift in Sources */,
 				864E653D20F4A44000D5AB30 /* LJOAuthViewController.swift in Sources */,
 				8667758520FDDCD600CD7D03 /* LJLable.swift in Sources */,

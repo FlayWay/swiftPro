@@ -10,9 +10,9 @@ import UIKit
 
 // 刷新状态的临界点
 // 普通
-//private let LJRefreshOffset:CGFloat = 60
+private let LJRefreshOffset:CGFloat = 60
 // 美团
-private let LJRefreshOffset:CGFloat = 126
+//private let LJRefreshOffset:CGFloat = 126
 
 
 /// 刷新状态
@@ -151,6 +151,8 @@ class LJRefreshControl: UIControl {
         var inset = sv.contentInset
         inset.top += LJRefreshOffset
         sv.contentInset = inset
+        // 设置刷新视图的父视图高度
+        refreshView.parentViewHeight = LJRefreshOffset
     }
     
     /// 结束刷新
@@ -174,7 +176,6 @@ class LJRefreshControl: UIControl {
         var inset = sv.contentInset
         inset.top -= LJRefreshOffset
         sv.contentInset = inset
-        
         
     }
     

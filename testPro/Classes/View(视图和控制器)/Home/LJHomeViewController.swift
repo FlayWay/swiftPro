@@ -56,8 +56,8 @@ class LJHomeViewController: LJBaseViewController {
         // beginRefreshing方法 什么都不显示
         refreshControl?.beginRefreshing()
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+10) {
-         
+//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+10) {
+        
             self.listViewModel.loadData(pullup:self.isPullUp) { (isSuccess,shouldRefresh) in
                 
                 
@@ -75,7 +75,7 @@ class LJHomeViewController: LJBaseViewController {
             
         }
 
-    }
+//    }
     
     @objc private func showFriends() {
         print("显示好友")

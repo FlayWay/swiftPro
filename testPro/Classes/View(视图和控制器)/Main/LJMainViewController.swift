@@ -70,9 +70,18 @@ class LJMainViewController: UITabBarController {
     // MARK: -撰写按钮事件
    @objc private func composeStatus() {
         print("撰写事件")
-        let vc = UIViewController()
-        let nav = UINavigationController(rootViewController: vc)
-        present(nav, animated: true, completion: nil)
+//        let vc = UIViewController()
+//        let nav = UINavigationController(rootViewController: vc)
+//        present(nav, animated: true, completion: nil)
+    
+    // 判断是否登录
+    
+    // 实例化视图
+    let v =  LJComposeTypeView()
+    
+    // 显示登录
+    v.show()
+    
     }
     
     // MARK: - 私有控件

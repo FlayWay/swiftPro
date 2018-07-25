@@ -109,7 +109,6 @@ class LJStatusViewModel: NSObject {
             }
             
             print("要缓存的url\(url)")
-            
             // 入组
             group.enter()
             /// 图像下载完成之后，自动保存到沙盒中，文件路径是url的md5
@@ -133,7 +132,6 @@ class LJStatusViewModel: NSObject {
                 
                 // 完成图片缓存
                 print("缓存的图像\(length / 1024)")
-                
                 completion(true,true)
             }
         }
