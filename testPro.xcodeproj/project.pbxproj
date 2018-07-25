@@ -35,6 +35,8 @@
 		869A439C20FC739D008980F9 /* LJStatusNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 869A439B20FC739D008980F9 /* LJStatusNormalCell.xib */; };
 		86ACA8CB21080D00003D3008 /* LJComposeTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86ACA8CA21080D00003D3008 /* LJComposeTypeView.swift */; };
 		86ACA8CD21080D09003D3008 /* LJComposeTypeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86ACA8CC21080D09003D3008 /* LJComposeTypeView.xib */; };
+		86ACA8CF210818A4003D3008 /* LJComposeTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86ACA8CE210818A4003D3008 /* LJComposeTypeButton.swift */; };
+		86ACA8D1210818BC003D3008 /* LJComposeTypeButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86ACA8D0210818BC003D3008 /* LJComposeTypeButton.xib */; };
 		86F6FC1920E2292000BA0AD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6FC1820E2292000BA0AD1 /* AppDelegate.swift */; };
 		86F6FC1E20E2292000BA0AD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86F6FC1C20E2292000BA0AD1 /* Main.storyboard */; };
 		86F6FC2320E2292000BA0AD1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86F6FC2120E2292000BA0AD1 /* LaunchScreen.storyboard */; };
@@ -101,6 +103,8 @@
 		869A439B20FC739D008980F9 /* LJStatusNormalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LJStatusNormalCell.xib; sourceTree = "<group>"; };
 		86ACA8CA21080D00003D3008 /* LJComposeTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJComposeTypeView.swift; sourceTree = "<group>"; };
 		86ACA8CC21080D09003D3008 /* LJComposeTypeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LJComposeTypeView.xib; sourceTree = "<group>"; };
+		86ACA8CE210818A4003D3008 /* LJComposeTypeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJComposeTypeButton.swift; sourceTree = "<group>"; };
+		86ACA8D0210818BC003D3008 /* LJComposeTypeButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LJComposeTypeButton.xib; sourceTree = "<group>"; };
 		86F6FC1520E2292000BA0AD1 /* testPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86F6FC1820E2292000BA0AD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86F6FC1D20E2292000BA0AD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -243,6 +247,8 @@
 			children = (
 				86ACA8CA21080D00003D3008 /* LJComposeTypeView.swift */,
 				86ACA8CC21080D09003D3008 /* LJComposeTypeView.xib */,
+				86ACA8CE210818A4003D3008 /* LJComposeTypeButton.swift */,
+				86ACA8D0210818BC003D3008 /* LJComposeTypeButton.xib */,
 			);
 			path = ComposeType;
 			sourceTree = "<group>";
@@ -517,6 +523,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86ACA8D1210818BC003D3008 /* LJComposeTypeButton.xib in Resources */,
 				864E654A20F6F79000D5AB30 /* LJWelcomeView.xib in Resources */,
 				86F6FC2320E2292000BA0AD1 /* LaunchScreen.storyboard in Resources */,
 				866775AB21002E6D00CD7D03 /* LJStatusRetweetCell.xib in Resources */,
@@ -617,6 +624,7 @@
 				86F6FC3F20E2451200BA0AD1 /* LJDiscoverViewController.swift in Sources */,
 				864E650120EDF5A600D5AB30 /* LJStatusViewModel.swift in Sources */,
 				86ACA8CB21080D00003D3008 /* LJComposeTypeView.swift in Sources */,
+				86ACA8CF210818A4003D3008 /* LJComposeTypeButton.swift in Sources */,
 				86F6FC3920E23F7100BA0AD1 /* LJNavigationController.swift in Sources */,
 				864E653D20F4A44000D5AB30 /* LJOAuthViewController.swift in Sources */,
 				8667758520FDDCD600CD7D03 /* LJLable.swift in Sources */,

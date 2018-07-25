@@ -77,8 +77,7 @@ class LJMainViewController: UITabBarController {
     // 判断是否登录
     
     // 实例化视图
-    let v =  LJComposeTypeView()
-    
+    let v =  LJComposeTypeView.composeTypeView()
     // 显示登录
     v.show()
     
