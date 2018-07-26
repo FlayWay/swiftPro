@@ -15,6 +15,10 @@ import YYModel
     // int 类型 在64位机器中是64位 在32位中是32位
     // 如果不写Int64 在5c/4s/ipad2 上无法运行
     var id:Int64 = 0
+    /// 微博来源
+    var source:String?
+    /// 微博创建时间
+    var created_at:String?
     /// 微博信息内容
     var text:String?
     /// 用户信息

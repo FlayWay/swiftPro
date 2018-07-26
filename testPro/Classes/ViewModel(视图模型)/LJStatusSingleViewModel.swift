@@ -48,6 +48,9 @@ class LJStatusSingleViewModel: CustomStringConvertible {
     /// 行高
     var rowHeight: CGFloat = 0
     
+    /// 来源字符串
+    var sourceStr:String?
+    
     /// 如果是被转发微博，原创微博一定没有图
     var picUrls:[LJStatausPicture]? {
         // 如果转发微博有配图，返回转发微博配图， 没有返回原创微博配图 都没有返回nil
@@ -88,8 +91,11 @@ class LJStatusSingleViewModel: CustomStringConvertible {
         let reweetTextStr = "@" + (status.retweeted_status?.user?.screen_name ?? "")
         reweetText = reweetTextStr + ":" + (status.retweeted_status?.text ?? "")
         
+        // 来源字符串
+        sourceStr =  "来自" + (model.source?.lj_href()?.text ?? "")
         // 计算行高
         updateRowHeight()
+    
     }
     
     var description: String {

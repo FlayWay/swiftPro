@@ -31,6 +31,11 @@ class LJStatusCell: UITableViewCell {
             // 配图视图模型
             picktrueView.viewModel = viewModel
             
+            // 设置来源
+            print("来源\(viewModel?.status.source)")
+            sourceLabel.text = viewModel?.sourceStr
+            
+            
             // 测试修改配置视图高度
 //            picktrueView.heigthCons.constant = viewModel?.picktureViewSize.height ?? 0
             // 图片数组
