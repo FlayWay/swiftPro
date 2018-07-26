@@ -79,7 +79,23 @@ class LJMainViewController: UITabBarController {
     // 实例化视图
     let v =  LJComposeTypeView.composeTypeView()
     // 显示登录
-    v.show()
+        v.show { [weak v] (clsName) in
+            
+            guard let clsName = clsName,
+                let cls = NSClassFromString(Bundle.main.namespace + "." + clsName) as? UIViewController.Type else {
+                    
+                    return
+            }
+            
+            let vc = cls.init()
+            let nav = UINavigationController(rootViewController: vc)
+            
+            self.present(nav, animated: true, completion: {
+                
+                v?.removeFromSuperview()
+            })
+            
+        }
     
     }
     
