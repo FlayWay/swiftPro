@@ -118,11 +118,13 @@ extension LJEmoticonManager {
             }
         }
         
+        
         // 统一设置一遍字符串的属性
         attrString.addAttributes([.font:font], range: NSRange(location: 0, length: attrString.length))
         
         return attrString
     }
+    
     
 }
 

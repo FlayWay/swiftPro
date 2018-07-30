@@ -7,9 +7,21 @@
 //
 
 import UIKit
+import YYText
+
+
+/// cell 协议
+ protocol LJStatusCellDelegate:NSObjectProtocol {
+    
+    /// 选中url字符串
+    func statusDidTapLinkString(cell:LJStatusCell,urlString:String)
+    
+}
 
 class LJStatusCell: UITableViewCell {
 
+    // 代理属性
+    weak var  delegate:LJStatusCellDelegate?
     
     /// 单条数据模型
     var viewModel:LJStatusSingleViewModel? {
@@ -64,14 +76,14 @@ class LJStatusCell: UITableViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var vipIconView: UIImageView!
     @IBOutlet weak var sourceLabel: UILabel!
-    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var statusLabel: FFLabel!
     /// 底部工具栏
     @IBOutlet weak var toolBar: LJStatusToolBar!
     /// 配图视图
     @IBOutlet weak var picktrueView: LJStatusPicView!
 
     /// 被转发正文 原创微博中没有此控件， 用 ？
-    @IBOutlet weak var reweetLable: UILabel?
+    @IBOutlet weak var reweetLable: FFLabel?
     
     @IBOutlet weak var pictureTopsCon: NSLayoutConstraint!
     
@@ -93,6 +105,10 @@ class LJStatusCell: UITableViewCell {
         // 使用栅格化必须注意指定分辨率
         self.layer.rasterizationScale = UIScreen.main.scale
         
+        // 设置代理
+        statusLabel.delegate = self
+        reweetLable?.delegate = self
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -101,4 +117,23 @@ class LJStatusCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+}
+
+extension LJStatusCell:FFLabelDelegate {
+    
+    
+    func labelDidSelectedLinkText(label: FFLabel, text: String) {
+        
+        print(text)
+        // 判断是否有url
+        if !text.hasPrefix("http://") {
+            return
+        }
+        
+        // 如果代理没有实现代理方法，就什么都不做
+        delegate?.statusDidTapLinkString(cell: self, urlString: text)
+        
+        
+    }
+    
 }

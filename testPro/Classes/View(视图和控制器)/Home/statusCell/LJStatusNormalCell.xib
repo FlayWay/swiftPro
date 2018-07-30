@@ -57,8 +57,8 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_enterprise_vip" translatesAutoresizingMaskIntoConstraints="NO" id="R1Z-bD-S7K" userLabel="认证">
                         <rect key="frame" x="32.5" y="45.5" width="17" height="17"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUs-fT-guS" userLabel="正文">
-                        <rect key="frame" x="11" y="69" width="37.5" height="18"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUs-fT-guS" userLabel="正文" customClass="FFLabel" customModule="testPro" customModuleProvider="target">
+                        <rect key="frame" x="11" y="69" width="32.5" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -123,7 +123,7 @@
                         <rect key="frame" x="170.5" y="496" width="1" height="1"/>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KUl-Wy-SDH" userLabel="配图视图" customClass="LJStatusPicView" customModule="testPro" customModuleProvider="target">
-                        <rect key="frame" x="11" y="99" width="490" height="267.5"/>
+                        <rect key="frame" x="11" y="87" width="490" height="267.5"/>
                         <color key="backgroundColor" red="1" green="0.91487964560000001" blue="0.2294043154" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="267.5" id="xfv-JE-9Wv"/>
@@ -137,7 +137,7 @@
                     <constraint firstItem="tjk-eq-pxu" firstAttribute="centerY" secondItem="qP2-Al-tdC" secondAttribute="centerY" id="1KP-o6-vR0"/>
                     <constraint firstItem="8UX-Ij-eJy" firstAttribute="top" secondItem="XYF-Cs-XFw" secondAttribute="bottom" constant="12" id="1k9-HY-qva"/>
                     <constraint firstItem="KUl-Wy-SDH" firstAttribute="leading" secondItem="UUs-fT-guS" secondAttribute="leading" id="30h-eV-sej"/>
-                    <constraint firstItem="KUl-Wy-SDH" firstAttribute="top" secondItem="UUs-fT-guS" secondAttribute="bottom" constant="12" id="3Ju-Qf-kTs"/>
+                    <constraint firstItem="KUl-Wy-SDH" firstAttribute="top" secondItem="UUs-fT-guS" secondAttribute="bottom" id="3Ju-Qf-kTs"/>
                     <constraint firstItem="tjk-eq-pxu" firstAttribute="leading" secondItem="qP2-Al-tdC" secondAttribute="trailing" constant="8" id="3z8-Bg-puS"/>
                     <constraint firstAttribute="trailing" secondItem="KUl-Wy-SDH" secondAttribute="trailing" constant="12" id="7Tb-na-2vX"/>
                     <constraint firstItem="ztw-nv-iNF" firstAttribute="centerY" secondItem="4lW-bT-cDg" secondAttribute="centerY" id="7k8-Fw-jD9"/>
@@ -175,7 +175,7 @@
                 <outlet property="toolBar" destination="qWo-pK-nem" id="JDb-iG-nd8"/>
                 <outlet property="vipIconView" destination="R1Z-bD-S7K" id="c8y-mI-Bwb"/>
             </connections>
-            <point key="canvasLocation" x="-1627.5" y="-609"/>
+            <point key="canvasLocation" x="-2553" y="-745"/>
         </tableViewCell>
     </objects>
     <resources>

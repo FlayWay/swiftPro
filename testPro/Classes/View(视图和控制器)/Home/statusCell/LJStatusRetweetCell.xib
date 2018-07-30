@@ -57,22 +57,22 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_enterprise_vip" translatesAutoresizingMaskIntoConstraints="NO" id="R1Z-bD-S7K" userLabel="认证">
                         <rect key="frame" x="32.5" y="45.5" width="17" height="17"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUs-fT-guS" userLabel="正文">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUs-fT-guS" userLabel="正文" customClass="FFLabel" customModule="testPro" customModuleProvider="target">
                         <rect key="frame" x="11" y="69" width="37.5" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgF-UA-fvg" userLabel="被转发视图按钮">
-                        <rect key="frame" x="0.0" y="99" width="511" height="371.5"/>
+                        <rect key="frame" x="0.0" y="87" width="511" height="383.5"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <state key="normal">
                             <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="idS-Es-tI3" userLabel="被转发视图正文">
-                        <rect key="frame" x="12" y="111" width="35.5" height="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="idS-Es-tI3" userLabel="被转发视图正文" customClass="FFLabel" customModule="testPro" customModuleProvider="target">
+                        <rect key="frame" x="12" y="99" width="35.5" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -137,7 +137,7 @@
                         <rect key="frame" x="170.5" y="488" width="1" height="1"/>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KUl-Wy-SDH" userLabel="配图视图" customClass="LJStatusPicView" customModule="testPro" customModuleProvider="target">
-                        <rect key="frame" x="11" y="128" width="488" height="267.5"/>
+                        <rect key="frame" x="11" y="116" width="488" height="267.5"/>
                         <color key="backgroundColor" red="1" green="0.91487964560000001" blue="0.2294043154" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="267.5" id="xfv-JE-9Wv"/>
@@ -175,7 +175,7 @@
                     <constraint firstItem="idS-Es-tI3" firstAttribute="leading" secondItem="hgF-UA-fvg" secondAttribute="leading" constant="12" id="YKs-oG-YcK"/>
                     <constraint firstItem="UUs-fT-guS" firstAttribute="leading" secondItem="8UX-Ij-eJy" secondAttribute="leading" id="aB2-hK-B6l"/>
                     <constraint firstItem="qP2-Al-tdC" firstAttribute="leading" secondItem="KFA-i0-79E" secondAttribute="leading" id="axC-eY-KPS"/>
-                    <constraint firstItem="hgF-UA-fvg" firstAttribute="top" secondItem="UUs-fT-guS" secondAttribute="bottom" constant="12" id="eks-k5-nLu"/>
+                    <constraint firstItem="hgF-UA-fvg" firstAttribute="top" secondItem="UUs-fT-guS" secondAttribute="bottom" id="eks-k5-nLu"/>
                     <constraint firstItem="KFA-i0-79E" firstAttribute="leading" secondItem="8UX-Ij-eJy" secondAttribute="trailing" constant="11" id="fGm-14-Wrk"/>
                     <constraint firstItem="ed0-yb-jyZ" firstAttribute="centerY" secondItem="KFA-i0-79E" secondAttribute="centerY" id="hIf-ys-HWR"/>
                     <constraint firstAttribute="bottom" secondItem="qWo-pK-nem" secondAttribute="bottom" id="iEA-UW-zMc"/>

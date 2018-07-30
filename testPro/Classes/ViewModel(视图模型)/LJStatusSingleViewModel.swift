@@ -99,6 +99,7 @@ class LJStatusSingleViewModel: CustomStringConvertible {
         let retweetedFont = UIFont.systemFont(ofSize: 14)
         // 设置被转发属性文字
         reweetAttrText = LJEmoticonManager.shared.emoticonString(string: reweetTextStr, font: retweetedFont)
+        
         // 设置正文属性文字
         statusAttrText = LJEmoticonManager.shared.emoticonString(string: model.text ?? "", font: originalFont)
         
@@ -182,17 +183,16 @@ class LJStatusSingleViewModel: CustomStringConvertible {
         
         var  height:CGFloat = 0
         
-        
         let viewSize = CGSize(width: UIScreen.cz_screenWidth() - 2 * margin, height: CGFloat(MAXFLOAT))
-        let originalFont = UIFont.systemFont(ofSize: 15)
-        let retweetedFont = UIFont.systemFont(ofSize: 14)
+//        let originalFont = UIFont.systemFont(ofSize: 15)
+//        let retweetedFont = UIFont.systemFont(ofSize: 14)
         
         // 计算顶部位置
         height = 2 * margin + iconHeight + margin
         // 计算正文高度
         if  let text = statusAttrText {
             // 属性文本中本身包含字体高度等属性
-            height += (statusAttrText?.boundingRect(with: viewSize, options: [.usesLineFragmentOrigin], context: nil).height)!
+            height += (text.boundingRect(with: viewSize, options: [.usesLineFragmentOrigin], context: nil).height)
              // 换行文本 统一使用 usesLineFragmentOrigin
 //           height += (text as NSString).boundingRect(with: viewSize, options: [.usesLineFragmentOrigin], attributes:[ .font:originalFont] , context: nil).height
         }
@@ -203,7 +203,7 @@ class LJStatusSingleViewModel: CustomStringConvertible {
             height += margin * 2
             // 转发文本高度
             if let text = reweetAttrText {
-                height += (reweetAttrText?.boundingRect(with: viewSize, options: [.usesLineFragmentOrigin], context: nil).height)!
+                height += (text.boundingRect(with: viewSize, options: [.usesLineFragmentOrigin], context: nil).height)
 //                 height += (text as NSString).boundingRect(with: viewSize, options: [.usesLineFragmentOrigin], attributes:[ .font: retweetedFont] , context: nil).height
             }
         }

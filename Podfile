@@ -12,5 +12,6 @@ target 'testPro' do
   pod "FMDB"
   pod "SVProgressHUD"
   pod "pop"
+  pod "YYText"
 
 end

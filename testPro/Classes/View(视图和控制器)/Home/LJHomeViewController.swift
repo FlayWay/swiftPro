@@ -96,6 +96,7 @@ extension LJHomeViewController{
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! LJStatusCell
         // 设置cell
         cell.viewModel = vm
+        cell.delegate = self
         // 返回cell
         return cell
     }
@@ -142,6 +143,19 @@ extension LJHomeViewController {
         // 设置选中状态
         button.isSelected = !button.isSelected
         
+    }
+    
+}
+
+
+// MARK: - LJStatusCellDelegate
+extension LJHomeViewController:LJStatusCellDelegate {
+    
+    func statusDidTapLinkString(cell: LJStatusCell, urlString: String) {
+        
+        let vc = LJWebViewController()
+        vc.urlString = urlString
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 }
