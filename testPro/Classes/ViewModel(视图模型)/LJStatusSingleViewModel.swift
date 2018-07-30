@@ -33,6 +33,10 @@ class LJStatusSingleViewModel: CustomStringConvertible {
     var memberIcon:UIImage?
     /// 认证图标
     var vipIcon:UIImage?
+    /// 正文的属性文本
+    var statusAttrText:NSAttributedString?
+    /// 被转发属性文本
+    var reweetAttrText:NSAttributedString?
     /// 转发
     var reweetStr: String?
     /// 评论
@@ -91,8 +95,16 @@ class LJStatusSingleViewModel: CustomStringConvertible {
         let reweetTextStr = "@" + (status.retweeted_status?.user?.screen_name ?? "")
         reweetText = reweetTextStr + ":" + (status.retweeted_status?.text ?? "")
         
+        let originalFont = UIFont.systemFont(ofSize: 15)
+        let retweetedFont = UIFont.systemFont(ofSize: 14)
+        // 设置被转发属性文字
+        reweetAttrText = LJEmoticonManager.shared.emoticonString(string: reweetTextStr, font: retweetedFont)
+        // 设置正文属性文字
+        statusAttrText = LJEmoticonManager.shared.emoticonString(string: model.text ?? "", font: originalFont)
+        
         // 来源字符串
         sourceStr =  "来自" + (model.source?.lj_href()?.text ?? "")
+        
         // 计算行高
         updateRowHeight()
     
@@ -178,10 +190,11 @@ class LJStatusSingleViewModel: CustomStringConvertible {
         // 计算顶部位置
         height = 2 * margin + iconHeight + margin
         // 计算正文高度
-        if  let text = status.text {
-            
+        if  let text = statusAttrText {
+            // 属性文本中本身包含字体高度等属性
+            height += (statusAttrText?.boundingRect(with: viewSize, options: [.usesLineFragmentOrigin], context: nil).height)!
              // 换行文本 统一使用 usesLineFragmentOrigin
-           height += (text as NSString).boundingRect(with: viewSize, options: [.usesLineFragmentOrigin], attributes:[ .font:originalFont] , context: nil).height
+//           height += (text as NSString).boundingRect(with: viewSize, options: [.usesLineFragmentOrigin], attributes:[ .font:originalFont] , context: nil).height
         }
     
         // 判断是否转发微博
@@ -189,8 +202,9 @@ class LJStatusSingleViewModel: CustomStringConvertible {
             
             height += margin * 2
             // 转发文本高度
-            if let text = reweetText {
-                 height += (text as NSString).boundingRect(with: viewSize, options: [.usesLineFragmentOrigin], attributes:[ .font: retweetedFont] , context: nil).height
+            if let text = reweetAttrText {
+                height += (reweetAttrText?.boundingRect(with: viewSize, options: [.usesLineFragmentOrigin], context: nil).height)!
+//                 height += (text as NSString).boundingRect(with: viewSize, options: [.usesLineFragmentOrigin], attributes:[ .font: retweetedFont] , context: nil).height
             }
         }
         

@@ -180,7 +180,6 @@ private extension LJComposeTypeView {
         
     }
     
-    
     /// 弹力显示所有按钮
     func showButtons() {
         
@@ -317,9 +316,7 @@ private extension LJComposeTypeView {
             }
             
             btn.clsName = dic["clsName"]
-            
         }
-        
         let btnSize = CGSize(width: 100.0, height: 100.0)
         let margin = (v.bounds.width - 3 *  btnSize.width) / 4
         

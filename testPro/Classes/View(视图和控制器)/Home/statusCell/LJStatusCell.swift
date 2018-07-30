@@ -16,7 +16,12 @@ class LJStatusCell: UITableViewCell {
         
         didSet {
             // 微博正文
-            statusLabel?.text = viewModel?.status.text
+//            statusLabel?.text = viewModel?.status.text
+            statusLabel.attributedText = viewModel?.statusAttrText
+            // 被转发
+//            reweetLable?.text = viewModel?.reweetText
+            reweetLable?.attributedText = viewModel?.reweetAttrText
+
             // 名字
             nameLab.text = viewModel?.status.user?.screen_name
             // 设置会员等级
@@ -32,9 +37,7 @@ class LJStatusCell: UITableViewCell {
             picktrueView.viewModel = viewModel
             
             // 设置来源
-            print("来源\(viewModel?.status.source)")
             sourceLabel.text = viewModel?.sourceStr
-            
             
             // 测试修改配置视图高度
 //            picktrueView.heigthCons.constant = viewModel?.picktureViewSize.height ?? 0
@@ -52,7 +55,6 @@ class LJStatusCell: UITableViewCell {
 //            }
 //            pictureTopsCon.constant = 0
             
-            reweetLable?.text = viewModel?.reweetText
         }
     }
     
