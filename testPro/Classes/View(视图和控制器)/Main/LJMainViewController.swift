@@ -89,7 +89,6 @@ class LJMainViewController: UITabBarController {
             
             let vc = cls.init()
             let nav = UINavigationController(rootViewController: vc)
-            
             self.present(nav, animated: true, completion: {
                 
                 v?.removeFromSuperview()
