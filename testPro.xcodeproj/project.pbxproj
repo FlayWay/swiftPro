@@ -36,6 +36,8 @@
 		86996DE4210B360A00D707C6 /* LJEmoticonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86996DE3210B360A00D707C6 /* LJEmoticonManager.swift */; };
 		86996DF1210EF94600D707C6 /* FFLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86996DF0210EF94600D707C6 /* FFLabel.swift */; };
 		86996DF3210F123800D707C6 /* LJWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86996DF2210F123800D707C6 /* LJWebViewController.swift */; };
+		86996DF521102FE300D707C6 /* LJComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86996DF421102FE300D707C6 /* LJComposeViewController.xib */; };
+		86996E16211144ED00D707C6 /* LJTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86996E15211144ED00D707C6 /* LJTextView.swift */; };
 		869A439720FC6CA1008980F9 /* LJImage+Extentsion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869A439620FC6CA1008980F9 /* LJImage+Extentsion.swift */; };
 		869A439A20FC736A008980F9 /* LJStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869A439920FC736A008980F9 /* LJStatusCell.swift */; };
 		869A439C20FC739D008980F9 /* LJStatusNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 869A439B20FC739D008980F9 /* LJStatusNormalCell.xib */; };
@@ -112,6 +114,8 @@
 		86996DE3210B360A00D707C6 /* LJEmoticonManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LJEmoticonManager.swift; sourceTree = "<group>"; };
 		86996DF0210EF94600D707C6 /* FFLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFLabel.swift; sourceTree = "<group>"; };
 		86996DF2210F123800D707C6 /* LJWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJWebViewController.swift; sourceTree = "<group>"; };
+		86996DF421102FE300D707C6 /* LJComposeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LJComposeViewController.xib; sourceTree = "<group>"; };
+		86996E15211144ED00D707C6 /* LJTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJTextView.swift; sourceTree = "<group>"; };
 		869A439620FC6CA1008980F9 /* LJImage+Extentsion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LJImage+Extentsion.swift"; sourceTree = "<group>"; };
 		869A439920FC736A008980F9 /* LJStatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJStatusCell.swift; sourceTree = "<group>"; };
 		869A439B20FC739D008980F9 /* LJStatusNormalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LJStatusNormalCell.xib; sourceTree = "<group>"; };
@@ -265,6 +269,14 @@
 			path = FFLabel;
 			sourceTree = "<group>";
 		};
+		86996E142111443E00D707C6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				86996E15211144ED00D707C6 /* LJTextView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		869A439820FC7337008980F9 /* statusCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -280,8 +292,10 @@
 		86ACA8C421080C14003D3008 /* Compose */ = {
 			isa = PBXGroup;
 			children = (
+				86996E142111443E00D707C6 /* View */,
 				86ACA8C521080C7B003D3008 /* ComposeType */,
 				86ACA8D221096773003D3008 /* LJComposeViewController.swift */,
+				86996DF421102FE300D707C6 /* LJComposeViewController.xib */,
 			);
 			path = Compose;
 			sourceTree = "<group>";
@@ -573,6 +587,7 @@
 			files = (
 				86ACA8D1210818BC003D3008 /* LJComposeTypeButton.xib in Resources */,
 				864E654A20F6F79000D5AB30 /* LJWelcomeView.xib in Resources */,
+				86996DF521102FE300D707C6 /* LJComposeViewController.xib in Resources */,
 				86996DDD210B35BC00D707C6 /* HMEmoticon.bundle in Resources */,
 				86F6FC2320E2292000BA0AD1 /* LaunchScreen.storyboard in Resources */,
 				866775AB21002E6D00CD7D03 /* LJStatusRetweetCell.xib in Resources */,
@@ -702,6 +717,7 @@
 				86F6FCAC20ECC75A00BA0AD1 /* LJNetworkManager+Extension.swift in Sources */,
 				86ACA8F52109C570003D3008 /* String+Extentsion.swift in Sources */,
 				86F6FC6A20E325D900BA0AD1 /* LJBaseViewController.swift in Sources */,
+				86996E16211144ED00D707C6 /* LJTextView.swift in Sources */,
 				86F6FC5E20E3239800BA0AD1 /* UIView+CZAddition.m in Sources */,
 				86F6FC6620E3239800BA0AD1 /* NSString+CZHash.m in Sources */,
 				86996DF1210EF94600D707C6 /* FFLabel.swift in Sources */,

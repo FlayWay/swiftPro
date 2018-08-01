@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LJComposeViewController" customModule="testPro" customModuleProvider="target">
+            <connections>
+                <outlet property="sendButton" destination="mn3-dG-rfb" id="oHj-RW-BBG"/>
+                <outlet property="textView" destination="ea2-hu-Chz" id="SJA-ru-JAg"/>
+                <outlet property="titleLabel" destination="8An-wD-5ni" id="0un-ux-ojG"/>
+                <outlet property="toolBar" destination="koj-we-BaP" id="YJB-Se-jl2"/>
+                <outlet property="toolBarBottomCon" destination="RIo-S1-44l" id="PkR-Cz-I1V"/>
+                <outlet property="view" destination="Y4K-St-vFR" id="nN9-bh-BUU"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Y4K-St-vFR">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ea2-hu-Chz" customClass="LJTextView" customModule="testPro" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="20" width="375" height="603"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="BQ3-48-7Rt"/>
+                    </connections>
+                </textView>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="koj-we-BaP">
+                    <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="tkH-OO-GqS"/>
+                    </constraints>
+                    <items/>
+                </toolbar>
+            </subviews>
+            <color key="backgroundColor" red="1" green="0.91487964560000001" blue="0.2294043154" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ea2-hu-Chz" firstAttribute="leading" secondItem="2m1-zD-Aep" secondAttribute="leading" id="2kR-A1-0al"/>
+                <constraint firstItem="koj-we-BaP" firstAttribute="trailing" secondItem="2m1-zD-Aep" secondAttribute="trailing" id="FWa-cI-CWJ"/>
+                <constraint firstItem="2m1-zD-Aep" firstAttribute="bottom" secondItem="koj-we-BaP" secondAttribute="bottom" id="RIo-S1-44l"/>
+                <constraint firstItem="ea2-hu-Chz" firstAttribute="top" secondItem="2m1-zD-Aep" secondAttribute="top" id="hqx-N6-K3n"/>
+                <constraint firstItem="ea2-hu-Chz" firstAttribute="trailing" secondItem="2m1-zD-Aep" secondAttribute="trailing" id="mcB-2C-xew"/>
+                <constraint firstItem="koj-we-BaP" firstAttribute="leading" secondItem="2m1-zD-Aep" secondAttribute="leading" id="uOf-Dn-qMA"/>
+                <constraint firstItem="koj-we-BaP" firstAttribute="top" secondItem="ea2-hu-Chz" secondAttribute="bottom" id="utV-Py-TZ6"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="2m1-zD-Aep"/>
+            <point key="canvasLocation" x="-1924" y="-349"/>
+        </view>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mn3-dG-rfb">
+            <rect key="frame" x="0.0" y="0.0" width="45" height="35"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+            <state key="normal" title="发布" backgroundImage="common_button_orange"/>
+            <state key="disabled" backgroundImage="common_button_white_disable">
+                <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            </state>
+            <state key="highlighted" backgroundImage="common_button_orange_highlighted"/>
+            <connections>
+                <action selector="postStatus:" destination="-1" eventType="touchUpInside" id="g3b-yV-8lM"/>
+            </connections>
+            <point key="canvasLocation" x="-1634" y="-85"/>
+        </button>
+        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8An-wD-5ni">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="35"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <attributedString key="attributedText">
+                <fragment>
+                    <string key="content">测试</string>
+                    <attributes>
+                        <font key="NSFont" size="14" name=".PingFangSC-Regular"/>
+                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                    </attributes>
+                </fragment>
+                <fragment>
+                    <string key="content" base64-UTF8="YES">
+DQ
+</string>
+                    <attributes>
+                        <font key="NSFont" size="3" name=".PingFangSC-Regular"/>
+                        <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                    </attributes>
+                </fragment>
+                <fragment content="测试一下可以">
+                    <attributes>
+                        <color key="NSColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <font key="NSFont" size="12" name=".PingFangSC-Regular"/>
+                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                    </attributes>
+                </fragment>
+            </attributedString>
+            <nil key="highlightedColor"/>
+            <point key="canvasLocation" x="-1530" y="149"/>
+        </label>
+    </objects>
+    <resources>
+        <image name="common_button_orange" width="11" height="35"/>
+        <image name="common_button_orange_highlighted" width="11" height="35"/>
+        <image name="common_button_white_disable" width="11" height="35"/>
+    </resources>
+</document>
