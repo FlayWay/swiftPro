@@ -83,6 +83,23 @@ class LJComposeViewController: UIViewController {
     }
     
     
+   /// 切换表情键盘
+   @objc private func emoticonKeyboard() {
+    
+        print("点击了表情")
+        // textView.inputView就是文本框的输入内容
+        // 如果使用系统默认的键盘,输入视图为nil
+        // 视图宽度可以随便，就是屏幕宽度
+        let keyboardView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 253))
+        keyboardView.backgroundColor = UIColor.blue
+        // 设置键盘视图
+        textView.inputView = (textView.inputView == nil) ? keyboardView : nil
+        // 刷新键盘视图
+        textView.reloadInputViews()
+        // 助理视图随着键盘的下落消失
+        // textView.inputAccessoryView
+    }
+    
     /// 监听键盘高度变化
     @objc private  func keyboardChanged(_ notification:Notification) {
         
@@ -169,7 +186,7 @@ private extension LJComposeViewController {
             // 判断 actionName
             if let actionName = s["actionName"] {
                  // 给按钮添加监听方法
-//                btn.addTarget(self, action: #selector(actionName), for: .touchUpInside)
+                btn.addTarget(self, action: #selector(emoticonKeyboard), for: .touchUpInside)
             }
             
             items.append(UIBarButtonItem(customView: btn))
