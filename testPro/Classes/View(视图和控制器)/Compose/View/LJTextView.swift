@@ -38,7 +38,7 @@ private extension LJTextView {
     func setupUI() {
         // 注册通知 一对多 如果其他控件监听当前文本视图的通知，不会影响
         // 如果使用代理，其他控件就无法使用代理监听通知
-        // 代理一对一 
+        // 代理一对一
         NotificationCenter.default.addObserver(self, selector: #selector(textChanged), name: Notification.Name.UITextViewTextDidChange, object: self)
         
         placeholderLabel.text = "分享新鲜事..."

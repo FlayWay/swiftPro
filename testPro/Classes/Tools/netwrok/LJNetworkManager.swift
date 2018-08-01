@@ -74,7 +74,7 @@ class LJNetworkManager: AFHTTPSessionManager {
     }
     
     ///  专门负责获取token的网络请求方法
-    func tokenRequest(method:LJHttpMethod = .GET,urlString:String,parameters:[String:Any]?,completaion:@escaping (_ json:Any?,_ isSuccess:Bool)->()) {
+    func tokenRequest(method:LJHttpMethod = .GET,urlString:String,parameters:[String:Any]?,name:String? = nil,data:Data? = nil,completaion:@escaping (_ json:Any?,_ isSuccess:Bool)->()) {
         
         // 处理token字典
         // 判断token是否为nil 为nil直接返回 一般情况下程序执行过程中token不为nil
@@ -92,7 +92,49 @@ class LJNetworkManager: AFHTTPSessionManager {
         }
         // 设置参数
         parameters!["access_token"] = token
-        request(URLString: urlString, parameters: parameters, completion: completaion)
+        
+        // 判断name和data
+        if let name = name,
+           let data = data{
+            upload(urlString: urlString, parameters: parameters, name: name, data: data, completion: completaion)
+        }else {
+            request(method: method, URLString: urlString, parameters: parameters, completion: completaion)
+        }
+        
+        
+//        request(URLString: urlString, parameters: parameters, completion: completaion)
     }
+    
+    
+    /// 上传图片
+    func upload(method:LJHttpMethod = .GET,urlString:String,parameters:[String:Any]?,name:String,data:Data,completion:@escaping (_ json:Any?,_ isSuccess:Bool)->()) {
+        
+        post(urlString, parameters: parameters, constructingBodyWith: { (formdata) in
+        
+            // 创建formdata
+            /*
+             data: 要上传的二进制数据
+             name:  服务器接受数据的字段名
+             fileName: 保存在服务器的文件名，大多数服务器，现在可以乱写,很多服务器，上传图片后
+             会生成 缩略图、中图、大图
+             mimeType: 告诉服务器上传文件的类型，如果不想告诉，可以使用application/octet-stream image/png image/jpg
+             */
+            formdata.appendPart(withFileData: data, name: name, fileName: "xxx", mimeType: "application/octet-stream")
+            
+            
+        }, progress: nil, success: { (_, json) in
+            
+            completion(json,true)
+            
+        }) { (task, error) in
+            
+            if (task?.response as? HTTPURLResponse)?.statusCode == 403 {
+                print("token过期了")
+                NotificationCenter.default.post(name: Notification.Name(LJUserShouldloginNotification), object: self, userInfo: nil)
+            }
+            completion(nil,false)
+        }
+    }
+    
     
 }

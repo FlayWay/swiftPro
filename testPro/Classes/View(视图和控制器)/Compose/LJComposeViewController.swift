@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 
 /**
@@ -23,7 +24,7 @@ class LJComposeViewController: UIViewController {
     // 如果想要设置间距，增加一个空行，可以设置空行的字体高度来设置间距
     @IBOutlet var titleLabel: UILabel!
     /// 文本编辑视图
-    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var textView: LJTextView!
     /// 工具栏
     @IBOutlet weak var toolBar: UIToolbar!
     override func viewDidLoad() {
@@ -56,9 +57,30 @@ class LJComposeViewController: UIViewController {
     @IBAction func postStatus(_ sender: UIButton) {
         
         print("点击啦")
+        // 获取文字
+        guard let text = textView.text else {
+            
+            return
+        }
+        
+        let image = UIImage(named: "")
+        LJNetworkManager.shared.postStatus(text: text,image: image) { (result, isSuccess) in
+            
+            SVProgressHUD.setDefaultStyle(.dark)
+            let message = isSuccess ? "发布成功" : "网络不给力"
+            SVProgressHUD.showInfo(withStatus: message)
+            
+            if isSuccess {
+                
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 4, execute: {
+                    self.close()
+                    SVProgressHUD.setDefaultStyle(.light)
+                })
+            }
+            
+        }
         
     }
-    
     
     
     /// 监听键盘高度变化

@@ -117,6 +117,42 @@ extension LJNetworkManager {
     }
     
 }
+ 
+// MARK: - 发布
+ extension LJNetworkManager {
+    
+    
+    /// 发布
+    func postStatus(text:String, image:UIImage?,completion:@escaping(_ result:[String:Any]?,_ isSuccess:Bool)->())-> () {
+        
+        // url
+        let urlString: String
+        if image == nil {
+            urlString = "https://api.weibo.com/2/statuses/update.json"
+        }else {
+            urlString = "https://upload.api.weibo.com/2/statuses/upload.json"
+        }
+        
+        // 参数字典
+        let params = ["status":text]
+        
+        // 如果图片不为空，需要设置name和data
+        var name:String?
+        var data:Data?
+        if image != nil {
+
+            name = "pic"
+            data = UIImagePNGRepresentation(image!)
+        }
+        // 发起网络请求
+        tokenRequest(method: .POST, urlString: urlString, parameters: params, name: name, data: data) { (json, isSuccess) in
+            
+             completion(json as? [String:Any], isSuccess)
+        }
+        
+    }
+    
+ }
 
 
 
