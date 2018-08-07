@@ -25,6 +25,12 @@ class LJComposeViewController: UIViewController {
     @IBOutlet var titleLabel: UILabel!
     /// 文本编辑视图
     @IBOutlet weak var textView: LJTextView!
+    // 表情输入视图
+    lazy var emoticonInputView = LJEmoticonInputView.inputView {[weak self] (em) in
+        self?.textView.insertEmoticon(em: em)
+        
+//        .insertEmoticon(em: em)
+    }
     /// 工具栏
     @IBOutlet weak var toolBar: UIToolbar!
     override func viewDidLoad() {
@@ -58,8 +64,7 @@ class LJComposeViewController: UIViewController {
         
         print("点击啦")
         // 获取文字
-        guard let text = textView.text else {
-            
+        guard let text = textView.emoticonText else {
             return
         }
         
@@ -90,10 +95,11 @@ class LJComposeViewController: UIViewController {
         // textView.inputView就是文本框的输入内容
         // 如果使用系统默认的键盘,输入视图为nil
         // 视图宽度可以随便，就是屏幕宽度
-        let keyboardView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 253))
-        keyboardView.backgroundColor = UIColor.blue
+//        let keyboardView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 253))
+//        keyboardView.backgroundColor = UIColor.blue
+    
         // 设置键盘视图
-        textView.inputView = (textView.inputView == nil) ? keyboardView : nil
+        textView.inputView = (textView.inputView == nil) ? emoticonInputView : nil
         // 刷新键盘视图
         textView.reloadInputViews()
         // 助理视图随着键盘的下落消失

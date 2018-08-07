@@ -53,7 +53,7 @@
                 <constraint firstItem="koj-we-BaP" firstAttribute="top" secondItem="ea2-hu-Chz" secondAttribute="bottom" id="utV-Py-TZ6"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="2m1-zD-Aep"/>
-            <point key="canvasLocation" x="-1924" y="-349"/>
+            <point key="canvasLocation" x="-2140" y="-353"/>
         </view>
         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mn3-dG-rfb">
             <rect key="frame" x="0.0" y="0.0" width="45" height="35"/>
@@ -74,7 +74,8 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <attributedString key="attributedText">
                 <fragment>
-                    <string key="content">测试</string>
+                    <string key="content">测试
+</string>
                     <attributes>
                         <font key="NSFont" size="14" name=".PingFangSC-Regular"/>
                         <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>

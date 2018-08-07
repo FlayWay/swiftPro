@@ -59,7 +59,6 @@ class LJComposeTypeView: UIView {
         // 开始动画
         showCurrentView()
         
-        
     }
     
     override func awakeFromNib() {

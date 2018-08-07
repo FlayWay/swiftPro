@@ -30,10 +30,6 @@
 		868E77F721071D6E00957E20 /* LJMeiRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868E77F421071D6D00957E20 /* LJMeiRefreshView.swift */; };
 		868E77F821071D6E00957E20 /* LJHumanRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 868E77F521071D6D00957E20 /* LJHumanRefreshView.xib */; };
 		868E77F921071D6E00957E20 /* LJMeiRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 868E77F621071D6E00957E20 /* LJMeiRefreshView.xib */; };
-		86996DDD210B35BC00D707C6 /* HMEmoticon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 86996DDC210B35BC00D707C6 /* HMEmoticon.bundle */; };
-		86996DE1210B35D200D707C6 /* LJEmoticonPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86996DDF210B35D200D707C6 /* LJEmoticonPackage.swift */; };
-		86996DE2210B35D200D707C6 /* LJEmoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86996DE0210B35D200D707C6 /* LJEmoticon.swift */; };
-		86996DE4210B360A00D707C6 /* LJEmoticonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86996DE3210B360A00D707C6 /* LJEmoticonManager.swift */; };
 		86996DF1210EF94600D707C6 /* FFLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86996DF0210EF94600D707C6 /* FFLabel.swift */; };
 		86996DF3210F123800D707C6 /* LJWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86996DF2210F123800D707C6 /* LJWebViewController.swift */; };
 		86996DF521102FE300D707C6 /* LJComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86996DF421102FE300D707C6 /* LJComposeViewController.xib */; };
@@ -47,6 +43,17 @@
 		86ACA8D1210818BC003D3008 /* LJComposeTypeButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86ACA8D0210818BC003D3008 /* LJComposeTypeButton.xib */; };
 		86ACA8D321096773003D3008 /* LJComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86ACA8D221096773003D3008 /* LJComposeViewController.swift */; };
 		86ACA8F52109C570003D3008 /* String+Extentsion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86ACA8F42109C56F003D3008 /* String+Extentsion.swift */; };
+		86EBFF8A21183C9200DBC032 /* LJEmoticonPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EBFF8521183C9200DBC032 /* LJEmoticonPackage.swift */; };
+		86EBFF8B21183C9200DBC032 /* LJTextAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EBFF8621183C9200DBC032 /* LJTextAttachment.swift */; };
+		86EBFF8C21183C9200DBC032 /* LJEmoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EBFF8721183C9200DBC032 /* LJEmoticon.swift */; };
+		86EBFF8D21183C9200DBC032 /* LJEmoticonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EBFF8821183C9200DBC032 /* LJEmoticonManager.swift */; };
+		86EBFF8E21183C9200DBC032 /* HMEmoticon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 86EBFF8921183C9200DBC032 /* HMEmoticon.bundle */; };
+		86EBFF9621183D4900DBC032 /* LJEmoticonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EBFF9021183D4900DBC032 /* LJEmoticonCell.swift */; };
+		86EBFF9721183D4900DBC032 /* LJEmoticonFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EBFF9121183D4900DBC032 /* LJEmoticonFlowLayout.swift */; };
+		86EBFF9821183D4900DBC032 /* LJEmoticonInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EBFF9221183D4900DBC032 /* LJEmoticonInputView.swift */; };
+		86EBFF9921183D4900DBC032 /* LJEmoticonInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86EBFF9321183D4900DBC032 /* LJEmoticonInputView.xib */; };
+		86EBFF9A21183D4900DBC032 /* LJEmoticonToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EBFF9421183D4900DBC032 /* LJEmoticonToolbar.swift */; };
+		86EBFF9B21183D4900DBC032 /* LJEmoticonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86EBFF9521183D4900DBC032 /* LJEmoticonCell.xib */; };
 		86F6FC1920E2292000BA0AD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F6FC1820E2292000BA0AD1 /* AppDelegate.swift */; };
 		86F6FC1E20E2292000BA0AD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86F6FC1C20E2292000BA0AD1 /* Main.storyboard */; };
 		86F6FC2320E2292000BA0AD1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86F6FC2120E2292000BA0AD1 /* LaunchScreen.storyboard */; };
@@ -108,10 +115,6 @@
 		868E77F421071D6D00957E20 /* LJMeiRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LJMeiRefreshView.swift; sourceTree = "<group>"; };
 		868E77F521071D6D00957E20 /* LJHumanRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LJHumanRefreshView.xib; sourceTree = "<group>"; };
 		868E77F621071D6E00957E20 /* LJMeiRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LJMeiRefreshView.xib; sourceTree = "<group>"; };
-		86996DDC210B35BC00D707C6 /* HMEmoticon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HMEmoticon.bundle; sourceTree = "<group>"; };
-		86996DDF210B35D200D707C6 /* LJEmoticonPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LJEmoticonPackage.swift; sourceTree = "<group>"; };
-		86996DE0210B35D200D707C6 /* LJEmoticon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LJEmoticon.swift; sourceTree = "<group>"; };
-		86996DE3210B360A00D707C6 /* LJEmoticonManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LJEmoticonManager.swift; sourceTree = "<group>"; };
 		86996DF0210EF94600D707C6 /* FFLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFLabel.swift; sourceTree = "<group>"; };
 		86996DF2210F123800D707C6 /* LJWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJWebViewController.swift; sourceTree = "<group>"; };
 		86996DF421102FE300D707C6 /* LJComposeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LJComposeViewController.xib; sourceTree = "<group>"; };
@@ -125,6 +128,17 @@
 		86ACA8D0210818BC003D3008 /* LJComposeTypeButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LJComposeTypeButton.xib; sourceTree = "<group>"; };
 		86ACA8D221096773003D3008 /* LJComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJComposeViewController.swift; sourceTree = "<group>"; };
 		86ACA8F42109C56F003D3008 /* String+Extentsion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extentsion.swift"; sourceTree = "<group>"; };
+		86EBFF8521183C9200DBC032 /* LJEmoticonPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LJEmoticonPackage.swift; sourceTree = "<group>"; };
+		86EBFF8621183C9200DBC032 /* LJTextAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LJTextAttachment.swift; sourceTree = "<group>"; };
+		86EBFF8721183C9200DBC032 /* LJEmoticon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LJEmoticon.swift; sourceTree = "<group>"; };
+		86EBFF8821183C9200DBC032 /* LJEmoticonManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LJEmoticonManager.swift; sourceTree = "<group>"; };
+		86EBFF8921183C9200DBC032 /* HMEmoticon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HMEmoticon.bundle; sourceTree = "<group>"; };
+		86EBFF9021183D4900DBC032 /* LJEmoticonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LJEmoticonCell.swift; sourceTree = "<group>"; };
+		86EBFF9121183D4900DBC032 /* LJEmoticonFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LJEmoticonFlowLayout.swift; sourceTree = "<group>"; };
+		86EBFF9221183D4900DBC032 /* LJEmoticonInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LJEmoticonInputView.swift; sourceTree = "<group>"; };
+		86EBFF9321183D4900DBC032 /* LJEmoticonInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LJEmoticonInputView.xib; sourceTree = "<group>"; };
+		86EBFF9421183D4900DBC032 /* LJEmoticonToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LJEmoticonToolbar.swift; sourceTree = "<group>"; };
+		86EBFF9521183D4900DBC032 /* LJEmoticonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LJEmoticonCell.xib; sourceTree = "<group>"; };
 		86F6FC1520E2292000BA0AD1 /* testPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86F6FC1820E2292000BA0AD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86F6FC1D20E2292000BA0AD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -242,25 +256,6 @@
 			path = NewFeature;
 			sourceTree = "<group>";
 		};
-		86996DDB210B35A800D707C6 /* Emoticon */ = {
-			isa = PBXGroup;
-			children = (
-				86996DE3210B360A00D707C6 /* LJEmoticonManager.swift */,
-				86996DDE210B35D200D707C6 /* Model */,
-				86996DDC210B35BC00D707C6 /* HMEmoticon.bundle */,
-			);
-			path = Emoticon;
-			sourceTree = "<group>";
-		};
-		86996DDE210B35D200D707C6 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				86996DDF210B35D200D707C6 /* LJEmoticonPackage.swift */,
-				86996DE0210B35D200D707C6 /* LJEmoticon.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		86996DEF210EF92E00D707C6 /* FFLabel */ = {
 			isa = PBXGroup;
 			children = (
@@ -309,6 +304,41 @@
 				86ACA8D0210818BC003D3008 /* LJComposeTypeButton.xib */,
 			);
 			path = ComposeType;
+			sourceTree = "<group>";
+		};
+		86EBFF8321183C9200DBC032 /* Emoticon */ = {
+			isa = PBXGroup;
+			children = (
+				86EBFF8F21183D4900DBC032 /* View */,
+				86EBFF8421183C9200DBC032 /* Model */,
+				86EBFF8821183C9200DBC032 /* LJEmoticonManager.swift */,
+				86EBFF8921183C9200DBC032 /* HMEmoticon.bundle */,
+			);
+			name = Emoticon;
+			path = ../../../../jianpan/jianpan/Emoticon;
+			sourceTree = "<group>";
+		};
+		86EBFF8421183C9200DBC032 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				86EBFF8521183C9200DBC032 /* LJEmoticonPackage.swift */,
+				86EBFF8621183C9200DBC032 /* LJTextAttachment.swift */,
+				86EBFF8721183C9200DBC032 /* LJEmoticon.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		86EBFF8F21183D4900DBC032 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				86EBFF9021183D4900DBC032 /* LJEmoticonCell.swift */,
+				86EBFF9121183D4900DBC032 /* LJEmoticonFlowLayout.swift */,
+				86EBFF9221183D4900DBC032 /* LJEmoticonInputView.swift */,
+				86EBFF9321183D4900DBC032 /* LJEmoticonInputView.xib */,
+				86EBFF9421183D4900DBC032 /* LJEmoticonToolbar.swift */,
+				86EBFF9521183D4900DBC032 /* LJEmoticonCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		86F6FC0C20E2292000BA0AD1 = {
@@ -420,8 +450,8 @@
 		86F6FC3320E23C8E00BA0AD1 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				86EBFF8321183C9200DBC032 /* Emoticon */,
 				86996DEF210EF92E00D707C6 /* FFLabel */,
-				86996DDB210B35A800D707C6 /* Emoticon */,
 				861D513D2104D75900700E97 /* LJRefreshControl */,
 				864E653E20F59DCE00D5AB30 /* Model */,
 				86F6FCA820EC7B3100BA0AD1 /* netwrok */,
@@ -588,16 +618,18 @@
 				86ACA8D1210818BC003D3008 /* LJComposeTypeButton.xib in Resources */,
 				864E654A20F6F79000D5AB30 /* LJWelcomeView.xib in Resources */,
 				86996DF521102FE300D707C6 /* LJComposeViewController.xib in Resources */,
-				86996DDD210B35BC00D707C6 /* HMEmoticon.bundle in Resources */,
 				86F6FC2320E2292000BA0AD1 /* LaunchScreen.storyboard in Resources */,
 				866775AB21002E6D00CD7D03 /* LJStatusRetweetCell.xib in Resources */,
 				86ACA8CD21080D09003D3008 /* LJComposeTypeView.xib in Resources */,
 				86F6FC2B20E2344600BA0AD1 /* Assets.xcassets in Resources */,
+				86EBFF9921183D4900DBC032 /* LJEmoticonInputView.xib in Resources */,
+				86EBFF8E21183C9200DBC032 /* HMEmoticon.bundle in Resources */,
 				868E77F821071D6E00957E20 /* LJHumanRefreshView.xib in Resources */,
 				86F6FCA320EA25F000BA0AD1 /* main.json in Resources */,
 				868E77F921071D6E00957E20 /* LJMeiRefreshView.xib in Resources */,
 				86FFE0D320F72B460026AB61 /* LJNewFeatureView.xib in Resources */,
 				861D514A2105B87300700E97 /* LJRefreshView.xib in Resources */,
+				86EBFF9B21183D4900DBC032 /* LJEmoticonCell.xib in Resources */,
 				869A439C20FC739D008980F9 /* LJStatusNormalCell.xib in Resources */,
 				86F6FC1E20E2292000BA0AD1 /* Main.storyboard in Resources */,
 			);
@@ -679,29 +711,31 @@
 				86F6FC5F20E3239800BA0AD1 /* UIScreen+CZAddition.m in Sources */,
 				86F6FC5D20E3239800BA0AD1 /* UIColor+CZAddition.m in Sources */,
 				864E654320F5F98C00D5AB30 /* LJTitleButton.swift in Sources */,
-				86996DE2210B35D200D707C6 /* LJEmoticon.swift in Sources */,
 				86F6FC3B20E244F100BA0AD1 /* LJMessageViewController.swift in Sources */,
 				864E64D020EDBC2600D5AB30 /* LJStatusModel.swift in Sources */,
 				86F6FC6120E3239800BA0AD1 /* NSString+CZBase64.m in Sources */,
-				86996DE4210B360A00D707C6 /* LJEmoticonManager.swift in Sources */,
 				864E654620F6EE3300D5AB30 /* LJWelcomeView.swift in Sources */,
 				86F6FC3D20E2450200BA0AD1 /* LJProfileViewController.swift in Sources */,
+				86EBFF9721183D4900DBC032 /* LJEmoticonFlowLayout.swift in Sources */,
 				864E654820F6EED400D5AB30 /* LJNewFeatureView.swift in Sources */,
 				861D51492105B87300700E97 /* LJRefreshView.swift in Sources */,
 				86F6FC4120E2451F00BA0AD1 /* LJHomeViewController.swift in Sources */,
 				86F6FC3F20E2451200BA0AD1 /* LJDiscoverViewController.swift in Sources */,
 				864E650120EDF5A600D5AB30 /* LJStatusViewModel.swift in Sources */,
+				86EBFF9621183D4900DBC032 /* LJEmoticonCell.swift in Sources */,
 				86ACA8CB21080D00003D3008 /* LJComposeTypeView.swift in Sources */,
 				86ACA8CF210818A4003D3008 /* LJComposeTypeButton.swift in Sources */,
 				86F6FC3920E23F7100BA0AD1 /* LJNavigationController.swift in Sources */,
 				864E653D20F4A44000D5AB30 /* LJOAuthViewController.swift in Sources */,
 				8667758520FDDCD600CD7D03 /* LJLable.swift in Sources */,
 				868E77F721071D6E00957E20 /* LJMeiRefreshView.swift in Sources */,
+				86EBFF8B21183C9200DBC032 /* LJTextAttachment.swift in Sources */,
 				86F6FC7120E39BC800BA0AD1 /* UIBarButtonItem+Extension.swift in Sources */,
 				864E653A20F4A15800D5AB30 /* LJCommon.swift in Sources */,
 				86F6FC6420E3239800BA0AD1 /* NSObject+CZRuntime.m in Sources */,
 				86F6FC6820E3239800BA0AD1 /* NSArray+Log.m in Sources */,
 				8667758320FDCCC000CD7D03 /* UIimageView+WebImage.swift in Sources */,
+				86EBFF8A21183C9200DBC032 /* LJEmoticonPackage.swift in Sources */,
 				864E654020F59DE800D5AB30 /* LJUserAccount.swift in Sources */,
 				86F6FC6D20E32D5400BA0AD1 /* Bundle+extension.swift in Sources */,
 				86996DF3210F123800D707C6 /* LJWebViewController.swift in Sources */,
@@ -712,15 +746,16 @@
 				86F6FC6020E3239800BA0AD1 /* UILabel+CZAddition.m in Sources */,
 				86F6FC9B20E7710C00BA0AD1 /* LJVisitorView.swift in Sources */,
 				869A439720FC6CA1008980F9 /* LJImage+Extentsion.swift in Sources */,
-				86996DE1210B35D200D707C6 /* LJEmoticonPackage.swift in Sources */,
 				866775A920FF14C500CD7D03 /* LJStatausPicture.swift in Sources */,
 				86F6FCAC20ECC75A00BA0AD1 /* LJNetworkManager+Extension.swift in Sources */,
 				86ACA8F52109C570003D3008 /* String+Extentsion.swift in Sources */,
 				86F6FC6A20E325D900BA0AD1 /* LJBaseViewController.swift in Sources */,
+				86EBFF8D21183C9200DBC032 /* LJEmoticonManager.swift in Sources */,
 				86996E16211144ED00D707C6 /* LJTextView.swift in Sources */,
 				86F6FC5E20E3239800BA0AD1 /* UIView+CZAddition.m in Sources */,
 				86F6FC6620E3239800BA0AD1 /* NSString+CZHash.m in Sources */,
 				86996DF1210EF94600D707C6 /* FFLabel.swift in Sources */,
+				86EBFF9821183D4900DBC032 /* LJEmoticonInputView.swift in Sources */,
 				86F6FC7320E48F2700BA0AD1 /* LJNavigationBar.swift in Sources */,
 				861D513F2104D77C00700E97 /* LJRefreshControl.swift in Sources */,
 				86F6FC6720E3239800BA0AD1 /* NSAttributedString+CZAdditon.m in Sources */,
@@ -731,7 +766,9 @@
 				86F6FC6220E3239800BA0AD1 /* NSString+CZPath.m in Sources */,
 				86F6FCAA20EC988900BA0AD1 /* LJNetworkManager.swift in Sources */,
 				8667757F20FD8B2500CD7D03 /* LJUser.swift in Sources */,
+				86EBFF9A21183D4900DBC032 /* LJEmoticonToolbar.swift in Sources */,
 				86F6FC3720E23E6500BA0AD1 /* LJMainViewController.swift in Sources */,
+				86EBFF8C21183C9200DBC032 /* LJEmoticon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
