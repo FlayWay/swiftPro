@@ -39,7 +39,12 @@ class LJStatusViewModel: NSObject {
         // max_id 上拉刷新
         let max_id = !pullup ? 0 : (statusList.last? .status.id ?? 0)
         
-        LJNetworkManager.shared.statusList(since_id: since_id,max_id: max_id) { (list, isSuccess) in
+        
+        LJStatusListDAL.loadStatus(since_id: since_id, max_id: max_id) { (list, isSuccess) in
+            
+//        }
+//        
+//        LJNetworkManager.shared.statusList(since_id: since_id,max_id: max_id) { (list, isSuccess) in
             
             if !isSuccess{
                 completion(false,false)

@@ -114,7 +114,7 @@ extension LJHomeViewController{
 // MARK: -设置界面
 extension LJHomeViewController {
     
-    
+
     override func setupTableView() {
         super.setupTableView()
         // 设置导航栏按钮
@@ -146,7 +146,6 @@ extension LJHomeViewController {
     }
     
 }
-
 
 // MARK: - LJStatusCellDelegate
 extension LJHomeViewController:LJStatusCellDelegate {

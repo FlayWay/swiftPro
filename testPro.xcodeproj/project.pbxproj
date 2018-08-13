@@ -10,6 +10,10 @@
 		861D513F2104D77C00700E97 /* LJRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861D513E2104D77C00700E97 /* LJRefreshControl.swift */; };
 		861D51492105B87300700E97 /* LJRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861D51472105B87300700E97 /* LJRefreshView.swift */; };
 		861D514A2105B87300700E97 /* LJRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 861D51482105B87300700E97 /* LJRefreshView.xib */; };
+		86208568212085D000262338 /* status.sql in Resources */ = {isa = PBXBuildFile; fileRef = 86208566212085D000262338 /* status.sql */; };
+		86208569212085D100262338 /* LJSQLiteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86208567212085D000262338 /* LJSQLiteManager.swift */; };
+		8620856B2120862E00262338 /* LJStatusListDAL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8620856A2120862E00262338 /* LJStatusListDAL.swift */; };
+		8620856D2120945C00262338 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8620856C2120945C00262338 /* Date+Extension.swift */; };
 		864E64D020EDBC2600D5AB30 /* LJStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864E64CF20EDBC2600D5AB30 /* LJStatusModel.swift */; };
 		864E650120EDF5A600D5AB30 /* LJStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864E650020EDF5A600D5AB30 /* LJStatusViewModel.swift */; };
 		864E653A20F4A15800D5AB30 /* LJCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864E653920F4A15700D5AB30 /* LJCommon.swift */; };
@@ -95,6 +99,10 @@
 		861D513E2104D77C00700E97 /* LJRefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJRefreshControl.swift; sourceTree = "<group>"; };
 		861D51472105B87300700E97 /* LJRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LJRefreshView.swift; sourceTree = "<group>"; };
 		861D51482105B87300700E97 /* LJRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LJRefreshView.xib; sourceTree = "<group>"; };
+		86208566212085D000262338 /* status.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = status.sql; sourceTree = "<group>"; };
+		86208567212085D000262338 /* LJSQLiteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LJSQLiteManager.swift; sourceTree = "<group>"; };
+		8620856A2120862E00262338 /* LJStatusListDAL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJStatusListDAL.swift; sourceTree = "<group>"; };
+		8620856C2120945C00262338 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		864E64CF20EDBC2600D5AB30 /* LJStatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJStatusModel.swift; sourceTree = "<group>"; };
 		864E650020EDF5A600D5AB30 /* LJStatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJStatusViewModel.swift; sourceTree = "<group>"; };
 		864E653920F4A15700D5AB30 /* LJCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJCommon.swift; sourceTree = "<group>"; };
@@ -219,6 +227,15 @@
 				861D51482105B87300700E97 /* LJRefreshView.xib */,
 			);
 			path = LJRefreshControl;
+			sourceTree = "<group>";
+		};
+		86208565212085D000262338 /* sqlit */ = {
+			isa = PBXGroup;
+			children = (
+				86208566212085D000262338 /* status.sql */,
+				86208567212085D000262338 /* LJSQLiteManager.swift */,
+			);
+			path = sqlit;
 			sourceTree = "<group>";
 		};
 		864E653B20F4A41A00D5AB30 /* OAuth */ = {
@@ -450,6 +467,7 @@
 		86F6FC3320E23C8E00BA0AD1 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				86208565212085D000262338 /* sqlit */,
 				86EBFF8321183C9200DBC032 /* Emoticon */,
 				86996DEF210EF92E00D707C6 /* FFLabel */,
 				861D513D2104D75900700E97 /* LJRefreshControl */,
@@ -469,6 +487,7 @@
 				864E650020EDF5A600D5AB30 /* LJStatusViewModel.swift */,
 				8667758020FD8EC500CD7D03 /* LJStatusSingleViewModel.swift */,
 				866775A820FF14C500CD7D03 /* LJStatausPicture.swift */,
+				8620856A2120862E00262338 /* LJStatusListDAL.swift */,
 			);
 			path = "ViewModel(视图模型)";
 			sourceTree = "<group>";
@@ -522,6 +541,7 @@
 				86F6FC7020E39BC800BA0AD1 /* UIBarButtonItem+Extension.swift */,
 				869A439620FC6CA1008980F9 /* LJImage+Extentsion.swift */,
 				8667758220FDCCC000CD7D03 /* UIimageView+WebImage.swift */,
+				8620856C2120945C00262338 /* Date+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -627,6 +647,7 @@
 				868E77F821071D6E00957E20 /* LJHumanRefreshView.xib in Resources */,
 				86F6FCA320EA25F000BA0AD1 /* main.json in Resources */,
 				868E77F921071D6E00957E20 /* LJMeiRefreshView.xib in Resources */,
+				86208568212085D000262338 /* status.sql in Resources */,
 				86FFE0D320F72B460026AB61 /* LJNewFeatureView.xib in Resources */,
 				861D514A2105B87300700E97 /* LJRefreshView.xib in Resources */,
 				86EBFF9B21183D4900DBC032 /* LJEmoticonCell.xib in Resources */,
@@ -729,6 +750,7 @@
 				864E653D20F4A44000D5AB30 /* LJOAuthViewController.swift in Sources */,
 				8667758520FDDCD600CD7D03 /* LJLable.swift in Sources */,
 				868E77F721071D6E00957E20 /* LJMeiRefreshView.swift in Sources */,
+				8620856D2120945C00262338 /* Date+Extension.swift in Sources */,
 				86EBFF8B21183C9200DBC032 /* LJTextAttachment.swift in Sources */,
 				86F6FC7120E39BC800BA0AD1 /* UIBarButtonItem+Extension.swift in Sources */,
 				864E653A20F4A15800D5AB30 /* LJCommon.swift in Sources */,
@@ -739,6 +761,7 @@
 				864E654020F59DE800D5AB30 /* LJUserAccount.swift in Sources */,
 				86F6FC6D20E32D5400BA0AD1 /* Bundle+extension.swift in Sources */,
 				86996DF3210F123800D707C6 /* LJWebViewController.swift in Sources */,
+				8620856B2120862E00262338 /* LJStatusListDAL.swift in Sources */,
 				8667758120FD8EC500CD7D03 /* LJStatusSingleViewModel.swift in Sources */,
 				86F6FC6520E3239800BA0AD1 /* UIViewController+CZAddition.m in Sources */,
 				86F6FC6320E3239800BA0AD1 /* UIButton+CZAddition.m in Sources */,
@@ -751,6 +774,7 @@
 				86ACA8F52109C570003D3008 /* String+Extentsion.swift in Sources */,
 				86F6FC6A20E325D900BA0AD1 /* LJBaseViewController.swift in Sources */,
 				86EBFF8D21183C9200DBC032 /* LJEmoticonManager.swift in Sources */,
+				86208569212085D100262338 /* LJSQLiteManager.swift in Sources */,
 				86996E16211144ED00D707C6 /* LJTextView.swift in Sources */,
 				86F6FC5E20E3239800BA0AD1 /* UIView+CZAddition.m in Sources */,
 				86F6FC6620E3239800BA0AD1 /* NSString+CZHash.m in Sources */,
