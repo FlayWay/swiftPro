@@ -14,6 +14,7 @@
 		86208569212085D100262338 /* LJSQLiteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86208567212085D000262338 /* LJSQLiteManager.swift */; };
 		8620856B2120862E00262338 /* LJStatusListDAL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8620856A2120862E00262338 /* LJStatusListDAL.swift */; };
 		8620856D2120945C00262338 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8620856C2120945C00262338 /* Date+Extension.swift */; };
+		8620856F21211D4200262338 /* LJEmoticonTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8620856E21211D4200262338 /* LJEmoticonTipView.swift */; };
 		864E64D020EDBC2600D5AB30 /* LJStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864E64CF20EDBC2600D5AB30 /* LJStatusModel.swift */; };
 		864E650120EDF5A600D5AB30 /* LJStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864E650020EDF5A600D5AB30 /* LJStatusViewModel.swift */; };
 		864E653A20F4A15800D5AB30 /* LJCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864E653920F4A15700D5AB30 /* LJCommon.swift */; };
@@ -103,6 +104,7 @@
 		86208567212085D000262338 /* LJSQLiteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LJSQLiteManager.swift; sourceTree = "<group>"; };
 		8620856A2120862E00262338 /* LJStatusListDAL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJStatusListDAL.swift; sourceTree = "<group>"; };
 		8620856C2120945C00262338 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		8620856E21211D4200262338 /* LJEmoticonTipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJEmoticonTipView.swift; sourceTree = "<group>"; };
 		864E64CF20EDBC2600D5AB30 /* LJStatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJStatusModel.swift; sourceTree = "<group>"; };
 		864E650020EDF5A600D5AB30 /* LJStatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJStatusViewModel.swift; sourceTree = "<group>"; };
 		864E653920F4A15700D5AB30 /* LJCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJCommon.swift; sourceTree = "<group>"; };
@@ -354,6 +356,7 @@
 				86EBFF9321183D4900DBC032 /* LJEmoticonInputView.xib */,
 				86EBFF9421183D4900DBC032 /* LJEmoticonToolbar.swift */,
 				86EBFF9521183D4900DBC032 /* LJEmoticonCell.xib */,
+				8620856E21211D4200262338 /* LJEmoticonTipView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -774,6 +777,7 @@
 				86ACA8F52109C570003D3008 /* String+Extentsion.swift in Sources */,
 				86F6FC6A20E325D900BA0AD1 /* LJBaseViewController.swift in Sources */,
 				86EBFF8D21183C9200DBC032 /* LJEmoticonManager.swift in Sources */,
+				8620856F21211D4200262338 /* LJEmoticonTipView.swift in Sources */,
 				86208569212085D100262338 /* LJSQLiteManager.swift in Sources */,
 				86996E16211144ED00D707C6 /* LJTextView.swift in Sources */,
 				86F6FC5E20E3239800BA0AD1 /* UIView+CZAddition.m in Sources */,

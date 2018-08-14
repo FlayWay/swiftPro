@@ -12,7 +12,13 @@ import UIKit
 
     
     /// 缩率图地址
-    var thumbnail_pic:String?
+    var thumbnail_pic:String? {
+        
+        didSet {
+            
+            thumbnail_pic = thumbnail_pic?.replacingOccurrences(of: "/thumbnail/", with: "/wap360/")
+        }
+    }
     
     override var description: String {
         

@@ -35,8 +35,9 @@ class LJComposeViewController: UIViewController {
     @IBOutlet weak var toolBar: UIToolbar!
     override func viewDidLoad() {
         super.viewDidLoad()
- 
+        
         setupUI()
+        
         // 监听键盘通知
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardChanged(_:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
         

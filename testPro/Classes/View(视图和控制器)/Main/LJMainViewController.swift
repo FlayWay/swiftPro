@@ -54,6 +54,8 @@ class LJMainViewController: UITabBarController {
         // 展现登录控制器，通常会和 UINavigationController连用
         let vc = LJOAuthViewController()
         let nav = UINavigationController(rootViewController: vc)
+        // 强制更新约束
+        nav.view.layoutIfNeeded()
         self.present(nav, animated: true, completion: nil)
      }
     
