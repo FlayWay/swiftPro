@@ -50,7 +50,7 @@ extension LJOAuthViewController {
    @objc func autoFill()  { 
     
         // 准备js
-     let js = "document.getElementById('userId').value='15993106537';" + "document.getElementById('passwd').value='sun62585542';"
+     let js = "document.getElementById('userId').value='*****';" + "document.getElementById('passwd').value='*****';"
         webView.stringByEvaluatingJavaScript(from:js)
     }
 }
