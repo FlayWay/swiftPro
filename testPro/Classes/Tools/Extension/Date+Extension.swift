@@ -61,7 +61,6 @@ extension Date {
                 fmt = "yyyy-" + fmt
             }
         }
-        
         dateFormatter.dateFormat = fmt
         return dateFormatter.string(from: self)
     }

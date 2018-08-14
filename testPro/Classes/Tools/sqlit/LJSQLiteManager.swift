@@ -207,11 +207,8 @@ extension LJSQLiteManager {
                     print("插入成功")
                 }
             }
-            
         }
-        
     }
-    
 }
 
 

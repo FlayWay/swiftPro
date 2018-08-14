@@ -77,7 +77,7 @@ extension LJBaseViewController {
         tableView?.delegate = self
         view.insertSubview(tableView!, belowSubview:navigationBar)
         // 设置内容缩进
-        tableView?.contentInset = UIEdgeInsets(top: navigationBar.bounds.height,
+        tableView?.contentInset = UIEdgeInsets(top: NavBarHeight,
                                                left: 0,
                                                bottom: tabBarController?.tabBar.bounds.height ?? 49,
                                                right: 0)
