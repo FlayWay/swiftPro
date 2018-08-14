@@ -16,9 +16,14 @@ import UIKit
         
         didSet {
             
+            largePic = thumbnail_pic?.replacingOccurrences(of: "/thumbnail/", with: "/large/")
             thumbnail_pic = thumbnail_pic?.replacingOccurrences(of: "/thumbnail/", with: "/wap360/")
+            
         }
     }
+    
+    /// 中等图片尺寸
+    var largePic:String?
     
     override var description: String {
         

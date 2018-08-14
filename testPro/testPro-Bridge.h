@@ -10,7 +10,6 @@
 #define testPro_Bridge_h
 
 #import "CZAdditions.h"
-
-
+#import "HMPhotoBrowserController.h"
 
 #endif /* testPro_Bridge_h */

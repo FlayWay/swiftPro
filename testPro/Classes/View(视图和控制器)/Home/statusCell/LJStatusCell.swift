@@ -51,6 +51,9 @@ class LJStatusCell: UITableViewCell {
             // 设置来源
             sourceLabel.text = viewModel?.sourceStr
             
+            // 设置时间
+            timeLabel.text = viewModel?.status.createdDate?.lj_dateDescription
+            
             // 测试修改配置视图高度
 //            picktrueView.heigthCons.constant = viewModel?.picktureViewSize.height ?? 0
             // 图片数组

@@ -22,6 +22,16 @@ let LJUserShouldloginNotification = "LJUserShouldloginNotification"
 /// 用户登录成功通知
 let LJUserloginSuccessNotification = "LJUserloginSuccessNotification"
 
+
+// MARK: ----照片浏览通知
+let LJStatusCellBrowserPhotoNotification = "LJStatusCellBrowserPhotoNotification"
+
+let LJStatusCellBrowserPhotoSelectedIndexKey = "LJStatusCellBrowserPhotoSelectedIndexKey"
+
+let LJStatusCellBrowserPhotoImageViewsKey = "LJStatusCellBrowserPhotoImageViewsKey"
+
+let LJStatusCellBrowserPhotoUrlsKey = "LJStatusCellBrowserPhotoUrlsKey"
+
 /// 常数设置
 let LJStatusPictureOutterMargin = CGFloat(12)
 /// 内部图像间距

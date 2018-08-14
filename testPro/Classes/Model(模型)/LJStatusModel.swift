@@ -18,7 +18,13 @@ import YYModel
     /// 微博来源
     var source:String?
     /// 微博创建时间
-    var created_at:String?
+    var created_at:String? {
+        didSet {
+            createdDate = Date.lj_sinaDate(string:created_at ?? "")
+        }
+    }
+    /// 创建日期
+    var createdDate:Date?
     /// 微博信息内容
     var text:String?
     /// 用户信息

@@ -22,7 +22,27 @@ class LJHomeViewController: LJBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
                 
+        // 注册通知
+        NotificationCenter.default.addObserver(self, selector: #selector(browserPhoto), name:NSNotification.Name(LJStatusCellBrowserPhotoNotification), object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    /// 点击图片事件
+    @objc private func browserPhoto(no:NSNotification) {
         
+        guard let selectedIndex = no.userInfo?[LJStatusCellBrowserPhotoSelectedIndexKey] as? Int,
+        let urls = no.userInfo?[LJStatusCellBrowserPhotoUrlsKey] as? [String],
+        let parentImageViews = no.userInfo?[LJStatusCellBrowserPhotoImageViewsKey] as? [UIImageView]
+        else {
+            
+            return
+        }
+    
+       let vc = HMPhotoBrowserController.photoBrowser(withSelectedIndex: selectedIndex, urls: urls, parentImageViews: parentImageViews)
+        
+        present(vc, animated: true, completion: nil)
     }
 
     // 加载数据

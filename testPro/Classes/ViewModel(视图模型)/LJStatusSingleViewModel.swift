@@ -61,6 +61,8 @@ class LJStatusSingleViewModel: CustomStringConvertible {
         return status.retweeted_status?.pic_urls ?? status.pic_urls
     }
     
+    
+    
     /// 构造函数
     ///
     /// - Parameter model: 返回视图模型

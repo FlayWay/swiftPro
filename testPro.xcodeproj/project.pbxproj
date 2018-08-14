@@ -15,6 +15,11 @@
 		8620856B2120862E00262338 /* LJStatusListDAL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8620856A2120862E00262338 /* LJStatusListDAL.swift */; };
 		8620856D2120945C00262338 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8620856C2120945C00262338 /* Date+Extension.swift */; };
 		8620856F21211D4200262338 /* LJEmoticonTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8620856E21211D4200262338 /* LJEmoticonTipView.swift */; };
+		8620857B212274FD00262338 /* HMPhotoBrowserController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86208571212274FD00262338 /* HMPhotoBrowserController.m */; };
+		8620857C212274FD00262338 /* HMPhotoViewerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86208572212274FD00262338 /* HMPhotoViewerController.m */; };
+		8620857D212274FD00262338 /* HMPhotoBrowserPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 86208573212274FD00262338 /* HMPhotoBrowserPhotos.m */; };
+		8620857E212274FD00262338 /* HMPhotoProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86208574212274FD00262338 /* HMPhotoProgressView.m */; };
+		8620857F212274FD00262338 /* HMPhotoBrowserAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 86208579212274FD00262338 /* HMPhotoBrowserAnimator.m */; };
 		864E64D020EDBC2600D5AB30 /* LJStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864E64CF20EDBC2600D5AB30 /* LJStatusModel.swift */; };
 		864E650120EDF5A600D5AB30 /* LJStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864E650020EDF5A600D5AB30 /* LJStatusViewModel.swift */; };
 		864E653A20F4A15800D5AB30 /* LJCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864E653920F4A15700D5AB30 /* LJCommon.swift */; };
@@ -105,6 +110,16 @@
 		8620856A2120862E00262338 /* LJStatusListDAL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJStatusListDAL.swift; sourceTree = "<group>"; };
 		8620856C2120945C00262338 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		8620856E21211D4200262338 /* LJEmoticonTipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJEmoticonTipView.swift; sourceTree = "<group>"; };
+		86208571212274FD00262338 /* HMPhotoBrowserController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMPhotoBrowserController.m; sourceTree = "<group>"; };
+		86208572212274FD00262338 /* HMPhotoViewerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMPhotoViewerController.m; sourceTree = "<group>"; };
+		86208573212274FD00262338 /* HMPhotoBrowserPhotos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMPhotoBrowserPhotos.m; sourceTree = "<group>"; };
+		86208574212274FD00262338 /* HMPhotoProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMPhotoProgressView.m; sourceTree = "<group>"; };
+		86208575212274FD00262338 /* HMPhotoBrowserAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMPhotoBrowserAnimator.h; sourceTree = "<group>"; };
+		86208576212274FD00262338 /* HMPhotoBrowserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMPhotoBrowserController.h; sourceTree = "<group>"; };
+		86208577212274FD00262338 /* HMPhotoViewerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMPhotoViewerController.h; sourceTree = "<group>"; };
+		86208578212274FD00262338 /* HMPhotoBrowserPhotos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMPhotoBrowserPhotos.h; sourceTree = "<group>"; };
+		86208579212274FD00262338 /* HMPhotoBrowserAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMPhotoBrowserAnimator.m; sourceTree = "<group>"; };
+		8620857A212274FD00262338 /* HMPhotoProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMPhotoProgressView.h; sourceTree = "<group>"; };
 		864E64CF20EDBC2600D5AB30 /* LJStatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJStatusModel.swift; sourceTree = "<group>"; };
 		864E650020EDF5A600D5AB30 /* LJStatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJStatusViewModel.swift; sourceTree = "<group>"; };
 		864E653920F4A15700D5AB30 /* LJCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJCommon.swift; sourceTree = "<group>"; };
@@ -238,6 +253,23 @@
 				86208567212085D000262338 /* LJSQLiteManager.swift */,
 			);
 			path = sqlit;
+			sourceTree = "<group>";
+		};
+		86208570212274FD00262338 /* PhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				86208571212274FD00262338 /* HMPhotoBrowserController.m */,
+				86208572212274FD00262338 /* HMPhotoViewerController.m */,
+				86208573212274FD00262338 /* HMPhotoBrowserPhotos.m */,
+				86208574212274FD00262338 /* HMPhotoProgressView.m */,
+				86208575212274FD00262338 /* HMPhotoBrowserAnimator.h */,
+				86208576212274FD00262338 /* HMPhotoBrowserController.h */,
+				86208577212274FD00262338 /* HMPhotoViewerController.h */,
+				86208578212274FD00262338 /* HMPhotoBrowserPhotos.h */,
+				86208579212274FD00262338 /* HMPhotoBrowserAnimator.m */,
+				8620857A212274FD00262338 /* HMPhotoProgressView.h */,
+			);
+			path = PhotoBrowser;
 			sourceTree = "<group>";
 		};
 		864E653B20F4A41A00D5AB30 /* OAuth */ = {
@@ -470,6 +502,7 @@
 		86F6FC3320E23C8E00BA0AD1 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				86208570212274FD00262338 /* PhotoBrowser */,
 				86208565212085D000262338 /* sqlit */,
 				86EBFF8321183C9200DBC032 /* Emoticon */,
 				86996DEF210EF92E00D707C6 /* FFLabel */,
@@ -688,8 +721,11 @@
 				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/YYCache/YYCache.framework",
+				"${BUILT_PRODUCTS_DIR}/YYImage/YYImage.framework",
 				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
 				"${BUILT_PRODUCTS_DIR}/YYText/YYText.framework",
+				"${BUILT_PRODUCTS_DIR}/YYWebImage/YYWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -698,8 +734,11 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYCache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYText.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -742,15 +781,19 @@
 				86F6FC3D20E2450200BA0AD1 /* LJProfileViewController.swift in Sources */,
 				86EBFF9721183D4900DBC032 /* LJEmoticonFlowLayout.swift in Sources */,
 				864E654820F6EED400D5AB30 /* LJNewFeatureView.swift in Sources */,
+				8620857B212274FD00262338 /* HMPhotoBrowserController.m in Sources */,
 				861D51492105B87300700E97 /* LJRefreshView.swift in Sources */,
 				86F6FC4120E2451F00BA0AD1 /* LJHomeViewController.swift in Sources */,
 				86F6FC3F20E2451200BA0AD1 /* LJDiscoverViewController.swift in Sources */,
 				864E650120EDF5A600D5AB30 /* LJStatusViewModel.swift in Sources */,
+				8620857F212274FD00262338 /* HMPhotoBrowserAnimator.m in Sources */,
 				86EBFF9621183D4900DBC032 /* LJEmoticonCell.swift in Sources */,
 				86ACA8CB21080D00003D3008 /* LJComposeTypeView.swift in Sources */,
+				8620857D212274FD00262338 /* HMPhotoBrowserPhotos.m in Sources */,
 				86ACA8CF210818A4003D3008 /* LJComposeTypeButton.swift in Sources */,
 				86F6FC3920E23F7100BA0AD1 /* LJNavigationController.swift in Sources */,
 				864E653D20F4A44000D5AB30 /* LJOAuthViewController.swift in Sources */,
+				8620857E212274FD00262338 /* HMPhotoProgressView.m in Sources */,
 				8667758520FDDCD600CD7D03 /* LJLable.swift in Sources */,
 				868E77F721071D6E00957E20 /* LJMeiRefreshView.swift in Sources */,
 				8620856D2120945C00262338 /* Date+Extension.swift in Sources */,
@@ -779,6 +822,7 @@
 				86EBFF8D21183C9200DBC032 /* LJEmoticonManager.swift in Sources */,
 				8620856F21211D4200262338 /* LJEmoticonTipView.swift in Sources */,
 				86208569212085D100262338 /* LJSQLiteManager.swift in Sources */,
+				8620857C212274FD00262338 /* HMPhotoViewerController.m in Sources */,
 				86996E16211144ED00D707C6 /* LJTextView.swift in Sources */,
 				86F6FC5E20E3239800BA0AD1 /* UIView+CZAddition.m in Sources */,
 				86F6FC6620E3239800BA0AD1 /* NSString+CZHash.m in Sources */,

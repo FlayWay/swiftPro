@@ -70,14 +70,14 @@ class LJStatusPicView: UIView {
                 
                 // 设置图像
                 iv.lj_setImage(urlString: url.thumbnail_pic, placeholderImage: nil)
+                // 判断是否是 gif
+                iv.subviews[0].isHidden = (((url.thumbnail_pic ?? "") as NSString).pathExtension.lowercased() != "gif")
+                
                 // 显示图像
                 iv.isHidden = false
                 index += 1
+                
             }
-            
-            
-            
-            
         }
     }
     /// 配图视图高度
@@ -86,6 +86,44 @@ class LJStatusPicView: UIView {
     override func awakeFromNib() {
         
         setupUI()
+    }
+    
+    //MARK: --图片点击事件
+    @objc private func tapImageView(tap:UITapGestureRecognizer){
+        
+        guard let iv = tap.view ,
+            let picUrls = viewModel?.picUrls
+        else {
+            return
+        }
+        var selectedIndex = iv.tag
+        
+        if picUrls.count == 4 && selectedIndex > 1 {
+            
+            selectedIndex -= 1
+        }
+        
+        let urls = (picUrls as NSArray).value(forKey: "largePic") as! [String]
+        
+        var imageViewList = [UIImageView]()
+        for iv in subviews as! [UIImageView] {
+            
+            if !iv.isHidden {
+                
+                imageViewList.append(iv)
+                
+            }
+        }
+        
+        // 发送通知
+        NotificationCenter.default.post(name:NSNotification.Name(rawValue: LJStatusCellBrowserPhotoNotification), object: self, userInfo:
+            [
+            LJStatusCellBrowserPhotoSelectedIndexKey:selectedIndex,
+            LJStatusCellBrowserPhotoImageViewsKey:imageViewList,
+            LJStatusCellBrowserPhotoUrlsKey:urls
+            ])
+        
+        
     }
     
 }
@@ -121,8 +159,43 @@ extension LJStatusPicView {
             let col = CGFloat(i % 3)
             iv.frame = rect.offsetBy(dx: col * (LJStatusPictureItemWidth + LJStatusPictureInnerMargin), dy: row * (LJStatusPictureItemWidth+LJStatusPictureInnerMargin))
             addSubview(iv)
+            
+            iv.tag = i
+            
+            // 设置手势
+            iv.isUserInteractionEnabled = true
+            let tap = UITapGestureRecognizer(target: self, action: #selector(tapImageView))
+            iv.addGestureRecognizer(tap)
+            
+            addGifView(iv: iv)
         }
         
+    }
+    
+    // 向图像加载一个gif图像视图
+    private func addGifView(iv:UIImageView) {
+       let gifImageView = UIImageView(image:UIImage(named: "timeline_image_gif"))
+       iv.addSubview(gifImageView)
+        
+       gifImageView.translatesAutoresizingMaskIntoConstraints = false
+        
+       iv.addConstraint(NSLayoutConstraint(
+        item: gifImageView,
+        attribute: .right,
+        relatedBy: .equal,
+        toItem: iv,
+        attribute: .right,
+        multiplier: 1.0,
+        constant: 0))
+    
+    iv.addConstraint(NSLayoutConstraint(
+        item: gifImageView,
+        attribute: .bottom,
+        relatedBy: .equal,
+        toItem: iv,
+        attribute: .bottom,
+        multiplier: 1.0,
+        constant: 0))
     }
 }
 

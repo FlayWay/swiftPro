@@ -13,5 +13,5 @@ target 'testPro' do
   pod "SVProgressHUD"
   pod "pop"
   pod "YYText"
-
+  pod 'YYWebImage'
 end
