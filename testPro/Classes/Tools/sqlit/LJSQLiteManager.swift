@@ -29,7 +29,7 @@ class LJSQLiteManager {
     /// 数据库队列
     let queue:FMDatabaseQueue
     
-    /// 避免外部访问 构造函数
+    /// 避免外部Sl访问 构造函数
     private init() {
         
         // 数据的路径
@@ -37,12 +37,12 @@ class LJSQLiteManager {
         var path =  NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
         path = (path as NSString).appendingPathComponent(dbname)
         print("数据库的路径+\(path)")
-       // 创建数据库队列,同时创建打开表
+       // 创建数据库队列,同时创建打开表
         queue = FMDatabaseQueue(path: path)
         // 创建sql
         createTable()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(clearDBCache), name: Notification.Name.UIApplicationWillEnterForeground, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(clearDBCache), name: Notification.Name.UIApplicationDidEnterBackground, object: nil)
         
     }
     
@@ -116,6 +116,7 @@ extension LJSQLiteManager {
         // 执行sql
         print("\(sql)")
         let array = execRecordSet(sql: sql)
+        print(array)
         var result = [[String:Any]]()
         // 遍历数组，将数组中的 status 反序列化-> 数组字典
         for dict in array {
@@ -127,7 +128,6 @@ extension LJSQLiteManager {
             }
            // 追加数组
             result.append(json ?? [:])
-            
         
         }
         

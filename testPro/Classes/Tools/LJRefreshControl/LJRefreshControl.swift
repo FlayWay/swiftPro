@@ -186,7 +186,6 @@ extension LJRefreshControl {
     
    private  func setupUI() {
     
-    
         backgroundColor = superview?.backgroundColor
         // 超出边界部分不显示
 //        clipsToBounds = true

@@ -18,7 +18,7 @@ extension Date {
     static func lj_dataString(time: TimeInterval) -> String {
         
         let date = Date(timeIntervalSinceNow: time)
-        //
+        //
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         
         return dateFormatter.string(from: date)
