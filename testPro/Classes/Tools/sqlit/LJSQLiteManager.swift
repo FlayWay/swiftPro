@@ -45,8 +45,6 @@ class LJSQLiteManager {
         NotificationCenter.default.addObserver(self, selector: #selector(clearDBCache), name: Notification.Name.UIApplicationDidEnterBackground, object: nil)
         
     }
-    
-    
     /// 清理数据缓存
     @objc func clearDBCache(){
         
